@@ -1,10 +1,71 @@
-// Stack technologies data
+// Inicializar el stack panel
+function initializeStackPanel() {
+    // Los puntos ya están implementados en CSS con gradientes radiales
+    // No se necesita JavaScript adicional para el efecto visual básico
+    
+    // Puedes agregar interacciones adicionales aquí si lo deseas
+    const techCards = document.querySelectorAll('.tech-card');
+    
+    techCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const tech = this.getAttribute('data-tech');
+            console.log(`Hovered over: ${tech}`);
+            // Aquí puedes agregar más interacciones
+        });
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeStackPanel();
+    createCursorFollower();
+    
+    // Email protection
+    const emailLink = document.querySelector('.email-link');
+    if (emailLink) {
+        emailLink.setAttribute('href', 'mailto:b.yusupoff001@gmail.com');
+    }
+});
+
+
+
+// Stack technologies data - ACTUALIZADO
 const stackTechnologies = [
     "React", "JavaScript", "TypeScript", "Node.js", 
-    "HTML/CSS", "Figma", "Adobe XD", "Python",
-    "MongoDB", "Express", "Git", "Webpack",
-    "SASS", "Tailwind", "Next.js", "Firebase"
+    "HTML/CSS", "Figma", "Python", "MongoDB"
 ];
+
+// Initialize dot matrix
+function initializeDotMatrix() {
+    const techItems = document.querySelectorAll('.tech-item');
+    
+    techItems.forEach(item => {
+        const dotMatrix = item.querySelector('.dot-matrix');
+        // Limpiar cualquier contenido existente
+        dotMatrix.innerHTML = '';
+        
+        // Crear 16 puntos (4x4 grid)
+        for (let i = 0; i < 16; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dotMatrix.appendChild(dot);
+        }
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeDotMatrix();
+    createCursorFollower();
+    
+    // Email protection
+    const emailLink = document.querySelector('.email-link');
+    if (emailLink) {
+        emailLink.setAttribute('href', 'mailto:b.yusupoff001@gmail.com');
+    }
+});
+
+
 
 // Initialize stack items
 function initializeStack() {
