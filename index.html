@@ -28,6 +28,7 @@
             class="w-16 h-16 md:w-20 md:h-20 rounded-full border-1 border-gray-600 hover:border-teal-400 transition-colors duration-300 object-contain scale-90">            </div>
             <nav class="social-links flex gap-6">
                 <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">About</a>
+                <a href="#experience" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Experience</a>
                 <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Projects</a>
                 <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Contact</a>
             </nav>
@@ -79,19 +80,35 @@
                     <div class="w-full md:w-1/2">
                         <div class="pl-2">
                             <h3 class="text-xl font-semibold text-white mb-4">Languages</h3>
-                            <ul class="text-gray-300 space-y-2">
-                                <li><span class="font-medium text-white custom-font-migra">Spanish 🇪🇸</span> — Native</li>
-                                <li><span class="font-medium text-white custom-font-migra">English 🇬🇧</span> — C1</li>
-                                <li><span class="font-medium text-white custom-font-migra">French 🇫🇷</span> — B2</li>
-                            </ul>
+                                <ul class="text-gray-300 space-y-2">
+                                    <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">Spanish 🇪🇸</span> — Native</li>
+                                    <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">English 🇬🇧</span> — C1</li>
+                                    <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">French 🇫🇷</span> — B2</li>
+                                </ul>
+
+                                <h3 class="text-xl font-semibold text-white mt-6 mb-4">Hobbies</h3>
+                                <!-- Hobbies card: two GIFs glued together inside a single animated card -->
+                                <div class="hobby-card" aria-hidden="false">
+                                    <div class="hobby-item">
+                                        <img id="pianoGif" src="gifs/cat-playing-piano-funny.gif" alt="Piano" class="" onerror="document.getElementById('pianoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('pianoIcon').style.display='none';" />
+                                        <i id="pianoIcon" class="fa-solid fa-music text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
+                                    </div>
+
+                                    <div class="hobby-item">
+                                        <img id="photoGif" src="gifs/spiderman-peter-parker.gif" alt="Fotografía" class="" onerror="document.getElementById('photoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('photoIcon').style.display='none';" />
+                                        <i id="photoIcon" class="fa-solid fa-camera-retro text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
+                                    </div>
+
+                                    <!-- noise overlay is handled in CSS (.hobby-card::after) -->
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section class="max-w-6xl mx-auto py-16">
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-6xl mx-auto py-16">
             <div class="mx-auto max-w-4xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
                 <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Experience</h2>
                 <div class="space-y-8">
