@@ -1,96 +1,74 @@
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+// Stack technologies data
+const stackTechnologies = [
+    "React", "JavaScript", "TypeScript", "Node.js", 
+    "HTML/CSS", "Figma", "Adobe XD", "Python",
+    "MongoDB", "Express", "Git", "Webpack",
+    "SASS", "Tailwind", "Next.js", "Firebase"
+];
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.querySelector('i').classList.toggle('fa-bars');
-    menuToggle.querySelector('i').classList.toggle('fa-times');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.querySelector('i').classList.add('fa-bars');
-        menuToggle.querySelector('i').classList.remove('fa-times');
+// Initialize stack items
+function initializeStack() {
+    const stackContainer = document.querySelector('.stack-items');
+    
+    stackTechnologies.forEach(tech => {
+        const stackItem = document.createElement('div');
+        stackItem.className = 'stack-item';
+        stackItem.textContent = tech;
+        stackContainer.appendChild(stackItem);
     });
-});
+}
 
-// Scroll to top button
-const scrollTop = document.querySelector('.scroll-top');
+// Cursor follower effect
+function createCursorFollower() {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor-follower';
+    document.body.appendChild(cursor);
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollTop.classList.add('active');
-    } else {
-        scrollTop.classList.remove('active');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    let timeout;
+    document.addEventListener('mousemove', () => {
+        cursor.style.opacity = '1';
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            cursor.style.opacity = '0';
+        }, 1000);
+    });
+}
+
+// Text animation for name - CORREGIDA
+function animateName() {
+    const nameElement = document.querySelector('.name');
+    const originalText = nameElement.textContent;
+    nameElement.innerHTML = ''; // Limpiar contenido
+    
+    // Crear spans para cada carácter
+    for (let i = 0; i < originalText.length; i++) {
+        const char = originalText[i];
+        const span = document.createElement('span');
+        span.textContent = char === ' ' ? ' ' : char;
+        span.className = 'char-animate';
+        span.style.animationDelay = `${i * 0.05}s`; // Más rápido
+        nameElement.appendChild(span);
     }
-});
+}
 
-scrollTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Form submission
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('¡Gracias por tu mensaje! Te responderé pronto.');
-    contactForm.reset();
-});
-
-// Header background on scroll
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 50) {
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
-    } else {
-        header.style.background = 'rgba(10, 10, 10, 0.9)';
-        header.style.backdropFilter = 'blur(10px)';
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeStack();
+    createCursorFollower();
+    
+    // Pequeño delay para asegurar que el CSS está cargado
+    setTimeout(() => {
+        animateName();
+    }, 100);
+    
+    // Email protection
+    const emailLink = document.querySelector('.email-link');
+    if (emailLink) {
+        emailLink.setAttribute('href', 'mailto:b.yusupoff001@gmail.com');
     }
-});
-
-// Animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements with animation classes
-document.querySelectorAll('.section-title, .skill-card, .project-card, .timeline-item, .contact-item, .form-group').forEach(el => {
-    observer.observe(el);
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
 });

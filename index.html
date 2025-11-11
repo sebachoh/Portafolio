@@ -1,264 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Desarrollador</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Sebastian Ruiz - Developer</title>
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SR" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Portfolio</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#experience">Experiencia</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hola, soy <span>Kevin Acevedo</span></h1>
-                <p>Desarrollador Full Stack & Unity Developer con pasión por crear experiencias digitales únicas.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn">Ver mis proyectos</a>
-                    <a href="#contact" class="btn btn-outline">Contáctame</a>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-                </div>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="avatar-container">
+                <img src="Logo.png" alt="Logo" class="" width="30px" height="auto">
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>¡Hola! Soy Kevin, un desarrollador Full Stack y Unity Developer con base en Colombia. Con más de 4 años de experiencia en el campo, me especializo en crear aplicaciones web y experiencias interactivas.</p>
-                    <p>Mi enfoque combina estética visual con funcionalidad, siempre buscando la mejor manera de comunicar la identidad de una marca a través del diseño y desarrollo web. Me encanta trabajar en proyectos desafiantes que me permitan crecer profesionalmente.</p>
-                    <p>Cuando no estoy programando, disfruto del senderismo, la fotografía y explorar nuevas tendencias en tecnología y diseño.</p>
-                    <a href="#contact" class="btn">Contáctame</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Foto de perfil" class="profile-img">
-                </div>
+            <div class="social-links">
+                <a href="#" class="social-link">About</a>
+                <a href="#" class="social-link">Projects</a>
+                <a href="#" class="social-link">Contact</a>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Mis Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill-card" style="animation-delay: 0.1s">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Desarrollo Front-end</h3>
-                    <p>HTML, CSS, JavaScript y frameworks modernos como React y Vue.</p>
-                </div>
-                <div class="skill-card" style="animation-delay: 0.2s">
-                    <div class="skill-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Desarrollo Back-end</h3>
-                    <p>Node.js, Express, MongoDB, y arquitecturas de API REST.</p>
-                </div>
-                <div class="skill-card" style="animation-delay: 0.3s">
-                    <div class="skill-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3>Unity Development</h3>
-                    <p>Desarrollo de juegos y experiencias interactivas en Unity.</p>
-                </div>
-                <div class="skill-card" style="animation-delay: 0.4s">
-                    <div class="skill-icon">
-                        <i class="fas fa-vr-cardboard"></i>
-                    </div>
-                    <h3>VR & AR</h3>
-                    <p>Desarrollo de experiencias inmersivas en Realidad Virtual y Aumentada.</p>
-                </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="name-section">
+                <h1 class="name">Sebastian Ruiz</h1>
+                <p class="title">Developer</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <div class="projects-container">
-                <div class="project-card" style="animation-delay: 0.1s">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Proyecto 1" class="project-img">
-                    <div class="project-info">
-                        <h3>E-commerce Minimalista</h3>
-                        <p>Diseño y desarrollo de una tienda online con enfoque en experiencia de usuario.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                        <a href="#" class="btn">Ver Proyecto</a>
-                    </div>
+            <!-- About Section -->
+            <section class="about-section">
+                <h2 class="section-title">About</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        I am a geeky front-end developer and designer from Uzbekistan. Specializing in React and product development, Passionate about continuous learning and exploring new tech frontiers.
+                    </p>
+                    <p class="about-text">
+                        Currently building <strong>thefalse</strong>, an AI based social network for book lovers.
+                    </p>
+                    <p class="about-text">
+                        I also study at Sejong University.
+                    </p>
+                    <p class="about-text">
+                        Feel free to drop me a message at <a href="mailto:b.yusupoff001@gmail.com" class="email-link">b.yusupoff001@gmail.com</a>.
+                    </p>
                 </div>
-                <div class="project-card" style="animation-delay: 0.2s">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Proyecto 2" class="project-img">
-                    <div class="project-info">
-                        <h3>Juego VR Inmersivo</h3>
-                        <p>Desarrollo de un juego de realidad virtual con Unity para Oculus Quest.</p>
-                        <div class="project-tags">
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">VR</span>
-                        </div>
-                        <a href="#" class="btn">Ver Proyecto</a>
-                    </div>
-                </div>
-                <div class="project-card" style="animation-delay: 0.3s">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Proyecto 3" class="project-img">
-                    <div class="project-info">
-                        <h3>App de Productividad</h3>
-                        <p>Desarrollo de aplicación web para gestión de tareas y proyectos.</p>
-                        <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">PWA</span>
-                        </div>
-                        <a href="#" class="btn">Ver Proyecto</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Experiencia</h2>
-            <div class="experience-container">
-                <div class="timeline">
-                    <div class="timeline-item" style="animation-delay: 0.1s">
-                        <div class="timeline-date">2022 - Presente</div>
-                        <div class="timeline-content">
-                            <h3>Desarrollador Full Stack Senior</h3>
-                            <p>Tech Solutions Inc.</p>
-                            <p>Lideré el desarrollo de aplicaciones web para clientes internacionales, utilizando tecnologías como React, Node.js y MongoDB.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" style="animation-delay: 0.2s">
-                        <div class="timeline-date">2020 - 2022</div>
-                        <div class="timeline-content">
-                            <h3>Unity Developer</h3>
-                            <p>Game Studio X</p>
-                            <p>Desarrollé juegos móviles y experiencias de realidad aumentada, optimizando el rendimiento para diferentes dispositivos.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" style="animation-delay: 0.3s">
-                        <div class="timeline-date">2018 - 2020</div>
-                        <div class="timeline-content">
-                            <h3>Desarrollador Front-end</h3>
-                            <p>Digital Agency</p>
-                            <p>Creé interfaces de usuario atractivas y responsivas para diversos clientes, mejorando la experiencia de usuario en un 40%.</p>
-                        </div>
-                    </div>
+            <!-- Stack Section -->
+            <section class="stack-section">
+                <h2 class="section-title">Stack</h2>
+                <div class="stack-items">
+                    <!-- Stack items will be added here -->
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contáctame</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item" style="animation-delay: 0.1s">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>kevin@ejemplo.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item" style="animation-delay: 0.2s">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Teléfono</h3>
-                            <p>+57 123 456 7890</p>
-                        </div>
-                    </div>
-                    <div class="contact-item" style="animation-delay: 0.3s">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Ubicación</h3>
-                            <p>Bogotá, Colombia</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group" style="animation-delay: 0.1s">
-                            <input type="text" class="form-control" placeholder="Nombre" required>
-                        </div>
-                        <div class="form-group" style="animation-delay: 0.2s">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-group" style="animation-delay: 0.3s">
-                            <input type="text" class="form-control" placeholder="Asunto" required>
-                        </div>
-                        <div class="form-group" style="animation-delay: 0.4s">
-                            <textarea class="form-control" placeholder="Mensaje" required></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="animation-delay: 0.5s">Enviar Mensaje</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-social">
-                <a href="#" class="footer-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="footer-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="footer-link"><i class="fab fa-behance"></i></a>
-            </div>
-            <p>&copy; 2023 Kevin Acevedo. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Scroll to top button -->
-    <div class="scroll-top">
-        <i class="fas fa-chevron-up"></i>
+            </section>
+        </main>
     </div>
 
     <script src="script.js"></script>
