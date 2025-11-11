@@ -85,14 +85,12 @@ function initializeTechStack() {
         
         techCard.innerHTML = `
             <div class="tech-icon-container">
-                <i class="${tech.icon} ${tech.color} text-5xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"></i>
+                <i class="${tech.icon} ${tech.color} text-6xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"></i>
             </div>
-            <span class="tech-label mt-4">${tech.name}</span>
         `;
 
         // Apply per-card hover behavior using the hex color (if provided)
         const iconEl = techCard.querySelector('i');
-        const labelEl = techCard.querySelector('.tech-label');
         if (tech.hex) {
             // set initial icon color to the hex (keeps Tailwind class as fallback)
             iconEl.style.color = tech.hex;
@@ -101,13 +99,11 @@ function initializeTechStack() {
             techCard.addEventListener('mouseenter', () => {
                 techCard.style.borderColor = tech.hex + '55';
                 techCard.style.background = `linear-gradient(135deg, ${tech.hex}22, rgba(255,255,255,0.02))`;
-                labelEl.style.color = tech.hex;
                 iconEl.style.filter = 'drop-shadow(0 6px 14px ' + tech.hex + '44)';
             });
             techCard.addEventListener('mouseleave', () => {
                 techCard.style.borderColor = '';
                 techCard.style.background = '';
-                labelEl.style.color = '';
                 iconEl.style.filter = '';
             });
         }
