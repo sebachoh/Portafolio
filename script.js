@@ -3,62 +3,74 @@ const technologies = [
     { 
         name: "JavaScript", 
         icon: "devicon-javascript-plain",
-        color: "text-yellow-400"
+        color: "text-yellow-400",
+        hex: "#F7DF1E"
     },
     { 
         name: "TypeScript", 
         icon: "devicon-typescript-plain",
-        color: "text-blue-400"
+        color: "text-blue-400",
+        hex: "#3178C6"
     },
     { 
         name: "Node.js", 
         icon: "devicon-nodejs-plain",
-        color: "text-green-400"
+        color: "text-green-400",
+        hex: "#83CD29"
     },
     { 
         name: "HTML5", 
         icon: "devicon-html5-plain",
-        color: "text-orange-400"
+        color: "text-orange-400",
+        hex: "#E34F26"
     },
     { 
         name: "CSS3", 
         icon: "devicon-css3-plain",
-        color: "text-blue-400"
+        color: "text-blue-400",
+        hex: "#1572B6"
     },
     { 
         name: "Figma", 
         icon: "devicon-figma-plain",
-        color: "text-purple-400"
+        color: "text-purple-400",
+        hex: "#F24E1E"
     },
     { 
         name: "Python", 
         icon: "devicon-python-plain",
-        color: "text-blue-300"
+        color: "text-blue-300",
+        hex: "#3776AB"
     },
     { 
         name: "MongoDB", 
         icon: "devicon-mongodb-plain",
-        color: "text-green-400"
+        color: "text-green-400",
+        hex: "#47A248"
     },
     { 
         name: "Tailwind", 
         icon: "devicon-tailwindcss-plain",
-        color: "text-cyan-300"
+        color: "text-cyan-300",
+        hex: "#06B6D4"
     },
     { 
         name: "Git", 
         icon: "devicon-git-plain",
-        color: "text-orange-400"
+        color: "text-orange-400",
+        hex: "#F05032"
     },
     { 
         name: "SASS", 
         icon: "devicon-sass-original",
-        color: "text-pink-400"
+        color: "text-pink-400",
+        hex: "#CC6699"
     },
     { 
         name: "Docker", 
         icon: "devicon-docker-plain",
-        color: "text-blue-400"
+        color: "text-blue-400",
+        hex: "#2496ED"
     },
 ];
 
@@ -77,7 +89,29 @@ function initializeTechStack() {
             </div>
             <span class="tech-label mt-4">${tech.name}</span>
         `;
-        
+
+        // Apply per-card hover behavior using the hex color (if provided)
+        const iconEl = techCard.querySelector('i');
+        const labelEl = techCard.querySelector('.tech-label');
+        if (tech.hex) {
+            // set initial icon color to the hex (keeps Tailwind class as fallback)
+            iconEl.style.color = tech.hex;
+
+            // On hover, light up the card with a subtle gradient and border using the tech color
+            techCard.addEventListener('mouseenter', () => {
+                techCard.style.borderColor = tech.hex + '55';
+                techCard.style.background = `linear-gradient(135deg, ${tech.hex}22, rgba(255,255,255,0.02))`;
+                labelEl.style.color = tech.hex;
+                iconEl.style.filter = 'drop-shadow(0 6px 14px ' + tech.hex + '44)';
+            });
+            techCard.addEventListener('mouseleave', () => {
+                techCard.style.borderColor = '';
+                techCard.style.background = '';
+                labelEl.style.color = '';
+                iconEl.style.filter = '';
+            });
+        }
+
         techGrid.appendChild(techCard);
     });
 }
@@ -198,6 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const tech = this.getAttribute('data-tech');
             console.log(`Clicked on: ${tech}`);
             // Aquí puedes agregar más interactividad, como modals o navegación
-        });ß
+        });
     });
 });
