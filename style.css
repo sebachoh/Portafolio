@@ -24,6 +24,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Migra';
+    src: url('font/migra-font-familygimlet-superfamily-font/migra-bold.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 h1{
     font-family: 'Barbra', sans-serif;
@@ -33,6 +39,9 @@ h1{
   font-family: 'Ahsing', sans-serif;
 }
 
+.custom-font-migra {
+  font-family: 'Migra', sans-serif;
+}
 
 /* Personalizar Tailwind */
 @layer utilities {
