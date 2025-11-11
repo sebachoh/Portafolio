@@ -4,9 +4,17 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Casa';
     src: url('font/casa-Regular.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Barbra';
+    src: url('font/barbra-font/Barbra-Regular.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,264 +24,38 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Barbra';
-    src: url('font/barbra-font/Barbra-Regular.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
+
+h1{
+    font-family: 'Barbra', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.custom-font {
+  font-family: 'Ahsing', sans-serif;
 }
 
+
+/* Personalizar Tailwind */
+@layer utilities {
+    .bg-grid-pattern {
+        background-image: 
+            radial-gradient(circle at 25% 25%, rgba(10, 201, 244, 0.1) 2px, transparent 0),
+            radial-gradient(circle at 75% 75%, rgba(10, 201, 244, 0.05) 1px, transparent 0);
+        background-size: 50px 50px, 100px 100px;
+    }
+}
+
+/* Efectos globales */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    justify-content: center;
-    align-items: center;
-    background-image: url('backgrounds/3.jpg');
-    background-size: cover;  
-    color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden;
+    /*background: 
+        radial-gradient(ellipse at top, rgba(142, 166, 171, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.1) 0%, transparent 50%);*/
+    background-image: url(backgrounds/2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Header Styles */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4rem;
-    padding: 1rem 0;
-}
-
-.avatar-container {
-    flex-shrink: 0;
-}
-
-.avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #333;
-    transition: border-color 0.3s ease;
-}
-
-.avatar:hover {
-    border-color: #667eea;
-}
-
-.social-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.social-link {
-    color: #888;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.social-link:hover {
-    color: #ffffff;
-}
-
-.social-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #ffffff;
-    transition: width 0.3s ease;
-}
-
-.social-link:hover::after {
-    width: 100%;
-}
-
-/* Name Section */
-.name-section {
-    margin-bottom: 4rem;
-    text-align: center;
-}
-
-.name {
-    font-family: 'Ahsing', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #000000 25%, #cd0404 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.title {
-    font-family: 'Ahsing', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 700;
-    font-size: 2.6rem;
-    color: #0ac9f4;
-}
-
-/* Section Styles */
-.section-title {
-    font-family: 'Ahsing', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.about-section {
-    margin: 0 auto 4rem; /* Centrado horizontal y margen inferior */
-    max-width: 800px;
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.about-text {
-    font-size: 1.1rem;
-    color: #ffffff;
-    line-height: 1.7;
-}
-
-.about-text strong {
-    color: #0c9b8d;
-    font-weight: 600;
-}
-
-.email-link {
-    color: #0c9b8d;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.email-link:hover {
-    color: #764ba2;
-}
-
-/* Stack Section */
-.stack-section {
-  margin: 0 auto 4rem auto; /* arriba - derecha - abajo - izquierda */
-  max-width: 600px; /* o el ancho que quieras */
-}
-
-
-.stack-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    max-width: 600px;
-}
-
-.stack-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.stack-item:hover {
-    transform: translateY(-2px);
-    background: rgba(102, 126, 234, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    .header {
-        flex-direction: column;
-        gap: 1.5rem;
-        margin-bottom: 3rem;
-    }
-
-    .name {
-        font-size: 2.5rem;
-    }
-
-    .social-links {
-        gap: 1.5rem;
-    }
-
-    .about-text {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .name {
-        font-size: 2rem;
-    }
-
-    .title {
-        font-size: 1.2rem;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-}
-
-/* Cursor Effect */
-.cursor-follower {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(207, 207, 207, 0.3), transparent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: screen;
-}
-
-/* Versión simple y garantizada */
-.name {
-    font-family: 'Barbra', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Mantener el gradiente en el contenedor principal */
-.name-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-
-/* Stack Panel con efecto de puntos - Inspirado en la captura */
+/* Stack Panel mejorado */
 .stack-panel {
     position: relative;
     margin: 4rem auto;
@@ -302,7 +84,6 @@ body {
 
 .panel-body {
     padding: 4rem 2rem;
-    /* Patrón de puntos del fondo - igual que la captura */
     background: 
         radial-gradient(circle at center, rgba(10, 201, 244, 0.05) 1px, transparent 1px),
         radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
@@ -311,23 +92,9 @@ body {
     position: relative;
 }
 
-.panel-title {
-    font-family: 'Ahsing', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    color: #0ac9f4;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-align: center;
-}
-
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .tech-card {
@@ -356,7 +123,7 @@ body {
         inset 0 0 0 1px rgba(10, 201, 244, 0.1);
 }
 
-/* Contenedor de puntos */
+/* Contenedor de puntos mejorado */
 .tech-dots {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -368,7 +135,6 @@ body {
     position: relative;
 }
 
-/* Puntos individuales */
 .tech-dots::before {
     content: '';
     position: absolute;
@@ -376,13 +142,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 6px;
-}
-
-.tech-dots::before {
     background: 
         radial-gradient(circle at 12.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
         radial-gradient(circle at 37.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
@@ -404,25 +163,7 @@ body {
     transition: all 0.6s ease;
 }
 
-/* Efecto hover - Los puntos se colorean secuencialmente */
 .tech-card:hover .tech-dots::before {
-    background: 
-        radial-gradient(circle at 12.5% 12.5%, #0ac9f4 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 12.5% 37.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 37.5%, #0ac9f4 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 37.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 37.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 12.5% 62.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 62.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 62.5%, #0ac9f4 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 62.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 12.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 87.5%, #0ac9f4 2px, transparent 3px);
     animation: dotColorWave 1.5s ease-in-out infinite;
 }
 
@@ -479,7 +220,7 @@ body {
     color: #0ac9f4;
 }
 
-/* Línea decorativa inferior (como en la captura) */
+/* Línea decorativa */
 .panel-decoration {
     position: relative;
     height: 2rem;
@@ -515,6 +256,35 @@ body {
     }
 }
 
+/* Efecto de cursor mejorado */
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(10, 201, 244, 0.4), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: transform 0.1s ease;
+}
+
+/* Animaciones suaves */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .tech-grid {
@@ -535,11 +305,5 @@ body {
     
     .panel-body {
         padding: 2rem 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .tech-grid {
-        grid-template-columns: 1fr;
     }
 }
