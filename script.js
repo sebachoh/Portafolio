@@ -29,6 +29,7 @@ function createCursorFollower() {
         cursor.style.top = e.clientY + 'px';
     });
 
+    // Hide cursor when not moving
     let timeout;
     document.addEventListener('mousemove', () => {
         cursor.style.opacity = '1';
@@ -39,32 +40,10 @@ function createCursorFollower() {
     });
 }
 
-// Text animation for name - CORREGIDA
-function animateName() {
-    const nameElement = document.querySelector('.name');
-    const originalText = nameElement.textContent;
-    nameElement.innerHTML = ''; // Limpiar contenido
-    
-    // Crear spans para cada carácter
-    for (let i = 0; i < originalText.length; i++) {
-        const char = originalText[i];
-        const span = document.createElement('span');
-        span.textContent = char === ' ' ? ' ' : char;
-        span.className = 'char-animate';
-        span.style.animationDelay = `${i * 0.05}s`; // Más rápido
-        nameElement.appendChild(span);
-    }
-}
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeStack();
     createCursorFollower();
-    
-    // Pequeño delay para asegurar que el CSS está cargado
-    setTimeout(() => {
-        animateName();
-    }, 100);
     
     // Email protection
     const emailLink = document.querySelector('.email-link');

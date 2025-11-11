@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Ahsing';
+    src: url('font/ahsing-regular.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -85,10 +92,11 @@ body {
 }
 
 .name {
+    font-family: 'Ahsing', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 25%, #cd0404 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -222,17 +230,20 @@ body {
 
 /* Versión simple y garantizada */
 .name {
-    position: relative;
+    font-family: 'Ahsing', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.name .char-animate {
-    display: inline-block;
-    opacity: 0;
-    animation: simpleFadeIn 0.5s ease forwards;
-}
-
-@keyframes simpleFadeIn {
-    to {
-        opacity: 1;
-    }
+/* Mantener el gradiente en el contenedor principal */
+.name-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
