@@ -1,23 +1,81 @@
-// Technologies data
+// Technologies data with icons
 const technologies = [
-    "React", "JavaScript", "TypeScript", "Node.js", 
-    "HTML/CSS", "Figma", "Python", "MongoDB",
-    "Vue.js", "Tailwind", "Git", "Express",
-    "PostgreSQL", "Firebase", "SASS", "Webpack"
+    { 
+        name: "JavaScript", 
+        icon: "devicon-javascript-plain",
+        color: "text-yellow-400"
+    },
+    { 
+        name: "TypeScript", 
+        icon: "devicon-typescript-plain",
+        color: "text-blue-400"
+    },
+    { 
+        name: "Node.js", 
+        icon: "devicon-nodejs-plain",
+        color: "text-green-400"
+    },
+    { 
+        name: "HTML5", 
+        icon: "devicon-html5-plain",
+        color: "text-orange-400"
+    },
+    { 
+        name: "CSS3", 
+        icon: "devicon-css3-plain",
+        color: "text-blue-400"
+    },
+    { 
+        name: "Figma", 
+        icon: "devicon-figma-plain",
+        color: "text-purple-400"
+    },
+    { 
+        name: "Python", 
+        icon: "devicon-python-plain",
+        color: "text-blue-300"
+    },
+    { 
+        name: "MongoDB", 
+        icon: "devicon-mongodb-plain",
+        color: "text-green-400"
+    },
+    { 
+        name: "Tailwind", 
+        icon: "devicon-tailwindcss-plain",
+        color: "text-cyan-300"
+    },
+    { 
+        name: "Git", 
+        icon: "devicon-git-plain",
+        color: "text-orange-400"
+    },
+    { 
+        name: "SASS", 
+        icon: "devicon-sass-original",
+        color: "text-pink-400"
+    },
+    { 
+        name: "Docker", 
+        icon: "devicon-docker-plain",
+        color: "text-blue-400"
+    },
 ];
 
-// Initialize tech stack
+// Initialize tech stack with icons
 function initializeTechStack() {
     const techGrid = document.querySelector('.tech-grid');
     
     technologies.forEach(tech => {
         const techCard = document.createElement('div');
         techCard.className = 'tech-card group';
-        techCard.setAttribute('data-tech', tech);
+        techCard.setAttribute('data-tech', tech.name);
         
         techCard.innerHTML = `
-            <div class="tech-dots"></div>
-            <span class="tech-label">${tech}</span>
+            <div class="tech-icon-container">
+                <i class="${tech.icon} ${tech.color} text-5xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"></i>
+            </div>
+            <span class="tech-label mt-4">${tech.name}</span>
         `;
         
         techGrid.appendChild(techCard);
@@ -131,5 +189,15 @@ document.addEventListener('DOMContentLoaded', function() {
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
         });
+    });
+
+    // Add click effects to tech cards
+    const techCards = document.querySelectorAll('.tech-card');
+    techCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const tech = this.getAttribute('data-tech');
+            console.log(`Clicked on: ${tech}`);
+            // Aquí puedes agregar más interactividad, como modals o navegación
+        });ß
     });
 });
