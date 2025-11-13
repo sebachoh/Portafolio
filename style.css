@@ -470,5 +470,8 @@ body {
 /* IMT specific fine-tune: slightly shrink to fit the 1:1 box */
 .edu-photo-img.imt-photo {
     object-position: center center;
-    transform: scale(0.88);
+    object-fit: contain;
+    width: 82%;
+    height: auto;
+    transform: none;
 }
