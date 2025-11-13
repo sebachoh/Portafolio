@@ -542,13 +542,15 @@ body {
     box-shadow: 0 10px 30px rgba(255,255,255,0.06), inset 0 0 30px rgba(255,255,255,0.02);
 }
 
-/* Make project card images appear in black & white by default, with a gentle transition to color on hover */
-#projects .project-card img {
+/* Make project card images appear in black & white by default, with a gentle transition to color on hover
+   NOTE: project containers are direct children of the grid inside #projects, so target those elements */
+#projects .grid > div img {
     filter: grayscale(100%) contrast(95%);
     transition: filter 260ms ease, transform 260ms ease;
     will-change: filter, transform;
 }
-#projects .project-card:hover img {
+/* On hovering an individual project card (the grid child), restore color */
+#projects .grid > div:hover img {
     filter: grayscale(0%) contrast(100%);
 }
 
