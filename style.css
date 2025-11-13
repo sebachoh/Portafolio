@@ -105,6 +105,29 @@ body {
     position: relative;
 }
 
+/* Translucent green accent for the whole Tech Stack panel on hover
+   Adds a subtle green overlay and slight border/shadow tint when hovering the stack container */
+.stack-panel .panel-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(16,185,129,0.06), rgba(16,185,129,0.03));
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transition: opacity 260ms ease, transform 260ms ease;
+    transform: translateY(4px);
+}
+.stack-panel:hover .panel-body::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+.stack-panel:hover .panel-body {
+    border-color: rgba(16,185,129,0.08);
+    box-shadow: 0 24px 60px rgba(16,185,129,0.04), inset 0 0 40px rgba(16,185,129,0.02);
+}
+
 .tech-grid {
     display: grid;
     gap: 1.5rem;
