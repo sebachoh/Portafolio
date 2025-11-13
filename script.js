@@ -114,6 +114,9 @@ function initializeTechStack() {
 
 // Enhanced cursor follower
 function createCursorFollower() {
+    // Don't create the custom cursor on touch / coarse-pointer devices
+    if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
+
     const cursor = document.createElement('div');
     cursor.className = 'cursor-follower';
     document.body.appendChild(cursor);
@@ -133,7 +136,7 @@ function createCursorFollower() {
         
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
-        
+        // Keep translate centering from CSS; do not override transform here so scale transforms still work
         requestAnimationFrame(animateCursor);
     }
 
@@ -153,10 +156,11 @@ function createCursorFollower() {
     const interactiveElements = document.querySelectorAll('a, button, .tech-card');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.5)';
+            // Preserve centering translate while scaling
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
         });
         el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
         });
     });
 }
