@@ -108,20 +108,30 @@ body {
 /* Translucent green accent for the whole Tech Stack panel on hover
    Adds a subtle green overlay and slight border/shadow tint when hovering the stack container */
 .stack-panel .panel-body::before {
+    /* beam originates on the left and sweeps across; keep content above it */
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(180deg, rgba(16,185,129,0.06), rgba(16,185,129,0.03));
-    mix-blend-mode: overlay;
+    /* left-to-right beam: stronger near left edge, fading to the right */
+    background: linear-gradient(90deg, rgba(6,130,85,0.20) 0%, rgba(6,130,85,0.12) 18%, rgba(6,130,85,0.06) 36%, rgba(6,130,85,0) 65%);
+    mix-blend-mode: screen;
     opacity: 0;
-    transition: opacity 260ms ease, transform 260ms ease;
-    transform: translateY(4px);
+    transform: translateX(-40%);
+    filter: blur(10px) saturate(1.05);
+    transition: opacity 360ms ease, transform 420ms cubic-bezier(.2,.8,.2,1);
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: 220% 100%;
+}
+.stack-panel .panel-body > * {
+    position: relative;
+    z-index: 2; /* ensure content stays above the beam */
 }
 .stack-panel:hover .panel-body::before {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 .stack-panel:hover .panel-body {
     border-color: rgba(16,185,129,0.08);
