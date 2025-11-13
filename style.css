@@ -108,22 +108,19 @@ body {
 /* Translucent green accent for the whole Tech Stack panel on hover
    Adds a subtle green overlay and slight border/shadow tint when hovering the stack container */
 .stack-panel .panel-body::before {
-    /* beam originates on the left and sweeps across; keep content above it */
+    /* Soft interior white beam matching education/experience panels */
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    /* left-to-right beam: stronger near left edge, fading to the right */
-    background: linear-gradient(90deg, rgba(6,130,85,0.20) 0%, rgba(6,130,85,0.12) 18%, rgba(6,130,85,0.06) 36%, rgba(6,130,85,0) 65%);
+    background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0) 80%);
     mix-blend-mode: screen;
     opacity: 0;
-    transform: translateX(-40%);
-    filter: blur(10px) saturate(1.05);
-    transition: opacity 360ms ease, transform 420ms cubic-bezier(.2,.8,.2,1);
+    transform: translateX(-18%);
+    filter: blur(10px);
+    transition: opacity 0.45s ease, transform 0.6s cubic-bezier(.2,.8,.2,1);
     z-index: 1;
-    background-repeat: no-repeat;
-    background-size: 220% 100%;
 }
 .stack-panel .panel-body > * {
     position: relative;
@@ -134,8 +131,8 @@ body {
     transform: translateX(0);
 }
 .stack-panel:hover .panel-body {
-    border-color: rgba(16,185,129,0.08);
-    box-shadow: 0 24px 60px rgba(16,185,129,0.04), inset 0 0 40px rgba(16,185,129,0.02);
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 24px 60px rgba(255,255,255,0.04), inset 0 0 40px rgba(255,255,255,0.02);
 }
 
 .tech-grid {
