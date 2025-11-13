@@ -64,8 +64,19 @@ body {
         radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.1) 0%, transparent 50%);*/
     background-image: url(backgrounds/2.jpg);
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    /* On mobile devices fixed backgrounds behave poorly (jumping/zoom issues).
+       Use scroll by default and enable fixed only on wider viewports. */
+    background-attachment: scroll;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+/* Re-enable fixed attachment on large screens for the parallax look */
+@media (min-width: 769px) {
+    body {
+        background-attachment: fixed;
+        background-position: center center;
+    }
 }
 
 /* Stack Panel mejorado */
