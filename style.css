@@ -303,25 +303,36 @@ body {
     }
 }
 
-/* Efecto de cursor personalizado: black circle with white border */
+/* Efecto de cursor personalizado: letra 'S' rápida y centrada */
 .cursor-follower {
     position: fixed;
     left: 0;
     top: 0;
-    width: 20px;
-    height: 20px;
-    background: #000; /* solid black fill */
-    border: 2px solid #fff; /* white border */
-    border-radius: 50%;
+    width: 28px;
+    height: 28px;
     pointer-events: none;
     z-index: 99999;
     mix-blend-mode: normal;
-    transition: transform 150ms cubic-bezier(.22,.8,.22,1), opacity 200ms, box-shadow 150ms;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    transition: transform 120ms cubic-bezier(.22,.8,.22,1), opacity 160ms, box-shadow 120ms;
     transform: translate(-50%, -50%) scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* keep background transparent so only the letter shows */
 }
 
-/* Hide native cursor in favor of the custom follower. On interactive elements, show the default cursor. */
+.cursor-letter {
+    color: #ffffff;
+    font-family: 'Migra', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}
+
+/* Hide native cursor in favor of the custom follower. Restore cursor for interactive elements */
 body { cursor: none; }
 
 a, button, input, textarea, select { cursor: auto; }

@@ -119,6 +119,8 @@ function createCursorFollower() {
 
     const cursor = document.createElement('div');
     cursor.className = 'cursor-follower';
+    // Use an inline letter so the follower becomes an 'S'
+    cursor.innerHTML = '<span class="cursor-letter">S</span>';
     document.body.appendChild(cursor);
 
     let mouseX = 0, mouseY = 0;
@@ -131,8 +133,9 @@ function createCursorFollower() {
 
     function animateCursor() {
         // Smooth follow with easing
-        cursorX += (mouseX - cursorX) * 0.1;
-        cursorY += (mouseY - cursorY) * 0.1;
+        // Increased easing factor for snappier follow (less delay)
+        cursorX += (mouseX - cursorX) * 0.45;
+        cursorY += (mouseY - cursorY) * 0.45;
         
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
