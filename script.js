@@ -212,8 +212,128 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollAnimations();
     initializeSmoothScroll();
     
+    // Add animated perimeter beams to project cards
+    try { addPerimeterBeams(); } catch (e) { console.warn('addPerimeterBeams failed', e); }
+
     console.log('Portfolio loaded successfully! 🚀');
 });
+
+// Insert an SVG overlay on each project card that animates a small bright segment around the border
+function addPerimeterBeams() {
+    const cards = document.querySelectorAll('#projects .grid > div');
+    if (!cards || !cards.length) return;
+
+    // Remove existing beams to allow re-creation (useful on resize)
+    cards.forEach(card => {
+        const existing = card.querySelector('.project-beam');
+        if (existing) existing.remove();
+        // Ensure the card has a border baseline so the effect reads well
+        if (!card.style.position) card.style.position = 'relative';
+        card.style.borderRadius = card.style.borderRadius || '12px';
+        card.style.overflow = 'visible';
+    });
+
+    cards.forEach((card, idx) => {
+        const rect = card.getBoundingClientRect();
+        const w = Math.max(60, Math.round(rect.width + 8));
+        const h = Math.max(40, Math.round(rect.height + 8));
+
+        const svgns = 'http://www.w3.org/2000/svg';
+        const svg = document.createElementNS(svgns, 'svg');
+        svg.setAttribute('class', 'project-beam');
+        svg.setAttribute('width', '100%');
+        svg.setAttribute('height', '100%');
+        svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+        svg.setAttribute('preserveAspectRatio', 'none');
+
+        // background faint ring (optional subtle border)
+        const base = document.createElementNS(svgns, 'rect');
+        base.setAttribute('x', '4');
+        base.setAttribute('y', '4');
+        base.setAttribute('width', String(w - 8));
+        base.setAttribute('height', String(h - 8));
+        base.setAttribute('rx', '12');
+        base.setAttribute('ry', '12');
+        base.setAttribute('fill', 'none');
+        base.setAttribute('stroke', 'rgba(255,255,255,0.06)');
+        base.setAttribute('stroke-width', '1');
+        svg.appendChild(base);
+
+    // moving segment + aura (white, thin, longer)
+    // defs for blur (aura)
+    const defs = document.createElementNS(svgns, 'defs');
+    const filt = document.createElementNS(svgns, 'filter');
+    const fid = `blur${idx}`;
+    filt.setAttribute('id', fid);
+    const fe = document.createElementNS(svgns, 'feGaussianBlur');
+    fe.setAttribute('stdDeviation', '6');
+    fe.setAttribute('result', 'blurOut');
+    filt.appendChild(fe);
+    defs.appendChild(filt);
+    svg.appendChild(defs);
+
+    // aura: blurred wider white stroke beneath the main beam
+    const aura = document.createElementNS(svgns, 'rect');
+    aura.setAttribute('x', '4');
+    aura.setAttribute('y', '4');
+    aura.setAttribute('width', String(w - 8));
+    aura.setAttribute('height', String(h - 8));
+    aura.setAttribute('rx', '12');
+    aura.setAttribute('ry', '12');
+    aura.setAttribute('fill', 'none');
+    aura.setAttribute('stroke', '#ffffff');
+    aura.setAttribute('stroke-width', '10');
+    aura.setAttribute('stroke-linecap', 'round');
+    aura.setAttribute('opacity', '0.12');
+    aura.setAttribute('filter', `url(#${fid})`);
+    svg.appendChild(aura);
+
+    const beam = document.createElementNS(svgns, 'rect');
+    beam.setAttribute('x', '4');
+    beam.setAttribute('y', '4');
+    beam.setAttribute('width', String(w - 8));
+    beam.setAttribute('height', String(h - 8));
+    beam.setAttribute('rx', '12');
+    beam.setAttribute('ry', '12');
+    beam.setAttribute('fill', 'none');
+    // white thin beam
+    beam.setAttribute('stroke', '#ffffff');
+    beam.setAttribute('stroke-width', '1.5');
+    beam.setAttribute('stroke-linecap', 'round');
+
+    svg.appendChild(beam);
+        card.appendChild(svg);
+
+        // after appended to DOM we can measure the path length
+        let length = 0;
+        try {
+            length = beam.getTotalLength();
+        } catch (err) {
+            length = 2 * ((w - 8) + (h - 8));
+        }
+
+    // visible segment length: longer fraction of perimeter (or min 60px) for a longer, thinner streak
+    const segment = Math.max(60, Math.round(length * 0.30));
+        beam.setAttribute('stroke-dasharray', `${segment} ${length}`);
+        beam.setAttribute('stroke-dashoffset', '0');
+
+        // use <animate> to slide the dashoffset around the perimeter
+        const animate = document.createElementNS(svgns, 'animate');
+        animate.setAttribute('attributeName', 'stroke-dashoffset');
+        animate.setAttribute('from', '0');
+        animate.setAttribute('to', String(-length));
+        animate.setAttribute('dur', (2.8 + (idx % 3) * 0.4) + 's');
+        animate.setAttribute('repeatCount', 'indefinite');
+        beam.appendChild(animate);
+    });
+
+    // Recreate on resize to adapt to changed card sizes
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => addPerimeterBeams(), 220);
+    });
+}
 
 // --- Three.js Globe (polished) -------------------------------------------------
 function initThreeGlobe() {

@@ -608,5 +608,35 @@ a, button, input, textarea, select { cursor: auto; }
     filter: grayscale(0%) contrast(100%);
 }
 
+/* Animated perimeter beam overlay for project cards */
+#projects .grid > div {
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: visible;
+    transition: border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
+}
+
+.project-beam {
+    position: absolute;
+    inset: -6px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    pointer-events: none;
+    z-index: 4;
+    opacity: 1;
+    transition: opacity 220ms ease, transform 220ms ease;
+}
+
+/* Hide the animated beam on hover and show solid white border on the card */
+#projects .grid > div:hover .project-beam {
+    opacity: 0;
+}
+#projects .grid > div:hover {
+    border-color: rgba(255,255,255,0.95);
+    box-shadow: 0 18px 40px rgba(255,255,255,0.06), inset 0 0 30px rgba(255,255,255,0.02);
+    transform: translateY(-6px);
+}
+
 /* Small accessible label hidden visually */
 .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
