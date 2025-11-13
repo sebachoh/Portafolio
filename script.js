@@ -266,7 +266,7 @@ function addPerimeterBeams() {
     const fid = `blur${idx}`;
     filt.setAttribute('id', fid);
     const fe = document.createElementNS(svgns, 'feGaussianBlur');
-    fe.setAttribute('stdDeviation', '6');
+    fe.setAttribute('stdDeviation', '10');
     fe.setAttribute('result', 'blurOut');
     filt.appendChild(fe);
     defs.appendChild(filt);
@@ -284,7 +284,7 @@ function addPerimeterBeams() {
     aura.setAttribute('stroke', '#ffffff');
     aura.setAttribute('stroke-width', '10');
     aura.setAttribute('stroke-linecap', 'round');
-    aura.setAttribute('opacity', '0.12');
+    aura.setAttribute('opacity', '0.22');
     aura.setAttribute('filter', `url(#${fid})`);
     svg.appendChild(aura);
 
@@ -313,18 +313,23 @@ function addPerimeterBeams() {
         }
 
     // visible segment length: longer fraction of perimeter (or min 60px) for a longer, thinner streak
-    const segment = Math.max(60, Math.round(length * 0.30));
-        beam.setAttribute('stroke-dasharray', `${segment} ${length}`);
-        beam.setAttribute('stroke-dashoffset', '0');
+    const segment = Math.max(60, Math.round(length * 0.14));
 
-        // use <animate> to slide the dashoffset around the perimeter
-        const animate = document.createElementNS(svgns, 'animate');
-        animate.setAttribute('attributeName', 'stroke-dashoffset');
-        animate.setAttribute('from', '0');
-        animate.setAttribute('to', String(-length));
-        animate.setAttribute('dur', (2.8 + (idx % 3) * 0.4) + 's');
-        animate.setAttribute('repeatCount', 'indefinite');
-        beam.appendChild(animate);
+    // use dasharray where total equals perimeter (segment + gap = length)
+    beam.setAttribute('stroke-dasharray', `${segment} ${Math.max(1, length - segment)}`);
+    beam.setAttribute('stroke-dashoffset', '0');
+
+    // use <animate> to slide the dashoffset around the perimeter for the primary beam
+    // make it slower to the user's request
+    const dur = (5 + (idx % 3) * 0.8) + 's';
+    const animate = document.createElementNS(svgns, 'animate');
+    animate.setAttribute('attributeName', 'stroke-dashoffset');
+    animate.setAttribute('from', '0');
+    animate.setAttribute('to', String(-length));
+    animate.setAttribute('dur', dur);
+    animate.setAttribute('repeatCount', 'indefinite');
+    animate.setAttribute('calcMode', 'linear');
+    beam.appendChild(animate);
     });
 
     // Recreate on resize to adapt to changed card sizes
