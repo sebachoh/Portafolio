@@ -29,6 +29,7 @@
             <nav class="social-links flex gap-6">
                 <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">About</a>
                 <a href="#experience" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Experience</a>
+                <a href="#education" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Education</a>
                 <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Projects</a>
                 <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Contact</a>
             </nav>
@@ -46,8 +47,18 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="max-w-4xl mx-auto py-16">
+
+
+        <!-- (Education moved below About) -->
+
+        <!-- (Globe moved into About -> Languages column) -->
+
+        <!-- Three.js and controls (loaded before script.js) -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto py-16">
             <!-- Translucent panel matching Tech Stack -->
             <div class="panel-body py-8 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-lg">
                 <h2 class="text-3xl font-bold text-white mb-8 text-center uppercase tracking-wider custom-font">About</h2>
@@ -57,16 +68,16 @@
                     <div class="w-full md:w-1/2">
                         <div class="space-y-4 text-lg text-gray-300 leading-relaxed custom-font-migra">
                             <p>
-                                I'm a passionate front-end developer and UI/UX designer from Colombia. Specializing in React and product development, I'm dedicated to creating exceptional digital experiences that blend beautiful design with robust engineering.
+                                I’m a passionate developer and engineer from Colombia, based in France, with a background in Mechatronic Engineering and a strong interest in intelligent systems and interactive technologies.
                             </p>
                             <p>
-                                Currently building <span class="text-neutral-800 font-semibold">innovative projects</span> that push the boundaries of web technology and user experience.
+                                I specialize in software development, particularly with C#, Python, C++, and Unity, and I enjoy creating interactive and innovative digital experiences that merge technology, creativity, and engineering.                           </p>
                             </p>
                             <p>
-                                With a background in computer science and a keen eye for design, I bridge the gap between technical implementation and user-centered design principles.
+                                I’m seeking an internship opportunity where I can apply my skills and contribute to impactful engineering and digital innovation projects.
                             </p>
                             <p class="pt-2">
-                                Feel free to reach out at <a href="mailto:sebastian@example.com" class="text-zinc-800 hover:text-lime-700 transition-colors duration-300 font-semibold">sebastian@example.com</a>
+                                📩 Reach me at  <a href="mailto:sebaruiz01@gmail.com" class="text-white hover:text-lime-700 transition-colors duration-300 font-semibold underline">sebaruiz01@gmail.com</a>
                             </p>
                         </div>
                     </div>
@@ -76,40 +87,95 @@
                         <div class="w-px bg-gray-600 h-56 opacity-60 mx-4"></div>
                     </div>
 
-                    <!-- Right column: languages -->
+                    <!-- Right column: languages + globe + hobbies -->
                     <div class="w-full md:w-1/2">
                         <div class="pl-2">
-                            <h3 class="text-xl font-semibold text-white mb-4">Languages</h3>
-                                <ul class="text-gray-300 space-y-2">
-                                    <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">Spanish 🇪🇸</span> — Native</li>
-                                    <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">English 🇬🇧</span> — C1</li>
-                                    <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">French 🇫🇷</span> — B2</li>
-                                </ul>
-
-                                <h3 class="text-xl font-semibold text-white mt-6 mb-4">Hobbies</h3>
-                                <!-- Hobbies card: two GIFs glued together inside a single animated card -->
-                                <div class="hobby-card" aria-hidden="false">
-                                    <div class="hobby-item">
-                                        <img id="pianoGif" src="gifs/cat-playing-piano-funny.gif" alt="Piano" class="" onerror="document.getElementById('pianoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('pianoIcon').style.display='none';" />
-                                        <i id="pianoIcon" class="fa-solid fa-music text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
-                                    </div>
-
-                                    <div class="hobby-item">
-                                        <img id="photoGif" src="gifs/spiderman-peter-parker.gif" alt="Fotografía" class="" onerror="document.getElementById('photoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('photoIcon').style.display='none';" />
-                                        <i id="photoIcon" class="fa-solid fa-camera-retro text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
-                                    </div>
-
-                                    <!-- noise overlay is handled in CSS (.hobby-card::after) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-5">Languages</h3>
+                                    <div class="section-divider my-4" aria-hidden="true"></div>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">Spanish 🇪🇸</span> — Native</li>
+                                        <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">English 🇬🇧</span> — C1</li>
+                                        <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">French 🇫🇷</span> — B2</li>
+                                    </ul>
+                                    
                                 </div>
+
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-4"></h3>
+                                                        <div id="globe" style="width:100%;height:160px;border-radius:12px;overflow:hidden"></div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-white mt-6 mb-4">Hobbies</h3>
+                            <div class="section-divider my-3" aria-hidden="true"></div>
+                            <!-- Hobbies card: two GIFs glued together inside a single animated card -->
+                            <div class="hobby-card" aria-hidden="false">
+                                <div class="hobby-item">
+                                    <img id="pianoGif" src="gifs/cat-playing-piano-funny.gif" alt="Piano" class="" onerror="document.getElementById('pianoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('pianoIcon').style.display='none';" />
+                                    <i id="pianoIcon" class="fa-solid fa-music text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
+                                </div>
+
+                                <div class="hobby-item">
+                                    <img id="photoGif" src="gifs/spiderman-peter-parker.gif" alt="Fotografía" class="" onerror="document.getElementById('photoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('photoIcon').style.display='none';" />
+                                    <i id="photoIcon" class="fa-solid fa-camera-retro text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
+                                </div>
+
+                                <!-- noise overlay is handled in CSS (.hobby-card::after) -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+                <!-- Education Section (moved here under About) -->
+        <section id="education" class="max-w-6xl mx-auto py-12">
+            <div class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Education</h2>
+                <div class="space-y-6 text-gray-300">
+                   
+                    <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+                        <div class="flex flex-col md:flex-row md:items-start md:gap-6">
+                            <div class="edu-photo">
+                                <img src="logosUni/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe" class="edu-photo-img imt-photo" onerror="this.style.display='none'" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Diplôme d'Ingénieur (Bac+5) / Equivalent to Master's Degree</h3>
+                                        <p class="text-sm text-gray-400">Institut Mines-Télécom Nord Europe / 2025-2027</p>
+                                    </div>
+                                    <div class="text-sm text-gray-500">Lille, France</div>
+                                </div>
+                                <p class="mt-4 text-gray-400">Systèmes Intelligents Sécurisés et Communicant.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+                        <div class="flex flex-col md:flex-row md:items-start md:gap-6">
+                            <div class="edu-photo">
+                                <img src="logosUni/utp-universidad-tecnologica-de-pereira-logo-png_seeklogo-259118.png" alt="Universidad Tecnológica de Pereira" class="edu-photo-img" onerror="this.style.display='none'" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Mechatronics Engineering</h3>
+                                        <p class="text-sm text-gray-400">Universidad Tecnológica de Pereira / 2019 - 2025</p>
+                                    </div>
+                                    <div class="text-sm text-gray-500">Pereira, Colombia</div>
+                                </div>
+                                <p class="mt-4 text-gray-400">GPA: 4.3/5.0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     <!-- Experience Section -->
     <section id="experience" class="max-w-6xl mx-auto py-16">
-            <div class="mx-auto max-w-4xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
+        <div class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
                 <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Experience</h2>
                 <div class="space-y-8">
                 <!-- Experience 1 -->
@@ -146,7 +212,7 @@ Participation à l’intégration de composants électroniques et systèmes de c
 
             <!-- Projects Section -->
             <section id="projects" class="max-w-6xl mx-auto py-16">
-                <div class="mx-auto max-w-4xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
+                <div class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
                     <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Projects</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->

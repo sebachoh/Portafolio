@@ -404,6 +404,15 @@ body {
     .hobby-title-row { max-width: 420px; }
 }
 
+/* Section divider used under Languages / Hobbies */
+.section-divider {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border-radius: 2px;
+    margin: 0.5rem 0;
+}
+
 /* Replace moving dots with a subtle noise overlay */
 .hobby-card::after {
     content: '';
@@ -419,3 +428,47 @@ body {
 
 /* Hide any leftover dot elements if present */
 .hobby-dots-overlay { display: none !important; }
+
+/* Make hobby GIFs black & white */
+#pianoGif,
+#photoGif {
+    filter: grayscale(100%) contrast(0.98) brightness(0.95);
+}
+
+/* Optional: on hover restore a little color (if you want) */
+.hobby-card:hover #pianoGif,
+.hobby-card:hover #photoGif {
+    filter: grayscale(100%) contrast(1) brightness(1);
+}
+
+/* Education photo square (1:1) */
+.edu-photo {
+    width: 96px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 96px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff; /* white background for photos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 4px; /* small padding so image doesn't touch edge */
+}
+.edu-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%) contrast(0.98) brightness(0.95); /* force B/W */
+}
+
+@media (max-width: 768px) {
+    .edu-photo { width: 72px; flex: 0 0 72px; margin-bottom: 0.75rem; }
+}
+
+/* IMT specific fine-tune: slightly shrink to fit the 1:1 box */
+.edu-photo-img.imt-photo {
+    object-position: center center;
+    transform: scale(0.88);
+}
