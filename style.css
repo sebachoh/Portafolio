@@ -18,12 +18,14 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Coterie';
     src: url('font/coterie-regular.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Migra';
     src: url('font/migra-font-familygimlet-superfamily-font/migra-bold.otf') format('woff');
@@ -31,26 +33,26 @@
     font-style: normal;
 }
 
-h1{
+h1 {
     font-family: 'Barbra', sans-serif;
 }
 
-h3{
+h3 {
     font-family: 'Migra', sans-serif;
 }
 
 .custom-font {
-  font-family: 'Ahsing', sans-serif;
+    font-family: 'Ahsing', sans-serif;
 }
 
 .custom-font-migra {
-  font-family: 'Migra', sans-serif;
+    font-family: 'Migra', sans-serif;
 }
 
 /* Personalizar Tailwind */
 @layer utilities {
     .bg-grid-pattern {
-        background-image: 
+        background-image:
             radial-gradient(circle at 25% 25%, rgba(10, 201, 244, 0.1) 2px, transparent 0),
             radial-gradient(circle at 75% 75%, rgba(10, 201, 244, 0.05) 1px, transparent 0);
         background-size: 50px 50px, 100px 100px;
@@ -59,23 +61,19 @@ h3{
 
 /* Efectos globales */
 body {
-    /*background: 
-        radial-gradient(ellipse at top, rgba(142, 166, 171, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.1) 0%, transparent 50%);*/
-    background-image: url(backgrounds/2.jpg);
-    background-size: cover;
-    /* On mobile devices fixed backgrounds behave poorly (jumping/zoom issues).
-       Use scroll by default and enable fixed only on wider viewports. */
+    /* Mobile: solid black background */
+    background: #000000;
     background-attachment: scroll;
-    background-position: center top;
-    background-repeat: no-repeat;
 }
 
-/* Re-enable fixed attachment on large screens for the parallax look */
+/* Desktop: use the background image with parallax effect */
 @media (min-width: 769px) {
     body {
+        background-image: url(backgrounds/2.jpg);
+        background-size: cover;
         background-attachment: fixed;
         background-position: center center;
+        background-repeat: no-repeat;
     }
 }
 
@@ -108,7 +106,7 @@ body {
 
 .panel-body {
     padding: 4rem 2rem;
-    background: 
+    background:
         radial-gradient(circle at center, rgba(10, 201, 244, 0.05) 1px, transparent 1px),
         radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 50px 50px, 25px 25px;
@@ -125,25 +123,29 @@ body {
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0) 80%);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0) 80%);
     mix-blend-mode: screen;
     opacity: 0;
     transform: translateX(-18%);
     filter: blur(10px);
-    transition: opacity 0.45s ease, transform 0.6s cubic-bezier(.2,.8,.2,1);
+    transition: opacity 0.45s ease, transform 0.6s cubic-bezier(.2, .8, .2, 1);
     z-index: 1;
 }
-.stack-panel .panel-body > * {
+
+.stack-panel .panel-body>* {
     position: relative;
-    z-index: 2; /* ensure content stays above the beam */
+    z-index: 2;
+    /* ensure content stays above the beam */
 }
+
 .stack-panel:hover .panel-body::before {
     opacity: 1;
     transform: translateX(0);
 }
+
 .stack-panel:hover .panel-body {
-    border-color: rgba(255,255,255,0.08);
-    box-shadow: 0 24px 60px rgba(255,255,255,0.04), inset 0 0 40px rgba(255,255,255,0.02);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(255, 255, 255, 0.04), inset 0 0 40px rgba(255, 255, 255, 0.02);
 }
 
 .tech-grid {
@@ -170,12 +172,17 @@ body {
 
 .tech-card:hover {
     transform: translateY(-8px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.5); /* Cambiado a blanco */
-    background: rgba(255, 255, 255, 0.05); /* Cambiado a blanco */
-    box-shadow: 
-        0 20px 40px rgba(255, 255, 255, 0.15), /* Cambiado a blanco */
-        0 0 0 1px rgba(255, 255, 255, 0.1), /* Cambiado a blanco */
-        inset 0 0 20px rgba(255, 255, 255, 0.05); /* Cambiado a blanco */
+    border-color: rgba(255, 255, 255, 0.5);
+    /* Cambiado a blanco */
+    background: rgba(255, 255, 255, 0.05);
+    /* Cambiado a blanco */
+    box-shadow:
+        0 20px 40px rgba(255, 255, 255, 0.15),
+        /* Cambiado a blanco */
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        /* Cambiado a blanco */
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    /* Cambiado a blanco */
 }
 
 /* Contenedor de puntos mejorado */
@@ -197,7 +204,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 12.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
         radial-gradient(circle at 37.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
         radial-gradient(circle at 62.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
@@ -223,8 +230,10 @@ body {
 }
 
 @keyframes dotColorWave {
-    0%, 100% {
-        background: 
+
+    0%,
+    100% {
+        background:
             radial-gradient(circle at 12.5% 12.5%, #fbfbfb 2px, transparent 3px),
             radial-gradient(circle at 37.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
             radial-gradient(circle at 62.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
@@ -242,8 +251,9 @@ body {
             radial-gradient(circle at 62.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
             radial-gradient(circle at 87.5% 87.5%, #f7f7f7 2px, transparent 3px);
     }
+
     50% {
-        background: 
+        background:
             radial-gradient(circle at 12.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
             radial-gradient(circle at 37.5% 12.5%, #e8e8e8 2px, transparent 3px),
             radial-gradient(circle at 62.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
@@ -292,13 +302,11 @@ body {
     left: -100%;
     width: 300%;
     height: 100%;
-    background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 10px,
-        rgba(70, 171, 15, 0.3) 10px,
-        rgba(193, 244, 10, 0.3) 20px
-    );
+    background: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 10px,
+            rgba(70, 171, 15, 0.3) 10px,
+            rgba(193, 244, 10, 0.3) 20px);
     animation: slideLine 2s linear infinite;
 }
 
@@ -306,6 +314,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(33.33%);
     }
@@ -321,12 +330,13 @@ body {
     pointer-events: none;
     z-index: 99999;
     mix-blend-mode: normal;
-    transition: transform 120ms cubic-bezier(.22,.8,.22,1), opacity 160ms, box-shadow 120ms;
+    transition: transform 120ms cubic-bezier(.22, .8, .22, 1), opacity 160ms, box-shadow 120ms;
     transform: translate(-50%, -50%) scale(1);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent; /* keep background transparent so only the letter shows */
+    background: transparent;
+    /* keep background transparent so only the letter shows */
 }
 
 .cursor-letter {
@@ -337,13 +347,21 @@ body {
     line-height: 1;
     user-select: none;
     pointer-events: none;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
 /* Hide native cursor in favor of the custom follower. Restore cursor for interactive elements */
-body { cursor: none; }
+body {
+    cursor: none;
+}
 
-a, button, input, textarea, select { cursor: auto; }
+a,
+button,
+input,
+textarea,
+select {
+    cursor: auto;
+}
 
 /* Animaciones suaves */
 .fade-in-up {
@@ -355,6 +373,7 @@ a, button, input, textarea, select { cursor: auto; }
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -367,21 +386,131 @@ a, button, input, textarea, select { cursor: auto; }
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
-    
+
     .tech-card {
         padding: 1.5rem 1rem;
         min-height: 120px;
     }
-    
+
     .tech-dots {
         width: 60px;
         height: 60px;
         gap: 4px;
     }
-    
+
     .panel-body {
         padding: 2rem 1rem;
     }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+
+    /* Hide navigation links on mobile to prevent overflow */
+    header nav.social-links {
+        display: none;
+    }
+
+    /* Reduce header padding */
+    header {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* Smaller avatar on mobile */
+    .avatar-container img {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+
+    /* Reduce section padding */
+    section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Smaller panel padding */
+    .panel-body {
+        padding: 1.5rem 1rem !important;
+    }
+
+    /* Reduce tech grid to 2 columns max */
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+
+    /* Smaller tech cards */
+    .tech-card {
+        padding: 1rem 0.75rem !important;
+        min-height: 100px !important;
+    }
+
+    .tech-dots {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .tech-label {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Disable custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        cursor: auto !important;
+    }
+
+    .cursor-follower {
+        display: none !important;
+    }
+
+    a,
+    button,
+    input,
+    textarea,
+    select {
+        cursor: pointer !important;
+    }
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-link {
+    font-family: 'Migra', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+#mobile-menu-btn {
+    transition: transform 0.3s ease;
+}
+
+#mobile-menu-btn.active {
+    transform: rotate(90deg);
+}
+
+#mobile-menu-btn.active i:before {
+    content: "\f00d";
+    /* Font Awesome X icon */
 }
 
 /* Hobbies card with animated moving dots */
@@ -395,9 +524,9 @@ a, button, input, textarea, select { cursor: auto; }
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.06);
-    background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 0 40px rgba(255,255,255,0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(255, 255, 255, 0.02);
 }
 
 .hobby-card .hobby-item {
@@ -444,33 +573,62 @@ a, button, input, textarea, select { cursor: auto; }
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(16, 185, 129, 0.9); /* teal-ish */
-    box-shadow: 0 0 8px rgba(16,185,129,0.6);
+    background: rgba(16, 185, 129, 0.9);
+    /* teal-ish */
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
     opacity: 0.95;
     animation: hobbyFloat 4s ease-in-out infinite;
 }
 
 @keyframes hobbyFloat {
-    0% { transform: translate(0,0) scale(1); opacity: 0.9; }
-    25% { transform: translate(12px,-8px) scale(1.2); opacity: 1; }
-    50% { transform: translate(-8px,10px) scale(0.9); opacity: 0.7; }
-    75% { transform: translate(6px,-6px) scale(1.05); opacity: 1; }
-    100% { transform: translate(0,0) scale(1); opacity: 0.9; }
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.9;
+    }
+
+    25% {
+        transform: translate(12px, -8px) scale(1.2);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-8px, 10px) scale(0.9);
+        opacity: 0.7;
+    }
+
+    75% {
+        transform: translate(6px, -6px) scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.9;
+    }
 }
 
 /* Add variety: different durations/delays will be set inline on each .hobby-dot */
 
 @media (max-width: 768px) {
-    .hobby-card { height: 160px; max-width: 420px; }
-    .hobby-card .hobby-item img { object-position: center; }
-    .hobby-title-row { max-width: 420px; }
+    .hobby-card {
+        height: 160px;
+        max-width: 420px;
+    }
+
+    .hobby-card .hobby-item img {
+        object-position: center;
+    }
+
+    .hobby-title-row {
+        max-width: 420px;
+    }
 }
 
 /* Section divider used under Languages / Hobbies */
 .section-divider {
     height: 2px;
     width: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
     border-radius: 2px;
     margin: 0.5rem 0;
 }
@@ -489,7 +647,9 @@ a, button, input, textarea, select { cursor: auto; }
 }
 
 /* Hide any leftover dot elements if present */
-.hobby-dots-overlay { display: none !important; }
+.hobby-dots-overlay {
+    display: none !important;
+}
 
 /* Make hobby GIFs black & white */
 #pianoGif,
@@ -510,23 +670,31 @@ a, button, input, textarea, select { cursor: auto; }
     flex: 0 0 96px;
     border-radius: 8px;
     overflow: hidden;
-    background: #ffffff; /* white background for photos */
+    background: #ffffff;
+    /* white background for photos */
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 4px; /* small padding so image doesn't touch edge */
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 4px;
+    /* small padding so image doesn't touch edge */
 }
+
 .edu-photo-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%) contrast(0.98) brightness(0.95); /* force B/W */
+    filter: grayscale(100%) contrast(0.98) brightness(0.95);
+    /* force B/W */
 }
 
 @media (max-width: 768px) {
-    .edu-photo { width: 72px; flex: 0 0 72px; margin-bottom: 0.75rem; }
+    .edu-photo {
+        width: 72px;
+        flex: 0 0 72px;
+        margin-bottom: 0.75rem;
+    }
 }
 
 /* IMT specific fine-tune: slightly shrink to fit the 1:1 box */
@@ -540,27 +708,31 @@ a, button, input, textarea, select { cursor: auto; }
 
 /* Global card hover: border turns white and a soft interior white light (beam) appears */
 .rounded-2xl.border {
-    position: relative; /* needed for ::after */
+    position: relative;
+    /* needed for ::after */
     transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }
+
 .rounded-2xl.border::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
     border-radius: inherit;
-    background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.00) 80%);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.00) 80%);
     mix-blend-mode: screen;
     opacity: 0;
     transform: translateX(-18%);
     filter: blur(10px);
-    transition: opacity 0.45s ease, transform 0.6s cubic-bezier(.2,.8,.2,1);
+    transition: opacity 0.45s ease, transform 0.6s cubic-bezier(.2, .8, .2, 1);
 }
+
 .rounded-2xl.border:hover {
-    border-color: rgba(255,255,255,0.95) !important;
-    box-shadow: 0 12px 40px rgba(255,255,255,0.06), inset 0 0 40px rgba(255,255,255,0.03);
+    border-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.06), inset 0 0 40px rgba(255, 255, 255, 0.03);
     transform: translateY(-4px);
 }
+
 .rounded-2xl.border:hover::after {
     opacity: 1;
     transform: translateX(0);
@@ -579,6 +751,7 @@ a, button, input, textarea, select { cursor: auto; }
     gap: 0.5rem;
     align-items: center;
 }
+
 .project-btn {
     display: inline-flex;
     align-items: center;
@@ -586,41 +759,44 @@ a, button, input, textarea, select { cursor: auto; }
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.06);
-    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
     color: #ffffff;
     text-decoration: none;
     transition: transform 0.22s ease, box-shadow 0.25s ease, border-color 0.22s ease;
 }
+
 .project-btn i,
 .project-btn .itch-icon {
     font-size: 18px;
     display: inline-block;
     color: inherit;
 }
+
 .project-btn:hover {
     transform: translateY(-3px);
-    border-color: rgba(255,255,255,0.95);
-    box-shadow: 0 10px 30px rgba(255,255,255,0.06), inset 0 0 30px rgba(255,255,255,0.02);
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.06), inset 0 0 30px rgba(255, 255, 255, 0.02);
 }
 
 /* Make project card images appear in black & white by default, with a gentle transition to color on hover
    NOTE: project containers are direct children of the grid inside #projects, so target those elements */
-#projects .grid > div img {
+#projects .grid>div img {
     filter: grayscale(100%) contrast(95%);
     transition: filter 260ms ease, transform 260ms ease;
     will-change: filter, transform;
 }
+
 /* On hovering an individual project card (the grid child), restore color */
-#projects .grid > div:hover img {
+#projects .grid>div:hover img {
     filter: grayscale(0%) contrast(100%);
 }
 
 /* Animated perimeter beam overlay for project cards */
-#projects .grid > div {
+#projects .grid>div {
     position: relative;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     overflow: visible;
     transition: border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
 }
@@ -637,12 +813,13 @@ a, button, input, textarea, select { cursor: auto; }
 }
 
 /* Hide the animated beam on hover and show solid white border on the card */
-#projects .grid > div:hover .project-beam {
+#projects .grid>div:hover .project-beam {
     opacity: 0;
 }
-#projects .grid > div:hover {
-    border-color: rgba(255,255,255,0.95);
-    box-shadow: 0 18px 40px rgba(255,255,255,0.06), inset 0 0 30px rgba(255,255,255,0.02);
+
+#projects .grid>div:hover {
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 18px 40px rgba(255, 255, 255, 0.06), inset 0 0 30px rgba(255, 255, 255, 0.02);
     transform: translateY(-6px);
 }
 
@@ -650,10 +827,12 @@ a, button, input, textarea, select { cursor: auto; }
 .glow-lime {
     position: relative;
     display: inline-block;
-    color: #eaff66; /* brighter, fluorescent lime */
-    background-color: rgba(180, 255, 120, 0.08); /* subtle lighter translucent background */
-    border: 1px solid rgba(196,255,106,0.12);
-    box-shadow: 0 8px 22px rgba(166,255,110,0.12), 0 0 18px rgba(180,255,120,0.06);
+    color: #eaff66;
+    /* brighter, fluorescent lime */
+    background-color: rgba(180, 255, 120, 0.08);
+    /* subtle lighter translucent background */
+    border: 1px solid rgba(196, 255, 106, 0.12);
+    box-shadow: 0 8px 22px rgba(166, 255, 110, 0.12), 0 0 18px rgba(180, 255, 120, 0.06);
     transition: box-shadow 240ms ease, transform 180ms ease, filter 240ms ease;
     z-index: 0;
 }
@@ -666,7 +845,7 @@ a, button, input, textarea, select { cursor: auto; }
     top: -4px;
     bottom: -4px;
     border-radius: 999px;
-    background: radial-gradient(circle at 30% 30%, rgba(196,255,106,0.34), rgba(196,255,106,0.12) 20%, rgba(196,255,106,0.06) 40%, rgba(196,255,106,0.00) 60%);
+    background: radial-gradient(circle at 30% 30%, rgba(196, 255, 106, 0.34), rgba(196, 255, 106, 0.12) 20%, rgba(196, 255, 106, 0.06) 40%, rgba(196, 255, 106, 0.00) 60%);
     filter: blur(10px) saturate(1.15);
     opacity: 0.95;
     z-index: -1;
@@ -676,13 +855,30 @@ a, button, input, textarea, select { cursor: auto; }
 
 .glow-lime:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 14px 34px rgba(166,255,110,0.18), 0 0 34px rgba(180,255,120,0.12);
-    filter: drop-shadow(0 8px 18px rgba(180,255,120,0.12));
+    box-shadow: 0 14px 34px rgba(166, 255, 110, 0.18), 0 0 34px rgba(180, 255, 120, 0.12);
+    filter: drop-shadow(0 8px 18px rgba(180, 255, 120, 0.12));
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .glow-lime::after { transition: none; filter: none; opacity: 0.75; }
-    .glow-lime { transition: none; }
+    .glow-lime::after {
+        transition: none;
+        filter: none;
+        opacity: 0.75;
+    }
+
+    .glow-lime {
+        transition: none;
+    }
 }
 
-.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

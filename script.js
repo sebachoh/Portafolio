@@ -211,12 +211,48 @@ document.addEventListener('DOMContentLoaded', function() {
     createCursorFollower();
     initializeScrollAnimations();
     initializeSmoothScroll();
+    initializeMobileMenu();
     
     // Add animated perimeter beams to project cards
     try { addPerimeterBeams(); } catch (e) { console.warn('addPerimeterBeams failed', e); }
 
     console.log('Portfolio loaded successfully! 🚀');
 });
+
+// Mobile menu functionality
+function initializeMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = document.querySelectorAll('.mobile-menu-link');
+    
+    if (!menuBtn || !mobileMenu) return;
+    
+    // Toggle menu
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking a link
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close menu when clicking outside
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            mobileMenu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
 
 // Insert an SVG overlay on each project card that animates a small bright segment around the border
 function addPerimeterBeams() {

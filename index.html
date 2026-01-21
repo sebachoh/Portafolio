@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,30 +19,61 @@
     <!-- Devicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
+
 <body class="bg-black text-white font-sans antialiased">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 sm:px-6">
         <!-- Header -->
-        <header class="flex justify-between items-center py-6">
+        <header class="flex justify-between items-center py-4 sm:py-6">
             <div class="avatar-container">
-        <img src="Logo.png" 
-            alt="Logo Sebastian Ruiz"
-            class="w-16 h-16 md:w-20 md:h-20 rounded-full border-1 border-gray-600 hover:border-teal-400 transition-colors duration-300 object-contain scale-90">            </div>
-            <nav class="social-links flex gap-6">
-                <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">About</a>
-                <a href="#experience" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Experience</a>
-                <a href="#education" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Education</a>
-                <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Projects</a>
-                <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Contact</a>
+                <img src="Logo.png" alt="Logo Sebastian Ruiz"
+                    class="w-16 h-16 md:w-20 md:h-20 rounded-full border-1 border-gray-600 hover:border-teal-400 transition-colors duration-300 object-contain scale-90">
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl z-50 relative">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop navigation -->
+            <nav class="social-links hidden md:flex gap-6">
+                <a href="#about"
+                    class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">About</a>
+                <a href="#experience"
+                    class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Experience</a>
+                <a href="#education"
+                    class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Education</a>
+                <a href="#projects"
+                    class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Projects</a>
+                <a href="#contact"
+                    class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Contact</a>
             </nav>
         </header>
 
+        <!-- Mobile menu overlay -->
+        <div id="mobile-menu" class="mobile-menu">
+            <nav class="flex flex-col items-center justify-center h-full gap-8">
+                <a href="#about"
+                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">About</a>
+                <a href="#experience"
+                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Experience</a>
+                <a href="#education"
+                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Education</a>
+                <a href="#projects"
+                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Projects</a>
+                <a href="#contact"
+                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Contact</a>
+            </nav>
+        </div>
+
         <!-- Hero Section -->
-        <section class="min-h-[78vh] flex items-center justify-center text-center py-16">
+        <section
+            class="min-h-[60vh] sm:min-h-[70vh] md:min-h-[78vh] flex items-center justify-center text-center py-8 sm:py-12 md:py-16">
             <div class="space-y-4">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
+                <h1
+                    class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
                     Sebastian Ruiz
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-300 font-light tracking-wider custom-font">
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 font-light tracking-wider custom-font">
                     Developer & Mechatronics
                 </p>
             </div>
@@ -57,27 +89,37 @@
         <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/controls/OrbitControls.js"></script>
 
-    <!-- About Section -->
-    <section id="about" class="max-w-5xl mx-auto py-16">
+        <!-- About Section -->
+        <section id="about" class="max-w-5xl mx-auto py-8 sm:py-12 md:py-16">
             <!-- Translucent panel matching Tech Stack -->
-            <div class="panel-body py-8 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-lg">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center uppercase tracking-wider custom-font">About</h2>
+            <div
+                class="panel-body py-6 sm:py-8 px-4 sm:px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-lg">
+                <h2
+                    class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 text-center uppercase tracking-wider custom-font">
+                    About
+                </h2>
 
                 <div class="flex flex-col md:flex-row items-start gap-6">
                     <!-- Left column: text -->
                     <div class="w-full md:w-1/2">
                         <div class="space-y-4 text-lg text-gray-300 leading-relaxed custom-font-migra">
                             <p>
-                                I’m a passionate developer and engineer from Colombia, based in France, with a background in Mechatronic Engineering and a strong interest in intelligent systems and interactive technologies.
+                                I’m a passionate developer and engineer from Colombia, based in France, with a
+                                background in Mechatronic Engineering and a strong interest in intelligent systems and
+                                interactive technologies.
                             </p>
                             <p>
-                                I specialize in software development, particularly with C#, Python, C++, and Unity, and I enjoy creating interactive and innovative digital experiences that merge technology, creativity, and engineering.                           </p>
+                                I specialize in software development, particularly with C#, Python, C++, and Unity, and
+                                I enjoy creating interactive and innovative digital experiences that merge technology,
+                                creativity, and engineering. </p>
                             </p>
                             <p>
-                                I’m seeking an internship opportunity where I can apply my skills and contribute to impactful engineering and digital innovation projects.
+                                I’m seeking an internship opportunity where I can apply my skills and contribute to
+                                impactful engineering and digital innovation projects.
                             </p>
                             <p class="pt-2">
-                                📩 Reach me at  <a href="mailto:sebaruiz01@gmail.com" class="text-white hover:text-lime-700 transition-colors duration-300 font-semibold underline">sebaruiz01@gmail.com</a>
+                                📩 Reach me at <a href="mailto:sebaruiz01@gmail.com"
+                                    class="text-white hover:text-lime-700 transition-colors duration-300 font-semibold underline">sebaruiz01@gmail.com</a>
                             </p>
                         </div>
                     </div>
@@ -95,16 +137,23 @@
                                     <h3 class="text-xl font-semibold text-white mb-5">Languages</h3>
                                     <div class="section-divider my-4" aria-hidden="true"></div>
                                     <ul class="text-gray-300 space-y-2">
-                                        <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">Spanish 🇪🇸</span> — Native</li>
-                                        <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">English 🇬🇧</span> — C1</li>
-                                        <li class="custom-font-migra"><span class="font-medium text-white custom-font-migra">French 🇫🇷</span> — B2</li>
+                                        <li class="custom-font-migra"><span
+                                                class="font-medium text-white custom-font-migra">Spanish 🇪🇸</span> —
+                                            Native</li>
+                                        <li class="custom-font-migra"><span
+                                                class="font-medium text-white custom-font-migra">English 🇬🇧</span> —
+                                            C1</li>
+                                        <li class="custom-font-migra"><span
+                                                class="font-medium text-white custom-font-migra">French 🇫🇷</span> — B2
+                                        </li>
                                     </ul>
-                                    
+
                                 </div>
 
                                 <div>
                                     <h3 class="text-xl font-semibold text-white mb-4"></h3>
-                                                        <div id="globe" style="width:100%;height:160px;border-radius:12px;overflow:hidden"></div>
+                                    <div id="globe" style="width:100%;height:160px;border-radius:12px;overflow:hidden">
+                                    </div>
                                 </div>
                             </div>
 
@@ -113,13 +162,19 @@
                             <!-- Hobbies card: two GIFs glued together inside a single animated card -->
                             <div class="hobby-card" aria-hidden="false">
                                 <div class="hobby-item">
-                                    <img id="pianoGif" src="gifs/cat-playing-piano-funny.gif" alt="Piano" class="" onerror="document.getElementById('pianoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('pianoIcon').style.display='none';" />
-                                    <i id="pianoIcon" class="fa-solid fa-music text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
+                                    <img id="pianoGif" src="gifs/cat-playing-piano-funny.gif" alt="Piano" class=""
+                                        onerror="document.getElementById('pianoIcon').style.display='inline-block'; this.style.display='none';"
+                                        onload="document.getElementById('pianoIcon').style.display='none';" />
+                                    <i id="pianoIcon" class="fa-solid fa-music text-teal-400 text-4xl"
+                                        style="display:none; position:absolute;"></i>
                                 </div>
 
                                 <div class="hobby-item">
-                                    <img id="photoGif" src="gifs/spiderman-peter-parker.gif" alt="Fotografía" class="" onerror="document.getElementById('photoIcon').style.display='inline-block'; this.style.display='none';" onload="document.getElementById('photoIcon').style.display='none';" />
-                                    <i id="photoIcon" class="fa-solid fa-camera-retro text-teal-400 text-4xl" style="display:none; position:absolute;"></i>
+                                    <img id="photoGif" src="gifs/spiderman-peter-parker.gif" alt="Fotografía" class=""
+                                        onerror="document.getElementById('photoIcon').style.display='inline-block'; this.style.display='none';"
+                                        onload="document.getElementById('photoIcon').style.display='none';" />
+                                    <i id="photoIcon" class="fa-solid fa-camera-retro text-teal-400 text-4xl"
+                                        style="display:none; position:absolute;"></i>
                                 </div>
 
                                 <!-- noise overlay is handled in CSS (.hobby-card::after) -->
@@ -131,35 +186,44 @@
         </section>
 
         <!-- Stack Section -->
-<section class="stack-panel my-16" id="stack">
-    <div class="panel-body py-16 px-4 md:px-8 rounded-t-3xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700">
-        <h2 class="panel-title text-3xl font-bold text-white mb-12 text-center uppercase tracking-wider custom-font">Tech Stack</h2>
-        <div class="tech-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-3 max-w-6xl mx-auto custom-font">
-            <!-- Los iconos se generarán automáticamente con JavaScript -->
-        </div>
-    </div>
-    <div class="panel-decoration h-8 bg-gradient-to-r from-white via-yellow-500 to-white rounded-b-3xl"></div>
+        <section class="stack-panel my-8 sm:my-12 md:my-16" id="stack">
+            <div
+                class="panel-body py-8 sm:py-12 md:py-16 px-4 md:px-8 rounded-t-3xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700">
+                <h2
+                    class="panel-title text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 text-center uppercase tracking-wider custom-font">
+                    Tech Stack</h2>
+                <div
+                    class="tech-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-3 max-w-6xl mx-auto custom-font">
+                    <!-- Los iconos se generarán automáticamente con JavaScript -->
+                </div>
+            </div>
+            <div class="panel-decoration h-8 bg-gradient-to-r from-white via-yellow-500 to-white rounded-b-3xl"></div>
 
 
 
-</section>
+        </section>
 
-                <!-- Education Section (moved here under About) -->
-        <section id="education" class="max-w-6xl mx-auto py-12">
-            <div class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
-                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Education</h2>
+        <!-- Education Section (moved here under About) -->
+        <section id="education" class="max-w-6xl mx-auto py-8 sm:py-10 md:py-12">
+            <div
+                class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">
+                    Education</h2>
                 <div class="space-y-6 text-gray-300">
-                   
+
                     <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosUni/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe" class="edu-photo-img imt-photo" onerror="this.style.display='none'" />
+                                <img src="logosUni/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe"
+                                    class="edu-photo-img imt-photo" onerror="this.style.display='none'" />
                             </div>
                             <div class="flex-1">
                                 <div class="flex justify-between items-start">
                                     <div>
-                                        <h3 class="text-xl font-bold text-white">Diplôme d'Ingénieur (Bac+5) / Equivalent to Master's Degree</h3>
-                                        <p class="text-sm text-gray-400">Institut Mines-Télécom Nord Europe / 2025-2027</p>
+                                        <h3 class="text-xl font-bold text-white">Diplôme d'Ingénieur (Bac+5) /
+                                            Equivalent to Master's Degree</h3>
+                                        <p class="text-sm text-gray-400">Institut Mines-Télécom Nord Europe / 2025-2027
+                                        </p>
                                     </div>
                                     <div class="text-sm text-gray-500">Lille, France</div>
                                 </div>
@@ -167,221 +231,279 @@
                             </div>
                         </div>
                     </div>
-                     <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+                    <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosUni/utp-universidad-tecnologica-de-pereira-logo-png_seeklogo-259118.png" alt="Universidad Tecnológica de Pereira" class="edu-photo-img" onerror="this.style.display='none'" />
+                                <img src="logosUni/utp-universidad-tecnologica-de-pereira-logo-png_seeklogo-259118.png"
+                                    alt="Universidad Tecnológica de Pereira" class="edu-photo-img"
+                                    onerror="this.style.display='none'" />
                             </div>
                             <div class="flex-1">
                                 <div class="flex justify-between items-start">
                                     <div>
                                         <h3 class="text-xl font-bold text-white">Mechatronics Engineering</h3>
-                                        <p class="text-sm text-gray-400">Universidad Tecnológica de Pereira / 2019 - 2025</p>
+                                        <p class="text-sm text-gray-400">Universidad Tecnológica de Pereira / 2019 -
+                                            2025</p>
                                     </div>
                                     <div class="text-sm text-gray-500">Pereira, Colombia</div>
                                 </div>
-                                <p class="mt-4 text-gray-400">GPA: 4.3/5.0 | Honor tuition waiver two times | Recognition for Top Scores in Saber Pro and TyT Exams</p>
+                                <p class="mt-4 text-gray-400">GPA: 4.3/5.0 | Honor tuition waiver two times |
+                                    Recognition for Top Scores in Saber Pro and TyT Exams</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    <!-- Experience Section -->
-    <section id="experience" class="max-w-6xl mx-auto py-16">
-        <div class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
-                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Experience</h2>
+        <!-- Experience Section -->
+        <section id="experience" class="max-w-6xl mx-auto py-8 sm:py-12 md:py-16">
+            <div
+                class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">
+                    Experience</h2>
                 <div class="space-y-8">
-                <!-- Experience 1 -->
-                <div class="bg-gray-900/50 rounded-2xl p-8 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-lime-700/30">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <h3 class="text-2xl font-bold text-white custom-font-migra">Responsable Support Technique et Infrastructure</h3>
-                        <span class="text-gray-600 font-semibold mt-2 md:mt-0 custom-font-migra">2024 - 2025</span>
-                    </div>
-                    <p class="text-lg text-gray-500 mb-4 custom-font-migra hover:text-lime-700 transition-colors duration-300">CEA Rutas.</p>
+                    <!-- Experience 1 -->
+                    <div
+                        class="bg-gray-900/50 rounded-2xl p-8 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-lime-700/30">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white custom-font-migra">Responsable Support Technique et
+                                Infrastructure</h3>
+                            <span class="text-gray-600 font-semibold mt-2 md:mt-0 custom-font-migra">2024 - 2025</span>
+                        </div>
+                        <p
+                            class="text-lg text-gray-500 mb-4 custom-font-migra hover:text-lime-700 transition-colors duration-300">
+                            CEA Rutas.</p>
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosWork/logoRutas.jpeg" alt="CEA Rutas" class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
+                                <img src="logosWork/logoRutas.jpeg" alt="CEA Rutas" class="edu-photo-img exp-photo"
+                                    onerror="this.style.display='none'" />
                             </div>
                             <div class="flex-1">
                                 <p class="text-gray-300 leading-relaxed custom-font-migra">
-                                    Responsable de la gestion complète de l’infrastructure technologique, incluant serveurs, réseaux LAN/WAN, postes de travail et
-                                    systèmes critiques. Planification et exécution de projets d’optimisation de la connectivité et de la sécurité, en mettant en œuvre
-                                    des protocoles réseau avancés, firewalls et accès à distance sécurisé. Pilotage de la maintenance préventive et corrective del
+                                    Responsable de la gestion complète de l’infrastructure technologique, incluant
+                                    serveurs, réseaux LAN/WAN, postes de travail et
+                                    systèmes critiques. Planification et exécution de projets d’optimisation de la
+                                    connectivité et de la sécurité, en mettant en œuvre
+                                    des protocoles réseau avancés, firewalls et accès à distance sécurisé. Pilotage de
+                                    la maintenance préventive et corrective del
                                     matériel et des logiciels, assurant une disponibilité de 99 % des systèmes.
                                 </p>
                             </div>
                         </div>
-                </div>
-
-                <!-- Experience 2 -->
-                <div class="bg-gray-900/50 rounded-2xl p-8 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-teal-400/30">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <h3 class="text-2xl font-bold text-white">Stage au laboratoire d’Électronique et Télécommunications</h3>
-                        <span class="text-gray-600 font-semibold mt-2 md:mt-0 custom-font-migra">2021 - 2022</span>
                     </div>
-                    <p class="text-lg text-gray-500 custom-font-migra hover:text-lime-700 mb-4">TecnoParque SENA</p>
+
+                    <!-- Experience 2 -->
+                    <div
+                        class="bg-gray-900/50 rounded-2xl p-8 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-teal-400/30">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">Stage au laboratoire d’Électronique et
+                                Télécommunications</h3>
+                            <span class="text-gray-600 font-semibold mt-2 md:mt-0 custom-font-migra">2021 - 2022</span>
+                        </div>
+                        <p class="text-lg text-gray-500 custom-font-migra hover:text-lime-700 mb-4">TecnoParque SENA</p>
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosWork/logoSena2.png" alt="TecnoParque SENA" class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
+                                <img src="logosWork/logoSena2.png" alt="TecnoParque SENA"
+                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
                             </div>
                             <div class="flex-1">
-                                <p class="text-gray-300 leading-relaxed custom-font-migra">Réalisation de prototypes de projets technologiques en intégrant technologie avancée et IoT (Internet de las Cosas), gestion de sistemas
-                                    embebidos y programación en C y Python para asegurar el funcionamiento de los proyectos. Participación en la integración de
-                                    componentes electrónicos y sistemas de comunicación, optimizando procesos de prototipado y pruebas.
+                                <p class="text-gray-300 leading-relaxed custom-font-migra">Réalisation de prototypes de
+                                    projets technologiques en intégrant technologie avancée et IoT (Internet de las
+                                    Cosas), gestion de sistemas
+                                    embebidos y programación en C y Python para asegurar el funcionamiento de los
+                                    proyectos. Participación en la integración de
+                                    componentes electrónicos y sistemas de comunicación, optimizando procesos de
+                                    prototipado y pruebas.
                                 </p>
                             </div>
                         </div>
-            </div>
+                    </div>
         </section>
 
-            <!-- Projects Section -->
-            <section id="projects" class="max-w-6xl mx-auto py-16">
-                <div class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
-                    <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Projects</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-lime-700/30 group">
-                    <div class="mb-4 h-48 bg-white rounded-xl flex items-center justify-center transition-all duration-300 p-4">
-                        <img src="Mecani.png" alt="Mecani project" class="h-full w-auto object-contain rounded-lg" />
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">AI-Chatbot with RAG</h3>
-                    <p class="text-gray-300 mb-4 leading-relaxed">
-                        A modern implementation of an AI-Chatbot with Retrieval Augmented Generation (RAG) for enhanced user interactions for the administrative department of the mechatronics program.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                            <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                             <i class="fa-brands fa-html5 text-yellow-500"></i>
-                             HTML
-                             </span>
-                             <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                             <i class="fa-brands fa-css3-alt text-yellow-500"></i>
-                             CSS
-                             </span>
-                             <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                             <i class="fa-brands fa-js text-yellow-500"></i>
-                             JavaScript
-                             </span>
-                             <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                             <i class="fa-brands fa-sass" style="font-size:18px"></i>
-                             SASS
-                             </span>
-                             <span class="px-4 py-2 bg-yellow-400/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-400/30 transition-all hover:bg-yellow-400/30 hover:scale-105">
-                             <i class="fa-solid fa-laptop"></i>
-                             LLM
-                             </span>
-                    </div>
-                    <div class="project-links mt-3">
-                        <a class="project-btn github-btn" href="https://github.com/sebachoh/ChatbotUI_V2.0" target="_blank" rel="noopener" title="View source on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
+        <!-- Projects Section -->
+        <section id="projects" class="max-w-6xl mx-auto py-8 sm:py-12 md:py-16">
+            <div
+                class="mx-auto max-w-5xl py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-wider custom-font">Projects
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Project 1 -->
+                    <div
+                        class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-lime-700/30 group">
+                        <div
+                            class="mb-4 h-48 bg-white rounded-xl flex items-center justify-center transition-all duration-300 p-4">
+                            <img src="Mecani.png" alt="Mecani project"
+                                class="h-full w-auto object-contain rounded-lg" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">AI-Chatbot with RAG</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            A modern implementation of an AI-Chatbot with Retrieval Augmented Generation (RAG) for
+                            enhanced user interactions for the administrative department of the mechatronics program.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-brands fa-html5 text-yellow-500"></i>
+                                HTML
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-brands fa-css3-alt text-yellow-500"></i>
+                                CSS
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-brands fa-js text-yellow-500"></i>
+                                JavaScript
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-brands fa-sass" style="font-size:18px"></i>
+                                SASS
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-400/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-400/30 transition-all hover:bg-yellow-400/30 hover:scale-105">
+                                <i class="fa-solid fa-laptop"></i>
+                                LLM
+                            </span>
+                        </div>
+                        <div class="project-links mt-3">
+                            <a class="project-btn github-btn" href="https://github.com/sebachoh/ChatbotUI_V2.0"
+                                target="_blank" rel="noopener" title="View source on GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span class="sr-only">GitHub</span>
+                            </a>
 
-                        <a class="project-btn demo-btn" href="https://sebachoh.github.io/ChatbotUI_V2.0/" target="_blank" rel="noopener" title="View as demo">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 20" class="w-10 h-auto" aria-hidden="true">
-                                 <text
-                                    x="50%"
-                                    y="70%"
-                                    text-anchor="middle"
-                                    font-family="Inter, system-ui, Arial, sans-serif"
-                                    font-size="14"
-                                    font-weight="700"
-                                    fill="white">
-                                    DEMO
+                            <a class="project-btn demo-btn" href="https://sebachoh.github.io/ChatbotUI_V2.0/"
+                                target="_blank" rel="noopener" title="View as demo">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 20" class="w-10 h-auto"
+                                    aria-hidden="true">
+                                    <text x="50%" y="70%" text-anchor="middle"
+                                        font-family="Inter, system-ui, Arial, sans-serif" font-size="14"
+                                        font-weight="700" fill="white">
+                                        DEMO
                                     </text>
                                 </svg>
-                            <span class="sr-only">Demo</span>
-                        </a>
-                    </div>
-                    
-                </div>
-                                <!-- Project 2 -->
-                <div class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-cyan-400/30 group">
-                    <div class="mb-4 h-48 bg-white rounded-xl flex items-center justify-center transition-all duration-300 p-0 overflow-hidden">
-                        <img src="Fotos/AmazonRagePrueba.jpg" alt="Amazon Rage" class="h-full w-full object-cover rounded-lg" />
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Amazon Rage</h3>
-                    <p class="text-gray-300 mb-4 leading-relaxed">
-                        Développement complet d’un jeu vidéo de qualité commerciale avec le moteur Unity, intégrant programmation en C#, level
-design, sound design et optimisation des performances.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                        <i class="fab fa-microsoft text-yellow-500"></i>C#
-                        </span>
-                        <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                        <i class="fab fa-unity text-yellow-500"></i>Unity
-                        </span>
-                        <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                        <i class="fa-solid fa-gamepad text-yellow-500"></i>Game programming
-                        </span>
-                    </div>
-                    <div class="project-links mt-3">
-                        <a class="project-btn github-btn" href="https://github.com/SeasterBlue/Amazon-Rage" target="_blank" rel="noopener" title="View source on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
-                        <a class="project-btn itch-btn" href="https://seaster-blue.itch.io/amazon-rage" target="_blank" rel="noopener" title="View on itch.io">
-                            <svg class="itch-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8.5 9.5C8.5 7.84315 9.84315 6.5 11.5 6.5H12.5C14.1569 6.5 15.5 7.84315 15.5 9.5V10.5C15.5 12.1569 14.1569 13.5 12.5 13.5H11.5C9.84315 13.5 8.5 12.1569 8.5 10.5V9.5Z" fill="currentColor"/>
-                            </svg>
-                            <span class="sr-only">itch.io</span>
-                        </a>
-                    </div>
-                </div>
+                                <span class="sr-only">Demo</span>
+                            </a>
+                        </div>
 
-                <!-- Project 3 -->
-                <div class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-teal-400/30 group">
-                    <div class="mb-4 h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl flex items-center justify-center group-hover:from-purple-600/30 group-hover:to-pink-600/30 transition-all duration-300">
-                        <img src="Fotos/Showbleas.jpg" alt="Système automatisé de fabrication d’obleas" class="h-full w-full object-cover rounded-lg rotated-90" />
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Système automatisé de fabrication d’obleas</h3>
-                    <p class="text-gray-300 mb-4 leading-relaxed">
-                        Conception et prototypage d’une ligne de production automatisée pour la fabrication de gaufrettes traditionnelles. Intégration de systèmes
-                        électroniques, contrôle et communication entre modules.                   </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                        <i class="fa-solid fa-c text-yellow-500"></i>
-                        </span>
-                        <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                        <i class="fa-solid fa-ethernet text-yellow-500"></i>Arduino
-                        </span>
-                        <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                        <i class="fa-solid fa-microchip text-yellow-500"></i>Hardware management
-                        </span>
+                    <!-- Project 2 -->
+                    <div
+                        class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-cyan-400/30 group">
+                        <div
+                            class="mb-4 h-48 bg-white rounded-xl flex items-center justify-center transition-all duration-300 p-0 overflow-hidden">
+                            <img src="Fotos/AmazonRagePrueba.jpg" alt="Amazon Rage"
+                                class="h-full w-full object-cover rounded-lg" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Amazon Rage</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Développement complet d’un jeu vidéo de qualité commerciale avec le moteur Unity, intégrant
+                            programmation en C#, level
+                            design, sound design et optimisation des performances.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fab fa-microsoft text-yellow-500"></i>C#
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fab fa-unity text-yellow-500"></i>Unity
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-solid fa-gamepad text-yellow-500"></i>Game programming
+                            </span>
+                        </div>
+                        <div class="project-links mt-3">
+                            <a class="project-btn github-btn" href="https://github.com/SeasterBlue/Amazon-Rage"
+                                target="_blank" rel="noopener" title="View source on GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span class="sr-only">GitHub</span>
+                            </a>
+                            <a class="project-btn itch-btn" href="https://seaster-blue.itch.io/amazon-rage"
+                                target="_blank" rel="noopener" title="View on itch.io">
+                                <svg class="itch-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12Z"
+                                        stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M8.5 9.5C8.5 7.84315 9.84315 6.5 11.5 6.5H12.5C14.1569 6.5 15.5 7.84315 15.5 9.5V10.5C15.5 12.1569 14.1569 13.5 12.5 13.5H11.5C9.84315 13.5 8.5 12.1569 8.5 10.5V9.5Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <span class="sr-only">itch.io</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-links mt-3">
-                        <a class="project-btn github-btn" href="https://github.com/sebachoh/Showbleas-Code" target="_blank" rel="noopener" title="View source on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
+
+                    <!-- Project 3 -->
+                    <div
+                        class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-teal-400/30 group">
+                        <div
+                            class="mb-4 h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl flex items-center justify-center group-hover:from-purple-600/30 group-hover:to-pink-600/30 transition-all duration-300">
+                            <img src="Fotos/Showbleas.jpg" alt="Système automatisé de fabrication d’obleas"
+                                class="h-full w-full object-cover rounded-lg rotated-90" />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Système automatisé de fabrication d’obleas</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Conception et prototypage d’une ligne de production automatisée pour la fabrication de
+                            gaufrettes traditionnelles. Intégration de systèmes
+                            électroniques, contrôle et communication entre modules. </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-solid fa-c text-yellow-500"></i>
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-solid fa-ethernet text-yellow-500"></i>Arduino
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-solid fa-microchip text-yellow-500"></i>Hardware management
+                            </span>
+                        </div>
+                        <div class="project-links mt-3">
+                            <a class="project-btn github-btn" href="https://github.com/sebachoh/Showbleas-Code"
+                                target="_blank" rel="noopener" title="View source on GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span class="sr-only">GitHub</span>
+                            </a>
+                        </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
         </section>
 
 
 
-    <!-- Footer -->
-    <footer id="contact" class="py-12 border-t border-gray-800 mt-16">
+        <!-- Footer -->
+        <footer id="contact" class="py-12 border-t border-gray-800 mt-16">
             <div class="max-w-6xl mx-auto text-center">
-                <div class="flex justify-center space-x-8 mb-8">
-                    <a href="mailto:sebaruiz01@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
+                <div class="flex justify-center space-x-4 sm:space-x-6 md:space-x-8 mb-6 sm:mb-8">
+                    <a href="mailto:sebaruiz01@gmail.com"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank"class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
+                    <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/sebachoh" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
+                    <a href="https://github.com/sebachoh" target="_blank"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
+                    <a href="#" target="_blank"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="http://instagram.com/sebachoh#" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
+                    <a href="http://instagram.com/sebachoh#" target="_blank"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
@@ -397,4 +519,5 @@ design, sound design et optimisation des performances.
 
     <script src="script.js"></script>
 </body>
+
 </html>
