@@ -1,73 +1,73 @@
 // Technologies data with icons
 const technologies = [
-    { 
-        name: "JavaScript", 
+    {
+        name: "JavaScript",
         icon: "devicon-javascript-plain",
         color: "text-yellow-400",
         hex: "#F7DF1E"
     },
-    { 
-        name: "TypeScript", 
+    {
+        name: "TypeScript",
         icon: "devicon-typescript-plain",
         color: "text-blue-400",
         hex: "#3178C6"
     },
-    { 
-        name: "Node.js", 
+    {
+        name: "Node.js",
         icon: "devicon-nodejs-plain",
         color: "text-green-400",
         hex: "#83CD29"
     },
-    { 
-        name: "HTML5", 
+    {
+        name: "HTML5",
         icon: "devicon-html5-plain",
         color: "text-orange-400",
         hex: "#E34F26"
     },
-    { 
-        name: "CSS3", 
+    {
+        name: "CSS3",
         icon: "devicon-css3-plain",
         color: "text-blue-400",
         hex: "#1572B6"
     },
-    { 
-        name: "Figma", 
+    {
+        name: "Figma",
         icon: "devicon-figma-plain",
         color: "text-purple-400",
         hex: "#F24E1E"
     },
-    { 
-        name: "Python", 
+    {
+        name: "Python",
         icon: "devicon-python-plain",
         color: "text-blue-300",
         hex: "#3776AB"
     },
-    { 
-        name: "MongoDB", 
+    {
+        name: "MongoDB",
         icon: "devicon-mongodb-plain",
         color: "text-green-400",
         hex: "#47A248"
     },
-    { 
-        name: "Tailwind", 
+    {
+        name: "Tailwind",
         icon: "devicon-tailwindcss-plain",
         color: "text-cyan-300",
         hex: "#06B6D4"
     },
-    { 
-        name: "Git", 
+    {
+        name: "Git",
         icon: "devicon-git-plain",
         color: "text-orange-400",
         hex: "#F05032"
     },
-    { 
-        name: "SASS", 
+    {
+        name: "SASS",
         icon: "devicon-sass-original",
         color: "text-pink-400",
         hex: "#CC6699"
     },
-    { 
-        name: "Docker", 
+    {
+        name: "Docker",
         icon: "devicon-docker-plain",
         color: "text-blue-400",
         hex: "#2496ED"
@@ -77,12 +77,12 @@ const technologies = [
 // Initialize tech stack with icons
 function initializeTechStack() {
     const techGrid = document.querySelector('.tech-grid');
-    
+
     technologies.forEach(tech => {
         const techCard = document.createElement('div');
         techCard.className = 'tech-card group';
         techCard.setAttribute('data-tech', tech.name);
-        
+
         techCard.innerHTML = `
             <div class="tech-icon-container">
                 <i class="${tech.icon} ${tech.color} text-6xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"></i>
@@ -136,7 +136,7 @@ function createCursorFollower() {
         // Increased easing factor for snappier follow (less delay)
         cursorX += (mouseX - cursorX) * 0.45;
         cursorY += (mouseY - cursorY) * 0.45;
-        
+
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
         // Keep translate centering from CSS; do not override transform here so scale transforms still work
@@ -206,13 +206,13 @@ function initializeSmoothScroll() {
 }
 
 // Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeTechStack();
     createCursorFollower();
     initializeScrollAnimations();
     initializeSmoothScroll();
     initializeMobileMenu();
-    
+
     // Add animated perimeter beams to project cards
     try { addPerimeterBeams(); } catch (e) { console.warn('addPerimeterBeams failed', e); }
 
@@ -224,9 +224,9 @@ function initializeMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuLinks = document.querySelectorAll('.mobile-menu-link');
-    
+
     if (!menuBtn || !mobileMenu) return;
-    
+
     // Toggle menu
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
@@ -234,7 +234,7 @@ function initializeMobileMenu() {
         // Prevent body scroll when menu is open
         document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
-    
+
     // Close menu when clicking a link
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -243,7 +243,7 @@ function initializeMobileMenu() {
             document.body.style.overflow = '';
         });
     });
-    
+
     // Close menu when clicking outside
     mobileMenu.addEventListener('click', (e) => {
         if (e.target === mobileMenu) {
@@ -295,49 +295,49 @@ function addPerimeterBeams() {
         base.setAttribute('stroke-width', '1');
         svg.appendChild(base);
 
-    // moving segment + aura (white, thin, longer)
-    // defs for blur (aura)
-    const defs = document.createElementNS(svgns, 'defs');
-    const filt = document.createElementNS(svgns, 'filter');
-    const fid = `blur${idx}`;
-    filt.setAttribute('id', fid);
-    const fe = document.createElementNS(svgns, 'feGaussianBlur');
-    fe.setAttribute('stdDeviation', '10');
-    fe.setAttribute('result', 'blurOut');
-    filt.appendChild(fe);
-    defs.appendChild(filt);
-    svg.appendChild(defs);
+        // moving segment + aura (white, thin, longer)
+        // defs for blur (aura)
+        const defs = document.createElementNS(svgns, 'defs');
+        const filt = document.createElementNS(svgns, 'filter');
+        const fid = `blur${idx}`;
+        filt.setAttribute('id', fid);
+        const fe = document.createElementNS(svgns, 'feGaussianBlur');
+        fe.setAttribute('stdDeviation', '10');
+        fe.setAttribute('result', 'blurOut');
+        filt.appendChild(fe);
+        defs.appendChild(filt);
+        svg.appendChild(defs);
 
-    // aura: blurred wider white stroke beneath the main beam
-    const aura = document.createElementNS(svgns, 'rect');
-    aura.setAttribute('x', '4');
-    aura.setAttribute('y', '4');
-    aura.setAttribute('width', String(w - 8));
-    aura.setAttribute('height', String(h - 8));
-    aura.setAttribute('rx', '12');
-    aura.setAttribute('ry', '12');
-    aura.setAttribute('fill', 'none');
-    aura.setAttribute('stroke', '#ffffff');
-    aura.setAttribute('stroke-width', '10');
-    aura.setAttribute('stroke-linecap', 'round');
-    aura.setAttribute('opacity', '0.22');
-    aura.setAttribute('filter', `url(#${fid})`);
-    svg.appendChild(aura);
+        // aura: blurred wider white stroke beneath the main beam
+        const aura = document.createElementNS(svgns, 'rect');
+        aura.setAttribute('x', '4');
+        aura.setAttribute('y', '4');
+        aura.setAttribute('width', String(w - 8));
+        aura.setAttribute('height', String(h - 8));
+        aura.setAttribute('rx', '12');
+        aura.setAttribute('ry', '12');
+        aura.setAttribute('fill', 'none');
+        aura.setAttribute('stroke', '#ffffff');
+        aura.setAttribute('stroke-width', '10');
+        aura.setAttribute('stroke-linecap', 'round');
+        aura.setAttribute('opacity', '0.22');
+        aura.setAttribute('filter', `url(#${fid})`);
+        svg.appendChild(aura);
 
-    const beam = document.createElementNS(svgns, 'rect');
-    beam.setAttribute('x', '4');
-    beam.setAttribute('y', '4');
-    beam.setAttribute('width', String(w - 8));
-    beam.setAttribute('height', String(h - 8));
-    beam.setAttribute('rx', '12');
-    beam.setAttribute('ry', '12');
-    beam.setAttribute('fill', 'none');
-    // white thin beam
-    beam.setAttribute('stroke', '#ffffff');
-    beam.setAttribute('stroke-width', '1.5');
-    beam.setAttribute('stroke-linecap', 'round');
+        const beam = document.createElementNS(svgns, 'rect');
+        beam.setAttribute('x', '4');
+        beam.setAttribute('y', '4');
+        beam.setAttribute('width', String(w - 8));
+        beam.setAttribute('height', String(h - 8));
+        beam.setAttribute('rx', '12');
+        beam.setAttribute('ry', '12');
+        beam.setAttribute('fill', 'none');
+        // white thin beam
+        beam.setAttribute('stroke', '#ffffff');
+        beam.setAttribute('stroke-width', '1.5');
+        beam.setAttribute('stroke-linecap', 'round');
 
-    svg.appendChild(beam);
+        svg.appendChild(beam);
         card.appendChild(svg);
 
         // after appended to DOM we can measure the path length
@@ -348,24 +348,24 @@ function addPerimeterBeams() {
             length = 2 * ((w - 8) + (h - 8));
         }
 
-    // visible segment length: longer fraction of perimeter (or min 60px) for a longer, thinner streak
-    const segment = Math.max(60, Math.round(length * 0.14));
+        // visible segment length: longer fraction of perimeter (or min 60px) for a longer, thinner streak
+        const segment = Math.max(60, Math.round(length * 0.14));
 
-    // use dasharray where total equals perimeter (segment + gap = length)
-    beam.setAttribute('stroke-dasharray', `${segment} ${Math.max(1, length - segment)}`);
-    beam.setAttribute('stroke-dashoffset', '0');
+        // use dasharray where total equals perimeter (segment + gap = length)
+        beam.setAttribute('stroke-dasharray', `${segment} ${Math.max(1, length - segment)}`);
+        beam.setAttribute('stroke-dashoffset', '0');
 
-    // use <animate> to slide the dashoffset around the perimeter for the primary beam
-    // make it slower to the user's request
-    const dur = (5 + (idx % 3) * 0.8) + 's';
-    const animate = document.createElementNS(svgns, 'animate');
-    animate.setAttribute('attributeName', 'stroke-dashoffset');
-    animate.setAttribute('from', '0');
-    animate.setAttribute('to', String(-length));
-    animate.setAttribute('dur', dur);
-    animate.setAttribute('repeatCount', 'indefinite');
-    animate.setAttribute('calcMode', 'linear');
-    beam.appendChild(animate);
+        // use <animate> to slide the dashoffset around the perimeter for the primary beam
+        // make it slower to the user's request
+        const dur = (5 + (idx % 3) * 0.8) + 's';
+        const animate = document.createElementNS(svgns, 'animate');
+        animate.setAttribute('attributeName', 'stroke-dashoffset');
+        animate.setAttribute('from', '0');
+        animate.setAttribute('to', String(-length));
+        animate.setAttribute('dur', dur);
+        animate.setAttribute('repeatCount', 'indefinite');
+        animate.setAttribute('calcMode', 'linear');
+        beam.appendChild(animate);
     });
 
     // Recreate on resize to adapt to changed card sizes
@@ -522,7 +522,7 @@ function startAnimationLoop(earth, scene, camera, renderer, container) {
 }
 
 // Initialize globe after DOM content loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     try {
         initThreeGlobe();
     } catch (err) {
@@ -531,14 +531,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add some interactive effects
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Add hover effects to project cards
     const projectCards = document.querySelectorAll('.bg-gray-900\\/50');
     projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-8px)';
         });
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0)';
         });
     });
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click effects to tech cards
     const techCards = document.querySelectorAll('.tech-card');
     techCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             const tech = this.getAttribute('data-tech');
             console.log(`Clicked on: ${tech}`);
             // Aquí puedes agregar más interactividad, como modals o navegación

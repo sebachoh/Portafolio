@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Ruiz - Developer & Mechatronics</title>
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <title>Sebastian Ruiz - Stage</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="SR" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Devicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -25,7 +25,7 @@
         <!-- Header -->
         <header class="flex justify-between items-center py-4 sm:py-6">
             <div class="avatar-container">
-                <img src="Logo.png" alt="Logo Sebastian Ruiz"
+                <img src="/assets/img/logos/Logo.png" alt="Logo Sebastian Ruiz"
                     class="w-16 h-16 md:w-20 md:h-20 rounded-full border-1 border-gray-600 hover:border-teal-400 transition-colors duration-300 object-contain scale-90">
             </div>
 
@@ -36,8 +36,8 @@
 
             <!-- Desktop navigation -->
             <nav class="social-links hidden md:flex gap-6">
-                <a href="#about"
-                    class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">À propos</a>
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">À
+                    propos</a>
                 <a href="#experience"
                     class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Expérience</a>
                 <a href="#education"
@@ -53,7 +53,8 @@
         <div id="mobile-menu" class="mobile-menu">
             <nav class="flex flex-col items-center justify-center h-full gap-8">
                 <a href="#about"
-                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">À propos</a>
+                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">À
+                    propos</a>
                 <a href="#experience"
                     class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Expérience</a>
                 <a href="#education"
@@ -74,16 +75,10 @@
                     Sebastian Ruiz
                 </h1>
                 <p class="text-lg sm:text-xl md:text-2xl text-gray-300 font-light tracking-wider custom-font">
-                    Developer & Mechatronics
+                    Développeur Logiciel & Ingénieur en Mécatronique
                 </p>
             </div>
         </section>
-
-
-
-        <!-- (Formation moved below À propos) -->
-
-        <!-- (Globe moved into À propos -> Langues column) -->
 
         <!-- Three.js and controls (loaded before script.js) -->
         <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
@@ -104,18 +99,20 @@
                     <div class="w-full md:w-1/2">
                         <div class="space-y-4 text-lg text-gray-300 leading-relaxed custom-font-migra">
                             <p>
-                                I’m a passionate developer and engineer from Colombia, based in France, with a
-                                background in Mechatronic Engineering and a strong interest in intelligent systems and
-                                interactive technologies.
+                                Je suis un développeur et ingénieur passionné originaire de Colombie, basé en France,
+                                avec une formation en ingénierie mécatronique et un fort intérêt pour les systèmes
+                                intelligents et les technologies interactives.
                             </p>
                             <p>
-                                Je me spécialise dans le développement logiciel, notamment avec C#, Python, C++ et
+                                Je me spécialise dans le développement logiciel, notamment avec C#, Python, et
                                 Unity, et j'aime créer des expériences numériques interactives et innovantes qui
                                 fusionnent technologie, créativité et ingénierie.
                             </p>
                             <p>
-                                I’m seeking an internship opportunity where I can apply my skills and contribute to
-                                impactful engineering and digital innovation projects.
+                                Je suis à la recherche d’un stage où je pourrais mettre mes compétences en pratique et
+                                contribuer à des projets d’ingénierie et d’innovation numérique ayant un impact
+                                significatif, à partir d’avril 2026, dans le développement logiciel, le cloud et
+                                l’infrastructure.
                             </p>
                             <p class="pt-2">
                                 📩 Contactez-moi à <a href="mailto:sebaruiz01@gmail.com"
@@ -162,7 +159,8 @@
                             <!-- Loisirs card: two GIFs glued together inside a single animated card -->
                             <div class="hobby-card" aria-hidden="false">
                                 <div class="hobby-item">
-                                    <img id="pianoGif" src="gifs/cat-playing-piano-funny.gif" alt="Piano" class=""
+                                    <img id="pianoGif" src="/assets/img/gifs/cat-playing-piano-funny.gif" alt="Piano"
+                                        class=""
                                         onerror="document.getElementById('pianoIcon').style.display='inline-block'; this.style.display='none';"
                                         onload="document.getElementById('pianoIcon').style.display='none';" />
                                     <i id="pianoIcon" class="fa-solid fa-music text-teal-400 text-4xl"
@@ -170,7 +168,8 @@
                                 </div>
 
                                 <div class="hobby-item">
-                                    <img id="photoGif" src="gifs/spiderman-peter-parker.gif" alt="Fotografía" class=""
+                                    <img id="photoGif" src="/assets/img/gifs/spiderman-peter-parker.gif"
+                                        alt="Fotografía" class=""
                                         onerror="document.getElementById('photoIcon').style.display='inline-block'; this.style.display='none';"
                                         onload="document.getElementById('photoIcon').style.display='none';" />
                                     <i id="photoIcon" class="fa-solid fa-camera-retro text-teal-400 text-4xl"
@@ -214,7 +213,7 @@
                     <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosUni/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe"
+                                <img src="/assets/img/logos/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe"
                                     class="edu-photo-img imt-photo" onerror="this.style.display='none'" />
                             </div>
                             <div class="flex-1">
@@ -234,7 +233,7 @@
                     <div class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosUni/utp-universidad-tecnologica-de-pereira-logo-png_seeklogo-259118.png"
+                                <img src="/assets/img/logos/utp-universidad-tecnologica-de-pereira-logo-png_seeklogo-259118.png"
                                     alt="Universidad Tecnológica de Pereira" class="edu-photo-img"
                                     onerror="this.style.display='none'" />
                             </div>
@@ -275,8 +274,8 @@
                             CEA Rutas.</p>
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosWork/logoRutas.jpeg" alt="CEA Rutas" class="edu-photo-img exp-photo"
-                                    onerror="this.style.display='none'" />
+                                <img src="/assets/img/logos/logoRutas.jpeg" alt="CEA Rutas"
+                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
                             </div>
                             <div class="flex-1">
                                 <p class="text-gray-300 leading-relaxed custom-font-migra">
@@ -303,7 +302,7 @@
                         <p class="text-lg text-gray-500 custom-font-migra hover:text-lime-700 mb-4">TecnoParque SENA</p>
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="logosWork/logoSena2.png" alt="TecnoParque SENA"
+                                <img src="/assets/img/logos/logoSena2.png" alt="TecnoParque SENA"
                                     class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
                             </div>
                             <div class="flex-1">
@@ -332,7 +331,7 @@
                         class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-lime-700/30 group">
                         <div
                             class="mb-4 h-48 bg-white rounded-xl flex items-center justify-center transition-all duration-300 p-4">
-                            <img src="Mecani.png" alt="Mecani project"
+                            <img src="/assets/img/project-items/mecani.png" alt="Mecani project"
                                 class="h-full w-auto object-contain rounded-lg" />
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3">AI-Chatbot with RAG</h3>
@@ -394,7 +393,7 @@
                         class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-cyan-400/30 group">
                         <div
                             class="mb-4 h-48 bg-white rounded-xl flex items-center justify-center transition-all duration-300 p-0 overflow-hidden">
-                            <img src="Fotos/AmazonRagePrueba.jpg" alt="Amazon Rage"
+                            <img src="/assets/img/project-items/AmazonRagePrueba.jpg" alt="Amazon Rage"
                                 class="h-full w-full object-cover rounded-lg" />
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3">Amazon Rage</h3>
@@ -445,7 +444,8 @@
                         class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-teal-400/30 group">
                         <div
                             class="mb-4 h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl flex items-center justify-center group-hover:from-purple-600/30 group-hover:to-pink-600/30 transition-all duration-300">
-                            <img src="Fotos/Showbleas.jpg" alt="Système automatisé de fabrication d’obleas"
+                            <img src="/assets/img/project-items/Showbleas.jpg"
+                                alt="Système automatisé de fabrication d’obleas"
                                 class="h-full w-full object-cover rounded-lg rotated-90" />
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3">Système automatisé de fabrication d’obleas</h3>
@@ -518,7 +518,7 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>

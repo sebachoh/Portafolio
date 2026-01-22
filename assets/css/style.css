@@ -1,34 +1,34 @@
 @font-face {
     font-family: 'Ahsing';
-    src: url('font/ahsing-regular.otf') format('woff');
+    src: url('assets/fonts/ahsing-regular.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Casa';
-    src: url('font/casa-Regular.otf') format('woff');
+    src: url('assets/fonts/casa-Regular.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Barbra';
-    src: url('font/barbra-font/Barbra-Regular.otf') format('woff');
+    src: url('assets/fonts/barbra-font/Barbra-Regular.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Coterie';
-    src: url('font/coterie-regular.ttf') format('woff');
+    src: url('assets/fonts/coterie-regular.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Migra';
-    src: url('font/migra-font-familygimlet-superfamily-font/migra-bold.otf') format('woff');
+    src: url('assets/fonts/migra-font-familygimlet-superfamily-font/migra-bold.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
