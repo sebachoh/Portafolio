@@ -171,8 +171,7 @@
                             <!-- Loisirs card: two GIFs glued together inside a single animated card -->
                             <div class="hobby-card" aria-hidden="false">
                                 <div class="hobby-item">
-                                    <img id="pianoGif" src="/assets/img/gifs/cat-playing-piano-funny.gif" alt="Piano"
-                                        class=""
+                                    <img id="pianoGif" src="/assets/img/photos/PlayingPiano.jpg" alt="Piano" class=""
                                         onerror="document.getElementById('pianoIcon').style.display='inline-block'; this.style.display='none';"
                                         onload="document.getElementById('pianoIcon').style.display='none';" />
                                     <i id="pianoIcon" class="fa-solid fa-music text-teal-400 text-4xl"
@@ -203,9 +202,10 @@
                 <h1
                     class="panel-title text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 text-center uppercase tracking-tight custom-font-barbra tracking-tight">
                     Stack Technique</h1>
-                <div
-                    class="tech-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-3 max-w-6xl mx-auto custom-font">
-                    <!-- Los iconos se generarán automáticamente con JavaScript -->
+                <div class="marquee-container max-w-6xl mx-auto">
+                    <div class="marquee-content custom">
+                        <!-- Logos will be injected here via JavaScript -->
+                    </div>
                 </div>
             </div>
             <div class="panel-decoration h-8 bg-gradient-to-r from-white via-yellow-500 to-white rounded-b-3xl"></div>
@@ -472,7 +472,7 @@
                         class="bg-gray-900/50 rounded-2xl p-6 hover:bg-gray-900/70 transition-all duration-300 border border-gray-800 hover:border-teal-400/30 group">
                         <div
                             class="mb-4 h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl flex items-center justify-center group-hover:from-purple-600/30 group-hover:to-pink-600/30 transition-all duration-300">
-                            <img src="/assets/img/project-items/Showbleas.jpg"
+                            <img src="/assets/img/project-items/Projet-MicroServices.png"
                                 alt="Boutique en ligne colombienne – Microservices & Docker"
                                 class="h-full w-full object-cover rounded-lg rotated-90" />
                         </div>
@@ -485,20 +485,25 @@
                         <div class="flex flex-wrap gap-2">
                             <span
                                 class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                                <i class="fa-solid fa-c text-yellow-500"></i>
+                                <i class="fa-brands fa-java text-yellow-500"></i>Java
                             </span>
                             <span
                                 class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                                <i class="fa-solid fa-ethernet text-yellow-500"></i>Arduino
+                                <i class="fa-brands fa-react text-yellow-500"></i>React
                             </span>
                             <span
                                 class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
-                                <i class="fa-solid fa-microchip text-yellow-500"></i>Hardware management
+                                <i class="fa-brands fa-docker text-yellow-500"></i>Docker
+                            </span>
+                            <span
+                                class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-2 border border-yellow-500/30 transition-all hover:bg-yellow-500/30 hover:scale-105">
+                                <i class="fa-brands fa-uikit text-yellow-500"></i>Tailwind CSS
                             </span>
                         </div>
                         <div class="project-links mt-3">
-                            <a class="project-btn github-btn" href="https://github.com/sebachoh/Showbleas-Code"
-                                target="_blank" rel="noopener" title="View source on GitHub">
+                            <a class="project-btn github-btn"
+                                href="https://github.com/sebachoh/ArchitectureMicroServices" target="_blank"
+                                rel="noopener" title="View source on GitHub">
                                 <i class="fab fa-github" aria-hidden="true"></i>
                                 <span class="sr-only">GitHub</span>
                             </a>

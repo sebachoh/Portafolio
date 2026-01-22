@@ -74,28 +74,28 @@ const technologies = [
     },
 ];
 
-// Initialize tech stack with icons
+// Initialize tech stack with icons for Marquee
 function initializeTechStack() {
-    const techGrid = document.querySelector('.tech-grid');
+    const marqueeContent = document.querySelector('.marquee-content');
+    if (!marqueeContent) return;
 
-    technologies.forEach(tech => {
+    // Create a function to generate tech cards
+    const createTechCard = (tech) => {
         const techCard = document.createElement('div');
         techCard.className = 'tech-card group';
         techCard.setAttribute('data-tech', tech.name);
 
         techCard.innerHTML = `
             <div class="tech-icon-container">
-                <i class="${tech.icon} ${tech.color} text-6xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"></i>
+                <i class="${tech.icon} ${tech.color} text-4xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"></i>
             </div>
+            <span class="tech-label space-y-2 text-[11px] custom-font-medium text-white tracking-[-0.03em]">${tech.name}</span>
         `;
 
-        // Apply per-card hover behavior using the hex color (if provided)
         const iconEl = techCard.querySelector('i');
         if (tech.hex) {
-            // set initial icon color to the hex (keeps Tailwind class as fallback)
             iconEl.style.color = tech.hex;
 
-            // On hover, light up the card with a subtle gradient and border using the tech color
             techCard.addEventListener('mouseenter', () => {
                 techCard.style.borderColor = tech.hex + '55';
                 techCard.style.background = `linear-gradient(135deg, ${tech.hex}22, rgba(255,255,255,0.02))`;
@@ -107,8 +107,12 @@ function initializeTechStack() {
                 iconEl.style.filter = '';
             });
         }
+        return techCard;
+    };
 
-        techGrid.appendChild(techCard);
+    // Add technologies twice for seamless looping
+    [...technologies, ...technologies].forEach(tech => {
+        marqueeContent.appendChild(createTechCard(tech));
     });
 }
 

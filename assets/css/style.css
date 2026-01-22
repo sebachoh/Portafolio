@@ -53,6 +53,10 @@ h3 {
     font-family: 'Migra', sans-serif;
 }
 
+.custom-font-barbra {
+    font-family: 'Barbra', sans-serif;
+}
+
 /* Personalizar Tailwind */
 @layer utilities {
     .bg-grid-pattern {
@@ -152,26 +156,56 @@ body {
     box-shadow: 0 24px 60px rgba(255, 255, 255, 0.04), inset 0 0 40px rgba(255, 255, 255, 0.02);
 }
 
-.tech-grid {
-    display: grid;
+/* Marquee Styles */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    /* Masking gradient for smooth edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
     gap: 1.5rem;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .tech-card {
     position: relative;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
+    border-radius: 5px;
+    padding: 1.5rem 2.5rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.4s ease;
     overflow: hidden;
-    min-height: 140px;
+    min-height: 100px;
+    min-width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .tech-card:hover {
@@ -278,7 +312,6 @@ body {
 }
 
 .tech-label {
-    font-family: 'Migra', sans-serif;
     font-size: 1.1rem;
     color: #ffffff;
     font-weight: 600;
