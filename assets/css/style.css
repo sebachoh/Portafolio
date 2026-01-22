@@ -169,16 +169,15 @@ body {
 
 .marquee-content {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
     width: max-content;
-    animation: scroll 40s linear infinite;
-    /* Slower for better readability */
+    animation: scroll 10s linear infinite;
 }
 
 /* SVG styling in tech cards */
 .tech-card svg {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     transition: all 0.3s ease;
 }
 
@@ -212,13 +211,17 @@ body {
     cursor: pointer;
     transition: all 0.4s ease;
     overflow: hidden;
-    min-height: 100px;
-    min-width: 120px;
+    min-height: 80px;
+    /* Smaller height */
+    min-width: 100px;
+    /* Smaller width */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    /* Reduced padding */
 }
 
 .tech-card:hover {
