@@ -1,119 +1,19 @@
-// Technologies data with icons
-const technologies = [
-    {
-        name: "JavaScript",
-        icon: "devicon-javascript-plain",
-        color: "text-yellow-400",
-        hex: "#F7DF1E"
-    },
-    {
-        name: "TypeScript",
-        icon: "devicon-typescript-plain",
-        color: "text-blue-400",
-        hex: "#3178C6"
-    },
-    {
-        name: "Node.js",
-        icon: "devicon-nodejs-plain",
-        color: "text-green-400",
-        hex: "#83CD29"
-    },
-    {
-        name: "HTML5",
-        icon: "devicon-html5-plain",
-        color: "text-orange-400",
-        hex: "#E34F26"
-    },
-    {
-        name: "CSS3",
-        icon: "devicon-css3-plain",
-        color: "text-blue-400",
-        hex: "#1572B6"
-    },
-    {
-        name: "Figma",
-        icon: "devicon-figma-plain",
-        color: "text-purple-400",
-        hex: "#F24E1E"
-    },
-    {
-        name: "Python",
-        icon: "devicon-python-plain",
-        color: "text-blue-300",
-        hex: "#3776AB"
-    },
-    {
-        name: "MongoDB",
-        icon: "devicon-mongodb-plain",
-        color: "text-green-400",
-        hex: "#47A248"
-    },
-    {
-        name: "Tailwind",
-        icon: "devicon-tailwindcss-plain",
-        color: "text-cyan-300",
-        hex: "#06B6D4"
-    },
-    {
-        name: "Git",
-        icon: "devicon-git-plain",
-        color: "text-orange-400",
-        hex: "#F05032"
-    },
-    {
-        name: "SASS",
-        icon: "devicon-sass-original",
-        color: "text-pink-400",
-        hex: "#CC6699"
-    },
-    {
-        name: "Docker",
-        icon: "devicon-docker-plain",
-        color: "text-blue-400",
-        hex: "#2496ED"
-    },
-];
-
-// Initialize tech stack with icons for Marquee
+// Initialize tech stack marquee by cloning items for seamless loop
 function initializeTechStack() {
     const marqueeContent = document.querySelector('.marquee-content');
     if (!marqueeContent) return;
 
-    // Create a function to generate tech cards
-    const createTechCard = (tech) => {
-        const techCard = document.createElement('div');
-        techCard.className = 'tech-card group';
-        techCard.setAttribute('data-tech', tech.name);
+    // Clone the items to ensure the marquee is long enough to loop seamlessly
+    const cards = Array.from(marqueeContent.children);
 
-        techCard.innerHTML = `
-            <div class="tech-icon-container">
-                <i class="${tech.icon} ${tech.color} text-4xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"></i>
-            </div>
-            <span class="tech-label space-y-2 text-[11px] custom-font-medium text-white tracking-[-0.03em]">${tech.name}</span>
-        `;
-
-        const iconEl = techCard.querySelector('i');
-        if (tech.hex) {
-            iconEl.style.color = tech.hex;
-
-            techCard.addEventListener('mouseenter', () => {
-                techCard.style.borderColor = tech.hex + '55';
-                techCard.style.background = `linear-gradient(135deg, ${tech.hex}22, rgba(255,255,255,0.02))`;
-                iconEl.style.filter = 'drop-shadow(0 6px 14px ' + tech.hex + '44)';
-            });
-            techCard.addEventListener('mouseleave', () => {
-                techCard.style.borderColor = '';
-                techCard.style.background = '';
-                iconEl.style.filter = '';
-            });
-        }
-        return techCard;
-    };
-
-    // Add technologies twice for seamless looping
-    [...technologies, ...technologies].forEach(tech => {
-        marqueeContent.appendChild(createTechCard(tech));
+    // Duplicate the cards twice to ensure there's enough content to fill the screen and loop
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        marqueeContent.appendChild(clone);
     });
+
+    // Optional: Add hover pause logic if not already in CSS
+    // The CSS handle this with: .marquee-container:hover .marquee-content { animation-play-state: paused; }
 }
 
 // Enhanced cursor follower
