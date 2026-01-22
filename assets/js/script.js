@@ -116,12 +116,31 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeScrollAnimations();
     initializeSmoothScroll();
     initializeMobileMenu();
+    initCardSpotlight();
 
     // Add animated perimeter beams to project cards
     try { addPerimeterBeams(); } catch (e) { console.warn('addPerimeterBeams failed', e); }
 
     console.log('Portfolio loaded successfully! 🚀');
 });
+
+// Interactive Card Spotlight logic
+function initCardSpotlight() {
+    const handleOnMouseMove = e => {
+        const { currentTarget: target } = e;
+        const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+        target.style.setProperty("--mouse-x", `${x}px`);
+        target.style.setProperty("--mouse-y", `${y}px`);
+    };
+
+    const cards = document.querySelectorAll(".card-spotlight, .tech-card, .rounded-2xl.border");
+    cards.forEach(card => {
+        card.onmousemove = e => handleOnMouseMove(e);
+    });
+}
 
 // Mobile menu functionality
 function initializeMobileMenu() {

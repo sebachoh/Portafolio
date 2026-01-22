@@ -65,6 +65,23 @@ h3 {
             radial-gradient(circle at 75% 75%, rgba(10, 201, 244, 0.05) 1px, transparent 0);
         background-size: 50px 50px, 100px 100px;
     }
+
+    .card-spotlight::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(255, 255, 255, 0.08),
+                transparent 40%);
+        opacity: 0;
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1;
+    }
+
+    .card-spotlight:hover::before {
+        opacity: 1;
+    }
 }
 
 /* Efectos globales */
@@ -120,23 +137,23 @@ body {
     background-size: 50px 50px, 25px 25px;
     background-position: center center;
     position: relative;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Translucent green accent for the whole Tech Stack panel on hover
    Adds a subtle green overlay and slight border/shadow tint when hovering the stack container */
 .stack-panel .panel-body::before {
-    /* Soft interior white beam matching education/experience panels */
+    /* Unified spotlight foundation */
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0) 80%);
-    mix-blend-mode: screen;
+    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.08),
+            transparent 40%);
     opacity: 0;
-    transform: translateX(-18%);
-    filter: blur(10px);
-    transition: opacity 0.45s ease, transform 0.6s cubic-bezier(.2, .8, .2, 1);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1;
 }
 
@@ -148,12 +165,13 @@ body {
 
 .stack-panel:hover .panel-body::before {
     opacity: 1;
-    transform: translateX(0);
 }
 
 .stack-panel:hover .panel-body {
-    border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 24px 60px rgba(255, 255, 255, 0.04), inset 0 0 40px rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 30px 60px -12px rgba(0, 0, 0, 0.5),
+        inset 0 0 40px rgba(255, 255, 255, 0.02);
 }
 
 /* Marquee Styles */
@@ -178,7 +196,7 @@ body {
 .tech-card svg {
     width: 2rem;
     height: 2rem;
-    transition: all 0.3s ease;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tech-card:hover svg {
@@ -209,7 +227,7 @@ body {
     padding: 1.5rem 2.5rem;
     text-align: center;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
     min-height: 80px;
     /* Smaller height */
@@ -225,18 +243,9 @@ body {
 }
 
 .tech-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.5);
-    /* Cambiado a blanco */
-    background: rgba(255, 255, 255, 0.05);
-    /* Cambiado a blanco */
-    box-shadow:
-        0 20px 40px rgba(255, 255, 255, 0.15),
-        /* Cambiado a blanco */
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        /* Cambiado a blanco */
-        inset 0 0 20px rgba(255, 255, 255, 0.05);
-    /* Cambiado a blanco */
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 /* Contenedor de puntos mejorado */
@@ -779,7 +788,7 @@ select {
 .rounded-2xl.border {
     position: relative;
     /* needed for ::after */
-    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .rounded-2xl.border::after {
@@ -788,23 +797,21 @@ select {
     inset: 0;
     pointer-events: none;
     border-radius: inherit;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.00) 80%);
-    mix-blend-mode: screen;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.1),
+            transparent 40%);
     opacity: 0;
-    transform: translateX(-18%);
-    filter: blur(10px);
-    transition: opacity 0.45s ease, transform 0.6s cubic-bezier(.2, .8, .2, 1);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .rounded-2xl.border:hover {
-    border-color: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.06), inset 0 0 40px rgba(255, 255, 255, 0.03);
-    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 .rounded-2xl.border:hover::after {
     opacity: 1;
-    transform: translateX(0);
 }
 
 /* Slightly stronger effect for inner panels with darker background */
@@ -867,7 +874,6 @@ select {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     overflow: visible;
-    transition: border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
 }
 
 .project-beam {
