@@ -37,6 +37,10 @@ h1 {
     font-family: 'Barbra', sans-serif;
 }
 
+h2 {
+    font-family: 'Barbra', sans-serif;
+}
+
 h3 {
     font-family: 'Migra', sans-serif;
 }
@@ -536,7 +540,7 @@ select {
     gap: 0;
     width: 100%;
     max-width: 520px;
-    height: 200px;
+    height: 250px;
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
