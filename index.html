@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Ruiz - Stage</title>
+    <title>Sebastian Ruiz - Alternance</title>
     <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
     <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
@@ -30,8 +30,10 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl z-50 relative">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-btn" class="md:hidden z-50 relative" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <!-- Desktop navigation -->
@@ -51,24 +53,36 @@
 
         <!-- Mobile menu overlay -->
         <div id="mobile-menu" class="mobile-menu">
-            <nav class="flex flex-col items-center justify-center h-full gap-8">
-                <a href="#about"
-                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">À
-                    propos</a>
-                <a href="#projects"
-                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Projets</a>
-                <a href="#experience"
-                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Expérience</a>
-                <a href="#education"
-                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Formation</a>
-                <a href="#contact"
-                    class="mobile-menu-link text-3xl font-bold text-white hover:text-gray-300 transition-colors">Contact</a>
+            <nav>
+                <a href="#about" class="mobile-menu-link">
+                    <span class="num">01 //</span> À propos
+                </a>
+                <a href="#projects" class="mobile-menu-link">
+                    <span class="num">02 //</span> Projets
+                </a>
+                <a href="#experience" class="mobile-menu-link">
+                    <span class="num">03 //</span> Expérience
+                </a>
+                <a href="#education" class="mobile-menu-link">
+                    <span class="num">04 //</span> Formation
+                </a>
+                <a href="#contact" class="mobile-menu-link">
+                    <span class="num">05 //</span> Contact
+                </a>
             </nav>
+            <div class="mobile-menu-footer">
+                <div class="mobile-menu-socials">
+                    <a href="https://github.com/sebachoh" target="_blank" class="fa-brands fa-github"></a>
+                    <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank" class="fa-brands fa-linkedin"></a>
+                    <a href="mailto:sebaruiz01@gmail.com" class="fa-solid fa-envelope"></a>
+                    <a href="#" onclick="showCVAlert(event)" class="fa-solid fa-download" title="Télécharger mon CV"></a>
+                </div>
+            </div>
         </div>
 
         <!-- Hero Section -->
         <section
-            class="min-h-[60vh] sm:min-h-[70vh] md:min-h-[78vh] flex items-center justify-center text-center py-8 sm:py-12 md:py-16">
+            class="min-h-[35vh] sm:min-h-[45vh] md:min-h-[60vh] flex items-center justify-center text-center py-8 sm:py-12 md:py-16">
             <div class="space-y-4">
                 <h1
                     class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
@@ -124,9 +138,9 @@
                                     class="fa-brands fa-github text-3xl text-white hover:scale-110 transition-all cursor-pointer"></a>
                                 <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank"
                                     class="fa-brands fa-linkedin text-3xl text-white hover:scale-110 transition-all cursor-pointer"></a>
-                                <a href="/assets/CV/CV Sebastian Ruiz Ingenieur.pdf"
-                                    download="CV Sebastian Ruiz Alternance.pdf"
-                                    class="fa-solid fa-download text-3xl text-white hover:scale-110 transition-all cursor-pointer"></a>
+                                <a href="#" onclick="showCVAlert(event)"
+                                    class="fa-solid fa-download text-3xl text-white hover:scale-110 transition-all cursor-pointer"
+                                    title="Télécharger mon CV"></a>
                             </div>
                         </div>
                     </div>
@@ -293,16 +307,18 @@
 
         <section id="experience" class="max-w-6xl mx-auto py-8 sm:py-12 md:py-16">
             <div
-                class="mx-auto max-w-5xl card-spotlight py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md transition-all duration-500">
+                class="mx-auto max-w-5xl card-spotlight py-6 px-6 rounded-2xl bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/10 shadow-md transition-all duration-500">
                 <h1 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-tight custom-font-barbra">
                     Expérience</h1>
                 <div class="space-y-8">
                     <!-- Expérience 5G (Stage de 4ème année) -->
                     <div
-                        class="bg-gray-900/50 card-spotlight rounded-2xl border p-8 hover:bg-gray-900/70 transition-all duration-500 border border-gray-800 hover:border-blue-500/30">
+                        class="bg-black/40 card-spotlight rounded-2xl p-8 hover:bg-black/60 transition-all duration-500 border border-white/10 hover:border-white/20">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                            <h3 class="text-2xl font-bold text-white custom-font-migra tracking-[-0.03em]">Stage Ingénieur - Projet Métavers 5G</h3>
-                            <span class="text-gray-600 font-semibold mt-2 md:mt-0 custom-font-migra">04/2026 - 08/2026</span>
+                            <h3 class="text-2xl font-bold text-white custom-font-migra tracking-[-0.03em]">Stage de 4
+                                mois (4ème Année) — Métavers & 5G Privée</h3>
+                            <span class="text-gray-400 font-medium mt-2 md:mt-0 text-sm tracking-normal"
+                                style="font-family: system-ui, -apple-system, sans-serif;">04/2026 - 08/2026</span>
                         </div>
                         <p
                             class="text-lg text-gray-500 hover:text-white transition-colors duration-300 tracking-[-0.06em] mb-4">
@@ -315,7 +331,11 @@
                             <div class="flex-1">
                                 <p
                                     class="space-y-4 text-lg text-gray-200 leading-snug tracking-[-0.06em] custom-font-medium">
-                                    Conception et développement d'une application innovante pour le rendu 3D et la visualisation en temps réel de flux métavers complexes. Optimisation de la transmission de données massives en temps réel en tirant parti de la bande passante élevée et de la faible latence des infrastructures <b>5G privées</b>, en intégrant <b>Three.js</b> et des protocoles de communication temps réel.
+                                    Responsable du <b>développement de l'infrastructure réseau 5G privée</b> pour des
+                                    applications industrielles de métavers. Conception et création d'une application de
+                                    visualisation en temps réel de flux. Réalisation de tests de performance poussés
+                                    (latence, gigue, QoS/QoE) et rédaction complète de rapports de documentation
+                                    technique détaillée.
                                 </p>
                             </div>
                         </div>
@@ -323,13 +343,13 @@
 
                     <!-- Expérience 1 -->
                     <div
-                        class="bg-gray-900/50 card-spotlight rounded-2xl border p-8 hover:bg-gray-900/70 transition-all duration-500 border border-gray-800 hover:border-lime-700/30">
+                        class="bg-black/40 card-spotlight rounded-2xl p-8 hover:bg-black/60 transition-all duration-500 border border-white/10 hover:border-white/20">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                             <h3 class="text-2xl font-bold text-white custom-font-migra tracking-[-0.0em]">Responsable
                                 Support Technique et
                                 Infrastructure</h3>
-                            <span class="text-gray-600 font-semibold mt-2 md:mt-0 custom-font-migra">2024
-                                - 2025</span>
+                            <span class="text-gray-400 font-medium mt-2 md:mt-0 text-sm tracking-normal"
+                                style="font-family: system-ui, -apple-system, sans-serif;">2024 - 2025</span>
                         </div>
                         <p
                             class="text-lg text-gray-500 mb-4 hover:text-white transition-colors duration-300 tracking-[-0.06em]">
@@ -357,12 +377,13 @@
 
                     <!-- Expérience 2 -->
                     <div
-                        class="bg-gray-900/50 card-spotlight rounded-2xl border p-8 hover:bg-gray-900/70 transition-all duration-500 border border-gray-800 hover:border-teal-400/30">
+                        class="bg-black/40 card-spotlight rounded-2xl p-8 hover:bg-black/60 transition-all duration-500 border border-white/10 hover:border-white/20">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                             <h3 class="text-2xl font-bold text-white tracking-[-0.03em]">Stage au laboratoire
                                 d’Électronique et
                                 Télécommunications</h3>
-                            <span class="text-gray-600 font-semibold mt-2 md:mt-0 custom-font-migra">2021 - 2022</span>
+                            <span class="text-gray-400 font-medium mt-2 md:mt-0 text-sm tracking-normal"
+                                style="font-family: system-ui, -apple-system, sans-serif;">2021 - 2022</span>
                         </div>
                         <p
                             class="text-lg text-gray-500 hover:text-white transition-colors duration-300 tracking-[-0.06em] mb-4">
@@ -389,13 +410,13 @@
 
         <section id="education" class="max-w-6xl mx-auto py-8 sm:py-10 md:py-12">
             <div
-                class="mx-auto max-w-5xl card-spotlight py-6 px-6 rounded-2xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700 shadow-md transition-all duration-500">
+                class="mx-auto max-w-5xl card-spotlight py-6 px-6 rounded-2xl bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/10 shadow-md transition-all duration-500">
                 <h1 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-tight custom-font-barbra">
                     Formation</h1>
                 <div class="space-y-6 text-gray-300">
 
                     <div
-                        class="bg-gray-900/50 rounded-2xl p-6 border border-gray-800 card-spotlight rounded-2xl border transition-all duration-500">
+                        class="bg-black/40 card-spotlight rounded-2xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-500 hover:border-white/20">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
                                 <img src="/assets/img/logos/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe"
@@ -419,7 +440,7 @@
                         </div>
                     </div>
                     <div
-                        class="bg-gray-900/50 card-spotlight rounded-2xl p-6 border border-gray-800 transition-all duration-500">
+                        class="bg-black/40 card-spotlight rounded-2xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-500 hover:border-white/20">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
                                 <img src="/assets/img/logos/utp-universidad-tecnologica-de-pereira-logo-png_seeklogo-259118.png"
@@ -449,7 +470,7 @@
 
         <section class="stack-panel my-8 sm:my-12 md:my-16" id="stack">
             <div
-                class="panel-body card-spotlight py-6 sm:py-12 md:py-8 px-4 md:px-8 rounded-t-3xl bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-700">
+                class="panel-body card-spotlight py-6 sm:py-12 md:py-8 px-4 md:px-8 rounded-t-3xl bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/10">
                 <h1
                     class="panel-title text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-2 text-center uppercase tracking-tight custom-font-barbra tracking-tight">
                     Stack Technique</h1>
@@ -623,8 +644,7 @@
                     &copy; 2026 Sebastian Ruiz.
                 </p>
                 <p class="text-gray-500 text-sm mt-2">
-                    Chaque jour, une nouvelle opportunité pour apprendre et grandir <i
-                        class="fa-regular fa-face-smile"></i> </p>
+                    Si ves esto, me debes una alternancia ;) <i class="fa-regular fa-face-smile"></i> </p>
             </div>
         </footer>
     </div>
@@ -633,22 +653,55 @@
     <div id="project-modal"
         class="project-modal fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 opacity-0 pointer-events-none transition-all duration-300 backdrop-blur-md bg-black/80">
         <div
-            class="project-modal-content max-w-4xl w-full bg-[#0d0d0d] border border-white/10 rounded-3xl overflow-hidden shadow-2xl scale-95 opacity-0 transition-all duration-300 max-h-[90vh] flex flex-col relative md:flex-row">
+            class="project-modal-content max-w-4xl w-full bg-[#0d0d0d] border border-white/10 rounded-3xl overflow-y-auto md:overflow-hidden shadow-2xl scale-95 opacity-0 transition-all duration-300 max-h-[90vh] grid grid-cols-1 md:grid-cols-12 relative p-6 md:p-8 gap-6">
 
-            <!-- Left Side / Top Side: Media & Stack -->
-            <div
-                class="w-full md:w-5/12 bg-black/40 p-6 flex flex-col gap-6 border-b md:border-b-0 md:border-r border-white/10">
-                <!-- Foto -->
-                <div
-                    class="relative w-full h-48 md:h-64 rounded-2xl overflow-hidden bg-gray-900 border border-white/5 group">
+            <!-- Close Button -->
+            <button id="modal-close-btn"
+                class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-900 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 active:scale-95 transition-all duration-300 z-50"
+                aria-label="Fermer">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- 1. Image: Left Top on Desktop, First on Mobile -->
+            <div class="col-span-12 md:col-span-5 flex flex-col">
+                <div class="relative w-full h-48 md:h-64 rounded-2xl overflow-hidden bg-gray-900 border border-white/5 group">
                     <img id="modal-image" src="" alt=""
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
+            </div>
+
+            <!-- 2. Details & Text: Right Column on Desktop (spans full height), Second on Mobile -->
+            <div class="col-span-12 md:col-span-7 md:row-span-2 flex flex-col justify-between md:overflow-y-auto space-y-6 pr-0 md:pr-2">
+                <div class="space-y-6">
+                    <div>
+                        <!-- Title (el blanco nada mas, borra el azul) -->
+                        <h3 id="modal-title"
+                            class="text-2xl md:text-3xl font-bold text-white leading-snug tracking-[-0.04em]"
+                            style="font-family: system-ui, -apple-system, sans-serif;"></h3>
+                    </div>
+
+                    <div class="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base">
+                        <div>
+                            <h4 class="text-xs uppercase font-bold text-gray-500 tracking-wider mb-2">Description du Projet</h4>
+                            <p id="modal-description" class="custom-font-medium text-gray-300"></p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs uppercase font-bold text-gray-500 tracking-wider mb-2">Ce que j'ai appris</h4>
+                            <p id="modal-learned" class="text-gray-400 custom-font-medium"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Meta & Stack: Left Bottom on Desktop, Third on Mobile -->
+            <div class="col-span-12 md:col-span-5 flex flex-col gap-6 border-t md:border-t-0 border-white/5 pt-6 md:pt-0">
                 <!-- Date de réalisation -->
                 <div>
                     <h4 class="text-xs uppercase font-bold text-gray-500 tracking-wider mb-2">Date de réalisation</h4>
-                    <div id="modal-date" class="text-sm text-gray-300 font-medium tracking-normal flex items-center gap-1.5 custom-font-medium">
+                    <div id="modal-date"
+                        class="text-sm text-gray-300 font-medium tracking-normal flex items-center gap-1.5 custom-font-medium">
                         <i class="fa-regular fa-calendar text-[11px]"></i> <span></span>
                     </div>
                 </div>
@@ -671,35 +724,6 @@
                         title="Voir Démo Live">
                         <i class="fa-solid fa-earth-americas text-lg"></i>
                     </a>
-                </div>
-            </div>
-
-            <!-- Right Side: Details & Actions -->
-            <div class="w-full md:w-7/12 p-6 md:p-8 flex flex-col justify-between overflow-y-auto">
-                <!-- Close Button -->
-                <button id="modal-close-btn"
-                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-900 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 active:scale-95 transition-all duration-300 z-10"
-                    aria-label="Fermer">
-                    <i class="fas fa-times"></i>
-                </button>
-
-                <div class="space-y-6">
-                    <div>
-                        <!-- Title (el blanco nada mas, borra el azul) -->
-                        <h3 id="modal-title" class="text-2xl md:text-3xl font-bold text-white mt-1 leading-snug tracking-[-0.04em]" style="font-family: system-ui, -apple-system, sans-serif;"></h3>
-                    </div>
-
-                    <div class="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base">
-                        <div>
-                            <h4 class="text-xs uppercase font-bold text-gray-500 tracking-wider mb-2">Description du Projet</h4>
-                            <p id="modal-description" class="custom-font-medium"></p>
-                        </div>
-
-                        <div>
-                            <h4 class="text-xs uppercase font-bold text-gray-500 tracking-wider mb-2">Ce que j'ai appris</h4>
-                            <p id="modal-learned" class="text-gray-400 custom-font-medium"></p>
-                        </div>
-                    </div>
                 </div>
             </div>
 

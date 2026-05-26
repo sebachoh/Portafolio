@@ -448,11 +448,13 @@ function initializeModal() {
         // Active classes for animated fade-in / zoom transitions
         modal.classList.add('active');
         document.body.style.overflow = 'hidden'; // prevent background scrolling
+        document.documentElement.style.overflow = 'hidden'; // prevent iOS scroll bleed
     }
 
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = ''; // restore scrolling
+        document.documentElement.style.overflow = ''; 
     }
 
     // Close button click
@@ -471,6 +473,16 @@ function initializeModal() {
             closeModal();
         }
     });
+
+    // iOS Touchmove Scroll Bleed Prevention
+    document.addEventListener('touchmove', function(e) {
+        if (modal.classList.contains('active')) {
+            const isScrollableModal = e.target.closest('.project-modal-content');
+            if (!isScrollableModal) {
+                e.preventDefault();
+            }
+        }
+    }, { passive: false });
 }
 
 // Initialize tech stack marquee by cloning items for seamless loop
@@ -768,3 +780,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log('Portfolio loaded successfully with 7 projects, responsive carousel, and premium details modal! 🚀');
 });
+
+// Premium Centered Glassmorphism Modal for CV alert
+window.showCVAlert = function(event) {
+    if (event) event.preventDefault();
+    
+    // Check if modal already exists
+    let alertModal = document.getElementById('cv-alert-modal');
+    if (alertModal) return;
+
+    // Create modal element
+    alertModal = document.createElement('div');
+    alertModal.id = 'cv-alert-modal';
+    alertModal.className = 'fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300 opacity-0';
+    
+    alertModal.innerHTML = `
+        <div class="bg-[#0d0d0d] border border-white/10 p-8 rounded-2xl max-w-md w-11/12 shadow-2xl text-center relative transform transition-all duration-300 scale-95 opacity-0 flex flex-col items-center gap-5" style="font-family: system-ui, -apple-system, sans-serif;">
+            <!-- Close Button -->
+            <button onclick="closeCVAlertModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors">
+                <i class="fas fa-times text-base"></i>
+            </button>
+            
+            <!-- Warning / Info Icon -->
+            <div class="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-3xl">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white tracking-tight">Téléchargement du CV</h3>
+            
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Le CV n'a pas encore été mis à jour, mais merci pour votre intérêt ! Écrivez-moi directement à :
+                <br>
+                <a href="mailto:sebaruiz01@gmail.com" class="text-blue-400 underline hover:text-blue-300 transition-colors font-semibold block mt-3 text-base">sebaruiz01@gmail.com</a>
+            </p>
+            
+            <button onclick="closeCVAlertModal()" class="mt-2 px-6 py-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-semibold rounded-xl transition-all duration-300 active:scale-95">
+                Fermer
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(alertModal);
+    
+    // Trigger animation
+    setTimeout(() => {
+        alertModal.classList.remove('opacity-0');
+        alertModal.querySelector('div').classList.remove('scale-95', 'opacity-0');
+    }, 10);
+};
+
+window.closeCVAlertModal = function() {
+    const alertModal = document.getElementById('cv-alert-modal');
+    if (alertModal) {
+        alertModal.classList.add('opacity-0');
+        alertModal.querySelector('div').classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            alertModal.remove();
+        }, 300);
+    }
+};
