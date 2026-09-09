@@ -1,100 +1,119 @@
+/* ---------------------------------------------------------------------------
+   Tipografías locales
+
+   Servidas en WOFF2 con subconjunto latino: el mismo aspecto pesando 96 KB
+   en lugar de los 404 KB de los .otf originales (Ahsing sola bajó de 208 a 40 KB).
+   Regenerar con:  npm run build:fonts
+   font-display: swap evita el texto invisible mientras la fuente descarga.
+--------------------------------------------------------------------------- */
 @font-face {
     font-family: 'Ahsing';
-    src: url('../fonts/ahsing-regular.otf') format('woff');
-    font-weight: normal;
+    src: url('../fonts/ahsing-regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Casa';
-    src: url('../fonts/casa-Regular.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Barbra';
-    src: url('../fonts/barbra-font/Barbra-Regular.otf') format('woff');
-    font-weight: normal;
+    src: url('../fonts/Barbra-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
+/* Migra se usa sobre todo en negrita (h3, .custom-font-migra). Declarar el
+   archivo bold con su peso real evita que el navegador le añada un bold
+   sintético encima del que la fuente ya trae. */
 @font-face {
-    font-family: 'Coterie';
-    src: url('../fonts/coterie-regular.ttf') format('woff');
-    font-weight: normal;
+    font-family: 'Migra';
+    src: url('../fonts/migra-regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Migra';
-    src: url('../fonts/migra-font-familygimlet-superfamily-font/migra-bold.otf') format('woff');
-    font-weight: normal;
+    src: url('../fonts/migra-bold.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
-h1 {
-    font-family: 'Barbra', sans-serif;
-}
-
+/* Jerarquía tipográfica */
+h1,
 h2 {
-    font-family: 'Barbra', sans-serif;
+    font-family: 'Barbra', Georgia, serif;
 }
 
 h3 {
-    font-family: 'Migra', sans-serif;
+    font-family: 'Migra', Georgia, serif;
 }
 
 .custom-font {
-    font-family: 'Ahsing', sans-serif;
+    font-family: 'Ahsing', Georgia, serif;
 }
 
 .custom-font-migra {
-    font-family: 'Migra', sans-serif;
+    font-family: 'Migra', Georgia, serif;
 }
 
 .custom-font-barbra {
-    font-family: 'Barbra', sans-serif;
+    font-family: 'Barbra', Georgia, serif;
 }
 
-/* Personalizar Tailwind */
-@layer utilities {
-    .bg-grid-pattern {
-        background-image:
-            radial-gradient(circle at 25% 25%, rgba(10, 201, 244, 0.1) 2px, transparent 0),
-            radial-gradient(circle at 75% 75%, rgba(10, 201, 244, 0.05) 1px, transparent 0);
-        background-size: 50px 50px, 100px 100px;
-    }
+/* Se usa en ~60 elementos y no estaba definida en ninguna parte, así que hasta
+   ahora no hacía absolutamente nada.
 
-    .card-spotlight::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                rgba(255, 255, 255, 0.08),
-                transparent 40%);
-        opacity: 0;
-        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 1;
-    }
+   Define sólo el grosor a propósito: la mayoría de esos elementos son texto de
+   cuerpo (hereda la sans del sistema, como antes) pero unos cuantos son <h3>,
+   que deben seguir en Migra. Fijar aquí una font-family se los quitaría.
+   Si quieres darle una tipografía propia, añádela apuntando sólo al cuerpo:
+     p.custom-font-medium, span.custom-font-medium, div.custom-font-medium { … } */
+.custom-font-medium {
+    font-weight: 500;
+}
 
-    .card-spotlight:hover::before {
-        opacity: 1;
-    }
+/* Foco que sigue al ratón sobre las tarjetas.
+   Fuera de @layer: dentro de una capa nativa estas reglas quedaban por debajo
+   de cualquier utilidad sin capa, lo que las hacía frágiles. */
+.card-spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.08),
+            transparent 40%);
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.card-spotlight:hover::before {
+    opacity: 1;
 }
 
 /* Efectos globales */
 body {
-    /* Mobile: subtle dark gradient background */
+    /* Móvil: degradado oscuro sutil */
     background: linear-gradient(180deg, #000000 0%, #ffffff 10%, #000000 90%);
     background-attachment: scroll;
+    /* El cursor nativo se oculta en favor del seguidor personalizado
+       (se restaura en dispositivos táctiles más abajo) */
+    cursor: none;
 }
 
 /* Desktop: use the background image with parallax effect */
 @media (min-width: 769px) {
     body {
-        background-image: url(/assets/img/backgrounds/2.jpg);
+        /* Velo oscuro sobre la foto: sin él, las zonas claras del fondo dejaban
+           el texto blanco del hero prácticamente ilegible. Ajusta las dos
+           opacidades para dejar la foto más o menos visible. */
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.58)),
+            url(/assets/img/backgrounds/2.webp);
         background-size: cover;
         background-attachment: fixed;
         background-position: center center;
@@ -248,49 +267,7 @@ body {
     background: rgba(255, 255, 255, 0.04);
 }
 
-/* Contenedor de puntos mejorado */
-.tech-dots {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 6px;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.tech-dots::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(circle at 12.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 12.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 12.5% 37.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 37.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 37.5%, rgba(166, 21, 21, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 37.5%, rgba(223, 223, 223, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 12.5% 62.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 62.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 62.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 62.5%, rgba(203, 22, 22, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 12.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 37.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 62.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px),
-        radial-gradient(circle at 87.5% 87.5%, rgba(255, 255, 255, 0.3) 2px, transparent 3px);
-    background-size: 100% 100%;
-    transition: all 0.6s ease;
-}
-
-.tech-card:hover .tech-dots::before {
-    animation: dotColorWave 1.5s ease-in-out infinite;
-}
+/* Contenedor de puntos mejorado *
 
 @keyframes dotColorWave {
 
@@ -412,11 +389,7 @@ body {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
-/* Hide native cursor in favor of the custom follower. Restore cursor for interactive elements */
-body {
-    cursor: none;
-}
-
+/* El cursor nativo vuelve en los elementos interactivos */
 a,
 button,
 input,
@@ -427,7 +400,10 @@ select {
 
 /* Animaciones suaves */
 .fade-in-up {
-    animation: fadeInUp 0.8s ease-out;
+    /* fill-mode both fija el estado final: sin él, si el navegador pausa la
+       animación (pestaña abierta en segundo plano) la sección se queda a medio
+       aparecer. */
+    animation: fadeInUp 0.8s ease-out both;
 }
 
 @keyframes fadeInUp {
@@ -444,20 +420,10 @@ select {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
 
     .tech-card {
         padding: 1.5rem 1rem;
         min-height: 120px;
-    }
-
-    .tech-dots {
-        width: 60px;
-        height: 60px;
-        gap: 4px;
     }
 
     .panel-body {
@@ -496,21 +462,12 @@ select {
         padding: 1.5rem 1rem !important;
     }
 
-    /* Reduce tech grid to 2 columns max */
-    .tech-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.75rem !important;
-    }
+    /* Reduce tech grid to 2 columns max *
 
     /* Smaller tech cards */
     .tech-card {
         padding: 1rem 0.75rem !important;
         min-height: 100px !important;
-    }
-
-    .tech-dots {
-        width: 50px !important;
-        height: 50px !important;
     }
 
     .tech-label {
@@ -662,155 +619,15 @@ select {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Hobbies card with animated moving dots */
-.hobby-card {
-    position: relative;
-    display: flex;
-    gap: 0;
-    width: 100%;
-    max-width: 520px;
-    height: 250px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(255, 255, 255, 0.02);
-}
+/* Section divider used under Languages / Hobbies *
 
-.hobby-card .hobby-item {
-    flex: 1 1 50%;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    background: #0b0b0b;
-}
+/* Replace moving dots with a subtle noise overlay *
 
-.hobby-card .hobby-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/* Hide any leftover dot elements if present *
 
-.hobby-card .hobby-title-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 0.75rem;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* Make hobby GIFs black & white *
 
-.hobby-title {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.hobby-dots-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 5;
-    mix-blend-mode: screen;
-}
-
-.hobby-dot {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(16, 185, 129, 0.9);
-    /* teal-ish */
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
-    opacity: 0.95;
-    animation: hobbyFloat 4s ease-in-out infinite;
-}
-
-@keyframes hobbyFloat {
-    0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.9;
-    }
-
-    25% {
-        transform: translate(12px, -8px) scale(1.2);
-        opacity: 1;
-    }
-
-    50% {
-        transform: translate(-8px, 10px) scale(0.9);
-        opacity: 0.7;
-    }
-
-    75% {
-        transform: translate(6px, -6px) scale(1.05);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.9;
-    }
-}
-
-/* Add variety: different durations/delays will be set inline on each .hobby-dot */
-
-@media (max-width: 768px) {
-    .hobby-card {
-        height: 160px;
-        max-width: 420px;
-    }
-
-    .hobby-card .hobby-item img {
-        object-position: center;
-    }
-
-    .hobby-title-row {
-        max-width: 420px;
-    }
-}
-
-/* Section divider used under Languages / Hobbies */
-.section-divider {
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-    border-radius: 2px;
-    margin: 0.5rem 0;
-}
-
-/* Replace moving dots with a subtle noise overlay */
-.hobby-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 6;
-    opacity: 0.06;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    background-size: cover;
-    mix-blend-mode: overlay;
-}
-
-/* Hide any leftover dot elements if present */
-.hobby-dots-overlay {
-    display: none !important;
-}
-
-/* Make hobby GIFs black & white */
-#pianoGif,
-#photoGif {
-    filter: grayscale(100%) contrast(0.98) brightness(0.95);
-}
-
-/* Optional: on hover restore a little color (if you want) */
-.hobby-card:hover #pianoGif,
-.hobby-card:hover #photoGif {
-    filter: grayscale(100%) contrast(1) brightness(1);
-}
+/* Optional: on hover restore a little color (if you want) *
 
 /* Education photo square (1:1) */
 .edu-photo {
@@ -892,39 +709,7 @@ select {
     opacity: 1;
 }
 
-/* Project buttons (GitHub & itch.io) */
-.project-links {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.project-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.02);
-    color: #ffffff;
-    text-decoration: none;
-    transition: transform 0.22s ease, box-shadow 0.25s ease, border-color 0.22s ease;
-}
-
-.project-btn i,
-.project-btn .itch-icon {
-    font-size: 18px;
-    display: inline-block;
-    color: inherit;
-}
-
-.project-btn:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.06), inset 0 0 30px rgba(255, 255, 255, 0.02);
-}
+/* Project buttons (GitHub & itch.io) *
 
 /* Make project card images appear in black & white by default, with a gentle transition to color on hover
    NOTE: project containers are direct children of the grid inside #projects, so target those elements */
@@ -939,7 +724,6 @@ select {
     filter: grayscale(0%) contrast(100%);
 }
 
-/* Animated perimeter beam overlay for project cards */
 #projects-track>div {
     position: relative;
     border-radius: 12px;
@@ -947,21 +731,7 @@ select {
     overflow: visible;
 }
 
-.project-beam {
-    position: absolute;
-    inset: -6px;
-    width: calc(100% + 12px);
-    height: calc(100% + 12px);
-    pointer-events: none;
-    z-index: 4;
-    opacity: 1;
-    transition: opacity 220ms ease, transform 220ms ease;
-}
-
-/* Hide the animated beam on hover and show solid white border on the card */
-#projects-track>div:hover .project-beam {
-    opacity: 0;
-}
+/* Hide the animated beam on hover and show solid white border on the card *
 
 #projects-track>div:hover {
     border-color: rgba(255, 255, 255, 0.22);
@@ -969,65 +739,7 @@ select {
     transform: translateY(-6px);
 }
 
-/* Small accessible label hidden visually */
-.glow-lime {
-    position: relative;
-    display: inline-block;
-    color: #eaff66;
-    /* brighter, fluorescent lime */
-    background-color: rgba(180, 255, 120, 0.08);
-    /* subtle lighter translucent background */
-    border: 1px solid rgba(196, 255, 106, 0.12);
-    box-shadow: 0 8px 22px rgba(166, 255, 110, 0.12), 0 0 18px rgba(180, 255, 120, 0.06);
-    transition: box-shadow 240ms ease, transform 180ms ease, filter 240ms ease;
-    z-index: 0;
-}
-
-.glow-lime::after {
-    content: "";
-    position: absolute;
-    left: -6px;
-    right: -6px;
-    top: -4px;
-    bottom: -4px;
-    border-radius: 999px;
-    background: radial-gradient(circle at 30% 30%, rgba(196, 255, 106, 0.34), rgba(196, 255, 106, 0.12) 20%, rgba(196, 255, 106, 0.06) 40%, rgba(196, 255, 106, 0.00) 60%);
-    filter: blur(10px) saturate(1.15);
-    opacity: 0.95;
-    z-index: -1;
-    pointer-events: none;
-    transition: opacity 300ms ease, transform 300ms ease;
-}
-
-.glow-lime:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 14px 34px rgba(166, 255, 110, 0.18), 0 0 34px rgba(180, 255, 120, 0.12);
-    filter: drop-shadow(0 8px 18px rgba(180, 255, 120, 0.12));
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .glow-lime::after {
-        transition: none;
-        filter: none;
-        opacity: 0.75;
-    }
-
-    .glow-lime {
-        transition: none;
-    }
-}
-
-.sr-only {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
+/* Small accessible label hidden visually *
 
 /* Carousel track and slide styling */
 .carousel-container {

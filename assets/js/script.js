@@ -8,7 +8,7 @@ const projectsData = [
         date: "04/26 - 08/26",
         shortDescription: "Conception et simulation d’un cœur de réseau 5G privé avec slicing, tests de performance réseau et développement d'une plateforme de visualisation métavers avec documentation technique.",
         fullDescription: "Projet réalisé dans le cadre d’un stage de 4 mois visant le déploiement et la configuration de serveurs pour le montage de services multi-slices (URLLC, eMBB, mIoT, V2X). Il comprend la modélisation et le test de l'infrastructure via le framework OpenAirInterface (OAI), la réalisation de tests de performance approfondis (débit, latence, gigue) et la rédaction de la documentation technique. Une plateforme de visualisation a ensuite été développée pour suivre les flux métavers sur ce réseau 5G privé, avec l'ambition finale de permettre une interaction en temps réel par casques VR connectés à distance entre l'école et l'usine.",
-        image: "/assets/img/project-items/Projet5G.png",
+        image: "/assets/img/project-items/Projet5G.webp",
         stack: ["Réseaux", "5G", "OpenAirInterface", "Python", "Docker", "Slicing", "Git"],
         demoUrl: "",
         githubUrl: "",
@@ -21,7 +21,7 @@ const projectsData = [
         date: "01/26 - 04/26",
         shortDescription: "Création d'une application desktop avec Qt (C++) pour le calcul de trajectoires optimales de couverture (CPP) et simulation 3D de drones aquatiques sous ROS2.",
         fullDescription: "Projet de Recherche (PDR) réalisé en 4ème année. Il s'agit d'une plateforme développée en C++ avec Qt permettant de planifier des trajectoires optimales de couverture (Coverage Path Planning - CPP). L'application évalue et compare plusieurs algorithmes de calcul de routes en fonction des zones définies par l'utilisateur pour renvoyer le chemin le plus efficace. Le système intègre un module de simulation locale et permet d'exporter les trajectoires calculées vers le simulateur robotique ROS2 pour la visualisation 3D en temps réel d'un drone dans un espace aquatique.",
-        image: "/assets/img/project-items/PDRPhoto.jpeg",
+        image: "/assets/img/project-items/PDRPhoto.webp",
         stack: ["C++", "Qt", "ROS2", "Algorithmique", "Python", "Git"],
         demoUrl: "",
         githubUrl: "https://github.com/jmvilla12/projet_de_recherche",
@@ -34,7 +34,7 @@ const projectsData = [
         date: "05/26 - En cours",
         shortDescription: "Conception et développement d'une plateforme personnelle de type 'Second Brain' pour centraliser et organiser mes connaissances (tâches, finances, projets, routines).",
         fullDescription: "Ce projet est né du besoin personnel d'organiser ma propre vie face au manque de fonctionnalités gratuites dans Notion. J'ai conçu et développé mon propre 'Second Brain' sur mesure et à mon goût. La plateforme intègre tous les modules dont j'ai besoin au quotidien : gestion des tâches et de projets, suivi des finances et du budget, planification de routines quotidiennes, suivi des candidatures de travail, organisation des tâches ménagères, et même un espace dédié à l'apprentissage de langues. Ce projet est en constante évolution, avec l'ambition finale de le publier sur l'App Store.",
-        image: "/assets/img/project-items/AxionPort.png",
+        image: "/assets/img/project-items/AxionPort.webp",
         stack: ["React", "TypeScript", "Vercel", "CSS"],
         demoUrl: "https://axion-chi-sandy.vercel.app/",
         githubUrl: "https://github.com/sebachoh/Axion",
@@ -47,7 +47,7 @@ const projectsData = [
         date: "10/25",
         shortDescription: "Développement d'une plateforme démo de gestion et de télémétrie en temps réel pour une entreprise française de moteurs électriques maritimes.",
         fullDescription: "Projet créé en tant que démonstrateur (DEMO) pour une entreprise française spécialisée dans la fabrication de moteurs électriques pour bateaux. La plateforme permet la gestion, la maintenance prédictive et la visualisation en temps réel des données télémétriques reçues des moteurs. Le backend repose sur une architecture robuste en microservices avec plusieurs API endpoints développés en JavaScript et une base de données PostgreSQL pour stocker efficacement les flux de métriques.",
-        image: "/assets/img/project-items/BateauxPort.png",
+        image: "/assets/img/project-items/BateauxPort.webp",
         stack: ["JavaScript", "Microservices", "API", "PostgreSQL", "Node.js"],
         demoUrl: "",
         githubUrl: "https://github.com/sebachoh/WeenavPL",
@@ -60,7 +60,7 @@ const projectsData = [
         date: "09/24 - 03/25",
         shortDescription: "Conception et développement d'un chatbot IA avec RAG pour automatiser le support administratif et répondre aux questions des étudiants en Mécatronique.",
         fullDescription: "Projet de fin d'études d'ingénierie mécatronique réalisé en Colombie. Il consiste en la création d'un chatbot IA doté d'une architecture RAG (Retrieval-Augmented Generation) pour le département de mécatronique, conçu pour remplacer et automatiser les tâches administratives répétitives du secrétariat du programme. Le chatbot répond avec précision aux requêtes des étudiants sur les cours, les règlements et les informations universitaires. Le système s'appuie sur l'API d'OpenAI pour le traitement du langage naturel et utilise AnythingLLM pour la connexion à la base de données vectorielle.",
-        image: "/assets/img/project-items/MecaniPort.png",
+        image: "/assets/img/project-items/MecaniPort.webp",
         stack: ["AnythingLLM", "HTML", "CSS", "JavaScript", "SASS", "LLM", "Vector DB"],
         demoUrl: "",
         githubUrl: "https://github.com/sebachoh/ChatbotUI_V2.0",
@@ -73,7 +73,7 @@ const projectsData = [
         date: "10/25",
         shortDescription: "Conception et déploiement d’une plateforme e-commerce de distribution alimentaire, architecturée de manière robuste en Java/Spring Boot et entièrement dockerisée.",
         fullDescription: "Développement complet d'une solution de boutique en ligne intégrant des modules avancés : gestion de catalogue de nourriture, panier d'achat dynamique, système de paiement sécurisé, et gestion des comptes utilisateurs, le tout reposant sur un backend Spring Boot performant et conteneurisé sous Docker.",
-        image: "/assets/img/project-items/Projet-MicroServices.png",
+        image: "/assets/img/project-items/Projet-MicroServices.webp",
         stack: ["Java", "Spring Boot", "React", "Docker", "PostgreSQL"],
         demoUrl: "",
         githubUrl: "https://github.com/sebachoh/ArchitectureMicroServices",
@@ -86,7 +86,7 @@ const projectsData = [
         date: "11/23",
         shortDescription: "Développement complet d’un jeu vidéo 3D de qualité commerciale avec le moteur de jeu Unity, intégrant programmation de scripts en C#, level design et optimisation.",
         fullDescription: "Conception et programmation de A à Z d'un jeu vidéo d'action-aventure sous Unity. Intègre des mécaniques de combat sophistiquées, une gestion physique robuste des objets 3D, une intelligence artificielle ennemie par états (FSM), et un travail minutieux sur l'audio et l'optimisation des scènes.",
-        image: "/assets/img/project-items/AmazonRagePrueba.jpg",
+        image: "/assets/img/project-items/AmazonRagePrueba.webp",
         stack: ["C#", "Unity", "Game programming", "3D Physics"],
         demoUrl: "https://seaster-blue.itch.io/amazon-rage",
         githubUrl: "https://github.com/SeasterBlue/Amazon-Rage",
@@ -149,7 +149,7 @@ function renderProjects() {
             <div class="bg-[#0d0d0d]/80 border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-all duration-300 group flex flex-col justify-between select-none" data-id="${proj.id}">
                 <div>
                     <div class="mb-4 h-48 bg-black/40 border border-white/5 rounded-xl flex items-center justify-center transition-all duration-300 overflow-hidden relative">
-                        <img src="${proj.image}" alt="${proj.title}" class="h-full w-full object-cover rounded-lg filter grayscale contrast-[1.15] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+                        <img src="${proj.image}" alt="${proj.title}" loading="lazy" decoding="async" width="900" height="675" class="h-full w-full object-cover rounded-lg filter grayscale contrast-[1.15] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
                     </div>
                     <div class="text-base font-bold text-white mb-2 leading-snug tracking-[-0.06em] custom-font-medium text-left min-h-[48px] flex items-center" style="font-family: system-ui, -apple-system, sans-serif;">${proj.title}</div>
@@ -164,12 +164,12 @@ function renderProjects() {
                     <div class="flex items-center justify-between border-t border-white/5 pt-3 mt-1 gap-2">
                         <div class="flex items-center gap-1.5">
                             ${proj.githubUrl ? `
-                                <a href="${proj.githubUrl}" target="_blank" class="w-8 h-8 bg-white/5 text-gray-300 rounded-full border border-white/10 transition-all hover:bg-white hover:text-black flex items-center justify-center" onclick="event.stopPropagation();" title="GitHub">
+                                <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-white/5 text-gray-300 rounded-full border border-white/10 transition-all hover:bg-white hover:text-black flex items-center justify-center" onclick="event.stopPropagation();" title="GitHub">
                                     <i class="fa-brands fa-github text-sm"></i>
                                 </a>
                             ` : ''}
                             ${proj.demoUrl ? `
-                                <a href="${proj.demoUrl}" target="_blank" class="h-8 px-3 bg-white/5 text-gray-300 rounded-full text-[11px] font-bold border border-white/10 transition-all hover:bg-white hover:text-black flex items-center gap-1.5" onclick="event.stopPropagation();">
+                                <a href="${proj.demoUrl}" target="_blank" rel="noopener noreferrer" class="h-8 px-3 bg-white/5 text-gray-300 rounded-full text-[11px] font-bold border border-white/10 transition-all hover:bg-white hover:text-black flex items-center gap-1.5" onclick="event.stopPropagation();">
                                     <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Demo
                                 </a>
                             ` : ''}
@@ -285,11 +285,11 @@ function initializeCarousel() {
     let animationID = 0;
 
     track.addEventListener('mousedown', dragStart);
-    track.addEventListener('touchstart', dragStart);
+    track.addEventListener('touchstart', dragStart, { passive: true });
     track.addEventListener('mouseup', dragEnd);
-    track.addEventListener('touchend', dragEnd);
+    track.addEventListener('touchend', dragEnd, { passive: true });
     track.addEventListener('mousemove', dragAction);
-    track.addEventListener('touchmove', dragAction);
+    track.addEventListener('touchmove', dragAction, { passive: true });
     track.addEventListener('mouseleave', dragEnd);
 
     function dragStart(e) {
@@ -500,64 +500,53 @@ function initializeTechStack() {
     });
 }
 
-// Enhanced cursor follower
+// Cursor personalizado con la letra 'S'
 function createCursorFollower() {
-    // Don't create the custom cursor on touch / coarse-pointer devices
-    if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
+    // No se crea en dispositivos táctiles ni si el usuario pidió menos movimiento
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const cursor = document.createElement('div');
     cursor.className = 'cursor-follower';
-    // Use an inline letter so the follower becomes an 'S'
+    cursor.setAttribute('aria-hidden', 'true');
     cursor.innerHTML = '<span class="cursor-letter">S</span>';
     document.body.appendChild(cursor);
 
+    const INTERACTIVE = 'a, button, .tech-card, #projects-track > div';
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
+    let hideTimer;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-    });
+        cursor.style.opacity = '1';
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => { cursor.style.opacity = '0'; }, 1000);
+    }, { passive: true });
 
-    function animateCursor() {
-        // Smooth follow with easing
+    // Delegación: dos listeners fijos en lugar de rebindear cada elemento cada segundo.
+    // La versión anterior usaba setInterval(…, 1000) y acumulaba ~136 listeners por
+    // segundo sin liberarlos nunca, lo que degradaba la página durante la visita.
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(INTERACTIVE)) {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        }
+    }, { passive: true });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(INTERACTIVE)) {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        }
+    }, { passive: true });
+
+    (function animateCursor() {
         cursorX += (mouseX - cursorX) * 0.45;
         cursorY += (mouseY - cursorY) * 0.45;
-
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
         requestAnimationFrame(animateCursor);
-    }
-
-    animateCursor();
-
-    // Hide cursor when not moving
-    let timeout;
-    document.addEventListener('mousemove', () => {
-        cursor.style.opacity = '1';
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            cursor.style.opacity = '0';
-        }, 1000);
-    });
-
-    // Scale effect on interactive elements
-    function updateInteractiveElements() {
-        const interactiveElements = document.querySelectorAll('a, button, .tech-card, #projects-track > div');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        });
-    }
-
-    updateInteractiveElements();
-
-    // Periodically rebind for dynamically loaded elements
-    setInterval(updateInteractiveElements, 1000);
+    })();
 }
 
 // Scroll animations
@@ -640,117 +629,211 @@ function initializeMobileMenu() {
     });
 }
 
-// Insert an SVG overlay on each project card that animates a small bright segment around the border
-function addPerimeterBeams() {
-    // Disabled to preserve premium minimal design and prevent blue glowing frame overlays
-}
-
-// --- Three.js Globe (polished) -------------------------------------------------
-function initThreeGlobe() {
-    if (typeof THREE === 'undefined') {
-        console.warn('Three.js not loaded');
-        return;
-    }
-
+function initGlobe() {
     const container = document.getElementById('globe');
     if (!container) return;
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(0, 0, 3);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.domElement.style.width = '100%';
-    renderer.domElement.style.height = '100%';
-    renderer.domElement.style.filter = 'grayscale(100%) contrast(95%)';
-    renderer.outputEncoding = THREE.sRGBEncoding;
-    container.appendChild(renderer.domElement);
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'Globe terrestre marquant Lille, France');
+    canvas.style.cssText = 'width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y';
+    container.appendChild(canvas);
 
-    const ambient = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambient);
-    const dir = new THREE.DirectionalLight(0xffffff, 0.8);
-    dir.position.set(5, 3, 5);
-    scene.add(dir);
+    const ctx = canvas.getContext('2d');
+    let W = 0, H = 0, R = 0, cx = 0, cy = 0;
 
-    const loader = new THREE.TextureLoader();
-    function loadTexture(url) {
-        return new Promise((resolve, reject) => {
-            loader.load(url, (tex) => resolve(tex), undefined, () => reject(new Error('Failed to load ' + url)));
-        });
+    // Malla de puntos repartida por latitud/longitud
+    const points = [];
+    for (let lat = -80; lat <= 80; lat += 10) {
+        const circumference = Math.cos(lat * Math.PI / 180);
+        const count = Math.max(6, Math.round(36 * circumference));
+        for (let i = 0; i < count; i++) {
+            points.push({ lat, lon: (360 / count) * i });
+        }
     }
 
-    const texBase = 'https://threejs.org/examples/textures/';
-    Promise.allSettled([
-        loadTexture(texBase + 'land_ocean_ice_cloud_2048.jpg'),
-        loadTexture(texBase + 'earth_specular_2048.jpg'),
-        loadTexture(texBase + 'earth_normal_2048.jpg'),
-        loadTexture(texBase + 'earth_clouds_2048.png')
-    ]).then(results => {
-        const [rMap, rSpec, rNorm, rCloud] = results;
+    // Lille, France
+    const LILLE = { lat: 50.63, lon: 3.06 };
 
-        const geometry = new THREE.SphereGeometry(1, 64, 64);
-        let earthMaterial;
-        if (rMap.status === 'fulfilled') {
-            earthMaterial = new THREE.MeshStandardMaterial({
-                map: rMap.value,
-                normalMap: (rNorm.status === 'fulfilled') ? rNorm.value : null,
-                metalness: 0.0,
-                roughness: 1.0,
-            });
-        } else {
-            earthMaterial = new THREE.MeshPhongMaterial({
-                color: 0x2A6F97,
-                specular: 0x222222,
-                shininess: 5
-            });
+    let rotation = 0;          // rotación acumulada en grados
+    let tilt = -18;            // inclinación del eje, en grados
+    let dragging = false;
+    let lastX = 0, lastY = 0;
+    let velocity = 0.12;       // grados por frame en reposo
+    let visible = true;
+    let rafId = null;
+
+    function resize() {
+        const rect = container.getBoundingClientRect();
+        // clientWidth puede ser 0 si el contenedor aún no tiene layout: en ese
+        // caso no dibujamos y esperamos al siguiente aviso del ResizeObserver.
+        if (rect.width < 1 || rect.height < 1) return false;
+
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = rect.width;
+        H = rect.height;
+        canvas.width = Math.round(W * dpr);
+        canvas.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        R = Math.min(W, H) * 0.42;
+        cx = W / 2;
+        cy = H / 2;
+        return true;
+    }
+
+    // Proyecta lat/lon a coordenadas de pantalla. z > 0 = cara visible.
+    function project(lat, lon) {
+        const la = lat * Math.PI / 180;
+        const lo = (lon + rotation) * Math.PI / 180;
+        const ti = tilt * Math.PI / 180;
+
+        let x = Math.cos(la) * Math.sin(lo);
+        let y = Math.sin(la);
+        let z = Math.cos(la) * Math.cos(lo);
+
+        // inclinación sobre el eje X
+        const y2 = y * Math.cos(ti) - z * Math.sin(ti);
+        const z2 = y * Math.sin(ti) + z * Math.cos(ti);
+
+        return { x: cx + x * R, y: cy - y2 * R, z: z2 };
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        // halo suave
+        const halo = ctx.createRadialGradient(cx, cy, R * 0.75, cx, cy, R * 1.25);
+        halo.addColorStop(0, 'rgba(255,255,255,0.05)');
+        halo.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = halo;
+        ctx.beginPath();
+        ctx.arc(cx, cy, R * 1.25, 0, Math.PI * 2);
+        ctx.fill();
+
+        // círculo exterior
+        ctx.strokeStyle = 'rgba(255,255,255,0.18)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // meridianos y paralelos
+        ctx.strokeStyle = 'rgba(255,255,255,0.10)';
+        for (let lon = 0; lon < 180; lon += 30) {
+            ctx.beginPath();
+            let started = false;
+            for (let lat = -90; lat <= 90; lat += 4) {
+                const p = project(lat, lon);
+                if (p.z < 0) { started = false; continue; }
+                if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+        }
+        for (let lat = -60; lat <= 60; lat += 30) {
+            ctx.beginPath();
+            let started = false;
+            for (let lon = 0; lon <= 360; lon += 4) {
+                const p = project(lat, lon);
+                if (p.z < 0) { started = false; continue; }
+                if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
         }
 
-        const earth = new THREE.Mesh(geometry, earthMaterial);
-        scene.add(earth);
-
-        if (rCloud.status === 'fulfilled') {
-            const cloudGeo = new THREE.SphereGeometry(1.01, 64, 64);
-            const cloudMat = new THREE.MeshLambertMaterial({
-                map: rCloud.value,
-                transparent: true,
-                opacity: 0.7,
-                depthWrite: false
-            });
-            const clouds = new THREE.Mesh(cloudGeo, cloudMat);
-            scene.add(clouds);
+        // puntos: los del hemisferio visible más brillantes y grandes
+        for (const pt of points) {
+            const p = project(pt.lat, pt.lon);
+            if (p.z < 0) continue;
+            const depth = p.z;
+            ctx.fillStyle = `rgba(255,255,255,${0.12 + depth * 0.55})`;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 0.6 + depth * 1.1, 0, Math.PI * 2);
+            ctx.fill();
         }
 
-        startAnimationLoop(earth, scene, camera, renderer, container);
-    }).catch(err => {
-        console.warn('Texture loading failed for globe, using fallback material:', err);
-        const geometry = new THREE.SphereGeometry(1, 64, 64);
-        const material = new THREE.MeshPhongMaterial({ color: 0x2A6F97, shininess: 5 });
-        const earth = new THREE.Mesh(geometry, material);
-        scene.add(earth);
-        startAnimationLoop(earth, scene, camera, renderer, container);
+        // marcador de Lille
+        const l = project(LILLE.lat, LILLE.lon);
+        if (l.z > 0) {
+            const pulse = reduceMotion ? 0.6 : (Math.sin(Date.now() / 500) + 1) / 2;
+            ctx.fillStyle = `rgba(255,255,255,${0.25 + pulse * 0.35})`;
+            ctx.beginPath();
+            ctx.arc(l.x, l.y, 5 + pulse * 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(l.x, l.y, 2.6, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function frame() {
+        if (!dragging) rotation += velocity;
+        draw();
+        rafId = requestAnimationFrame(frame);
+    }
+
+    function start() {
+        if (rafId === null) rafId = requestAnimationFrame(frame);
+    }
+
+    function stop() {
+        if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+    }
+
+    // --- arrastre para rotar (sustituye a OrbitControls) ---
+    function pointerDown(e) {
+        dragging = true;
+        canvas.style.cursor = 'grabbing';
+        lastX = e.touches ? e.touches[0].clientX : e.clientX;
+        lastY = e.touches ? e.touches[0].clientY : e.clientY;
+    }
+
+    function pointerMove(e) {
+        if (!dragging) return;
+        const x = e.touches ? e.touches[0].clientX : e.clientX;
+        const y = e.touches ? e.touches[0].clientY : e.clientY;
+        rotation += (x - lastX) * 0.5;
+        tilt = Math.max(-70, Math.min(70, tilt - (y - lastY) * 0.3));
+        lastX = x;
+        lastY = y;
+        if (e.cancelable) e.preventDefault();
+    }
+
+    function pointerUp() {
+        dragging = false;
+        canvas.style.cursor = 'grab';
+    }
+
+    canvas.addEventListener('mousedown', pointerDown);
+    window.addEventListener('mousemove', pointerMove);
+    window.addEventListener('mouseup', pointerUp);
+    canvas.addEventListener('touchstart', pointerDown, { passive: true });
+    canvas.addEventListener('touchmove', pointerMove, { passive: false });
+    canvas.addEventListener('touchend', pointerUp);
+
+    // El ResizeObserver resuelve el bug de origen: el contenedor puede medir 0
+    // cuando arranca el script, así que dibujamos en cuanto tenga tamaño real.
+    new ResizeObserver(() => { if (resize()) draw(); }).observe(container);
+
+    // No gastar CPU ni batería mientras el globo está fuera de pantalla
+    new IntersectionObserver((entries) => {
+        visible = entries[0].isIntersecting;
+        if (visible) start(); else stop();
+    }, { threshold: 0 }).observe(container);
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else if (visible) start();
     });
 
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.08;
-    controls.rotateSpeed = 0.4;
-    controls.minDistance = 1.6;
-    controls.maxDistance = 6;
-}
-
-function startAnimationLoop(earth, scene, camera, renderer, container) {
-    const clouds = scene.children.find(c => c.material && c.material.opacity && c.geometry && c.geometry.type === 'SphereGeometry');
-    const clock = new THREE.Clock();
-    function animate() {
-        const delta = clock.getDelta();
-        if (earth) earth.rotation.y += 0.1 * delta;
-        if (clouds) clouds.rotation.y += 0.12 * delta;
-        if (renderer && camera) renderer.render(scene, camera);
-        requestAnimationFrame(animate);
-    }
-    animate();
+    if (reduceMotion) velocity = 0;
+    resize();
+    draw();
 }
 
 // Global DOM Loaded Initiator
@@ -772,70 +855,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeMobileMenu();
     initCardSpotlight();
 
-    // 5. Add dynamic neon perimeter beams
-    try { addPerimeterBeams(); } catch (e) { console.warn('addPerimeterBeams failed', e); }
-
-    // 6. Globe
-    try { initThreeGlobe(); } catch (err) { console.error('Globe init failed', err); }
-
-    console.log('Portfolio loaded successfully with 7 projects, responsive carousel, and premium details modal! 🚀');
+    // 5. Globo interactivo
+    try { initGlobe(); } catch (err) { console.error('Globe init failed', err); }
 });
-
-// Premium Centered Glassmorphism Modal for CV alert
-window.showCVAlert = function(event) {
-    if (event) event.preventDefault();
-    
-    // Check if modal already exists
-    let alertModal = document.getElementById('cv-alert-modal');
-    if (alertModal) return;
-
-    // Create modal element
-    alertModal = document.createElement('div');
-    alertModal.id = 'cv-alert-modal';
-    alertModal.className = 'fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300 opacity-0';
-    
-    alertModal.innerHTML = `
-        <div class="bg-[#0d0d0d] border border-white/10 p-8 rounded-2xl max-w-md w-11/12 shadow-2xl text-center relative transform transition-all duration-300 scale-95 opacity-0 flex flex-col items-center gap-5" style="font-family: system-ui, -apple-system, sans-serif;">
-            <!-- Close Button -->
-            <button onclick="closeCVAlertModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors">
-                <i class="fas fa-times text-base"></i>
-            </button>
-            
-            <!-- Warning / Info Icon -->
-            <div class="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-3xl">
-                <i class="fa-solid fa-circle-info"></i>
-            </div>
-            
-            <h3 class="text-xl font-bold text-white tracking-tight">Téléchargement du CV</h3>
-            
-            <p class="text-sm text-gray-300 leading-relaxed">
-                Le CV n'a pas encore été mis à jour, mais merci pour votre intérêt ! Écrivez-moi directement à :
-                <br>
-                <a href="mailto:sebaruiz01@gmail.com" class="text-blue-400 underline hover:text-blue-300 transition-colors font-semibold block mt-3 text-base">sebaruiz01@gmail.com</a>
-            </p>
-            
-            <button onclick="closeCVAlertModal()" class="mt-2 px-6 py-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-semibold rounded-xl transition-all duration-300 active:scale-95">
-                Fermer
-            </button>
-        </div>
-    `;
-    
-    document.body.appendChild(alertModal);
-    
-    // Trigger animation
-    setTimeout(() => {
-        alertModal.classList.remove('opacity-0');
-        alertModal.querySelector('div').classList.remove('scale-95', 'opacity-0');
-    }, 10);
-};
-
-window.closeCVAlertModal = function() {
-    const alertModal = document.getElementById('cv-alert-modal');
-    if (alertModal) {
-        alertModal.classList.add('opacity-0');
-        alertModal.querySelector('div').classList.add('scale-95', 'opacity-0');
-        setTimeout(() => {
-            alertModal.remove();
-        }, 300);
-    }
-};
