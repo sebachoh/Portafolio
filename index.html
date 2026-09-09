@@ -1,23 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Ruiz - Alternance</title>
-    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="SR" />
-    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Devicons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <title>Sebastian Ruiz — Ingénieur Infrastructure, Cloud &amp; Cybersécurité | Alternance 2026</title>
+    <meta name="description"
+        content="Élève-ingénieur en 5ème année à IMT Nord Europe, à Lille. Expérience en 5G privée, infrastructure réseau, Docker, AWS et cybersécurité. Recherche une alternance à partir de septembre 2026." />
+    <meta name="author" content="Sebastian Ruiz Zuluaga" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href="https://sebastianruiz.me/" />
+
+    <!-- Open Graph : aperçu sur LinkedIn, WhatsApp, Slack… -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sebastianruiz.me/" />
+    <meta property="og:title" content="Sebastian Ruiz — Ingénieur Infrastructure, Cloud &amp; Cybersécurité" />
+    <meta property="og:description"
+        content="Élève-ingénieur à IMT Nord Europe (Lille). 5G privée, infrastructure réseau, Docker, AWS, cybersécurité. Recherche une alternance à partir de septembre 2026." />
+    <meta property="og:image" content="https://sebastianruiz.me/assets/img/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sebastian Ruiz — Ingénieur Infrastructure, Cloud &amp; Cybersécurité" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Sebastian Ruiz" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sebastian Ruiz — Ingénieur Infrastructure, Cloud &amp; Cybersécurité" />
+    <meta name="twitter:description"
+        content="Élève-ingénieur à IMT Nord Europe (Lille). Recherche une alternance à partir de septembre 2026." />
+    <meta name="twitter:image" content="https://sebastianruiz.me/assets/img/og-image.jpg" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SR" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+    <!-- La fuente del titre principal se precarga: es el elemento más grande
+         de la primera pantalla y así no aparece en fallback antes de cambiar. -->
+    <link rel="preload" href="/assets/fonts/Barbra-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Styles. Tailwind se compile en local (npm run build:css) au lieu d'être
+         chargé depuis le CDN, qui compilait le CSS dans le navigateur à chaque visite. -->
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Données structurées : aide Google à afficher le profil correctement -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sebastian Ruiz Zuluaga",
+      "url": "https://sebastianruiz.me/",
+      "image": "https://sebastianruiz.me/assets/img/og-image.jpg",
+      "jobTitle": "Ingénieur Infrastructure, Cloud & Cybersécurité",
+      "email": "mailto:sebaruiz01@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Lille", "addressCountry": "FR" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "IMT Nord Europe" },
+        { "@type": "CollegeOrUniversity", "name": "Universidad Tecnológica de Pereira" }
+      ],
+      "knowsLanguage": ["es", "en", "fr"],
+      "knowsAbout": ["Cloud Computing", "Cybersécurité", "Réseaux 5G", "Docker", "AWS", "Linux", "Python"],
+      "sameAs": [
+        "https://github.com/sebachoh",
+        "https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/"
+      ]
+    }
+    </script>
 </head>
 
 <body class="bg-black text-white font-sans antialiased">
@@ -25,8 +81,8 @@
         <!-- Header -->
         <header class="flex justify-between items-center py-4 sm:py-6">
             <div class="avatar-container">
-                <img src="/assets/img/logos/Logo.png" alt="Logo Sebastian Ruiz"
-                    class="w-16 h-16 md:w-20 md:h-20 rounded-full border-1 border-gray-600 hover:border-teal-400 transition-colors duration-300 object-contain scale-90">
+                <img src="/assets/img/logos/Logo.webp" alt="Logo Sebastian Ruiz"
+                    class="w-16 h-16 md:w-20 md:h-20 rounded-full border-1 border-gray-600 hover:border-teal-400 transition-colors duration-300 object-contain scale-90" loading="eager" fetchpriority="high" decoding="async" width="350" height="678" />
             </div>
 
             <!-- Mobile menu button -->
@@ -46,6 +102,8 @@
                     class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Expérience</a>
                 <a href="#education"
                     class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Formation</a>
+                <a href="#stack"
+                    class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Stack</a>
                 <a href="#contact"
                     class="text-gray-400 hover:text-white transition-colors duration-300 font-medium">Contact</a>
             </nav>
@@ -66,16 +124,21 @@
                 <a href="#education" class="mobile-menu-link">
                     <span class="num">04 //</span> Formation
                 </a>
+                <a href="#stack" class="mobile-menu-link">
+                    <span class="num">05 //</span> Stack
+                </a>
                 <a href="#contact" class="mobile-menu-link">
-                    <span class="num">05 //</span> Contact
+                    <span class="num">06 //</span> Contact
                 </a>
             </nav>
             <div class="mobile-menu-footer">
                 <div class="mobile-menu-socials">
-                    <a href="https://github.com/sebachoh" target="_blank" class="fa-brands fa-github"></a>
-                    <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank" class="fa-brands fa-linkedin"></a>
+                    <a href="https://github.com/sebachoh" target="_blank" rel="noopener noreferrer" class="fa-brands fa-github"></a>
+                    <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank" rel="noopener noreferrer" class="fa-brands fa-linkedin"></a>
                     <a href="mailto:sebaruiz01@gmail.com" class="fa-solid fa-envelope"></a>
-                    <a href="#" onclick="showCVAlert(event)" class="fa-solid fa-download" title="Télécharger mon CV"></a>
+                    <a href="/assets/CV/CV-Sebastian-Ruiz-Ingenieur.pdf" download
+                        class="fa-solid fa-download" title="Télécharger mon CV"
+                        aria-label="Télécharger mon CV (PDF)"></a>
                 </div>
             </div>
         </div>
@@ -85,18 +148,14 @@
             class="min-h-[85vh] sm:min-h-[88vh] flex items-center justify-center text-center py-8 sm:py-12 md:py-16">
             <div class="space-y-4">
                 <h1
-                    class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
+                    class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white">
                     Sebastian Ruiz
                 </h1>
                 <p class="text-lg sm:text-xl md:text-2xl text-gray-300 font-light tracking-wider custom-font">
-                    Ingénieur Infrastructure, Cloud & Cybersécurité
+                    Ingénieur Infrastructure, Cloud &amp; Cybersécurité
                 </p>
             </div>
         </section>
-
-        <!-- Three.js and controls (loaded before script.js) -->
-        <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/controls/OrbitControls.js"></script>
 
         <!-- À propos Section -->
         <section id="about" class="max-w-5xl mx-auto py-8 sm:py-12 md:py-16">
@@ -107,9 +166,9 @@
                 <div class="flex flex-col md:flex-row items-start gap-6">
                     <!-- Left column: text -->
                     <div class="w-full md:w-1/2">
-                        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight mb-2">
+                        <h2 class="text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight mb-2">
                             Salut, c'est Sebastian!
-                        </h1>
+                        </h2>
                         <div class="flex items-center text-white-500 tracking-[-0.06em] text-xs sm:text-sm mb-8">
                             <i class="fa-solid fa-location-dot mr-2"></i>
                             <span>Lille, France</span>
@@ -134,13 +193,13 @@
                                 apporter mes connaissances à votre équipe <b>dès le premier jour</b>.
                             </p>
                             <div class="flex gap-4 mt-8">
-                                <a href="https://github.com/sebachoh" target="_blank"
+                                <a href="https://github.com/sebachoh" target="_blank" rel="noopener noreferrer"
                                     class="fa-brands fa-github text-3xl text-white hover:scale-110 transition-all cursor-pointer"></a>
-                                <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank"
+                                <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank" rel="noopener noreferrer"
                                     class="fa-brands fa-linkedin text-3xl text-white hover:scale-110 transition-all cursor-pointer"></a>
-                                <a href="#" onclick="showCVAlert(event)"
+                                <a href="/assets/CV/CV-Sebastian-Ruiz-Ingenieur.pdf" download
                                     class="fa-solid fa-download text-3xl text-white hover:scale-110 transition-all cursor-pointer"
-                                    title="Télécharger mon CV"></a>
+                                    title="Télécharger mon CV" aria-label="Télécharger mon CV (PDF)"></a>
                             </div>
                         </div>
                     </div>
@@ -213,7 +272,7 @@
 
                                 <!-- Globe -->
                                 <div class="flex flex-col">
-                                    <h3 class="text-xl font-semibold text-white mb-4"></h3>
+                                    <div class="text-xl font-semibold text-white mb-4" aria-hidden="true"></div>
                                     <div id="globe" style="width:100%;height:220px;border-radius:12px;overflow:hidden">
                                     </div>
                                 </div>
@@ -230,9 +289,9 @@
                                     <div
                                         class="group bg-[#0d0d0d]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 flex flex-col">
                                         <div class="w-full h-32 bg-gray-900 border-b border-white/5 overflow-hidden">
-                                            <img src="/assets/img/photos/PlayingPiano.jpg" alt="Piano"
+                                            <img src="/assets/img/photos/PlayingPiano.webp" alt="Piano"
                                                 class="w-full h-full object-cover filter grayscale contrast-[1.15] group-hover:grayscale-0 transition-all duration-500"
-                                                onerror="this.style.display='none';" />
+                                                onerror="this.style.display='none';" loading="lazy" decoding="async" width="700" height="561" />
                                         </div>
                                         <div
                                             class="p-3 text-base text-gray-200 tracking-[-0.06em] custom-font-medium leading-snug">
@@ -246,9 +305,9 @@
                                     <div
                                         class="group bg-[#0d0d0d]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 flex flex-col">
                                         <div class="w-full h-32 bg-gray-900 border-b border-white/5 overflow-hidden">
-                                            <img src="/assets/img/photos/SanSebastian.JPG" alt="Photographie"
+                                            <img src="/assets/img/photos/SanSebastian.webp" alt="Photographie"
                                                 class="w-full h-full object-cover filter grayscale contrast-[1.15] group-hover:grayscale-0 transition-all duration-500"
-                                                onerror="this.style.display='none';" />
+                                                onerror="this.style.display='none';" loading="lazy" decoding="async" width="700" height="525" />
                                         </div>
                                         <div
                                             class="p-3 text-base text-gray-200 tracking-[-0.06em] custom-font-medium leading-snug">
@@ -308,8 +367,8 @@
         <section id="experience" class="max-w-6xl mx-auto py-8 sm:py-12 md:py-16">
             <div
                 class="mx-auto max-w-5xl card-spotlight py-6 px-6 rounded-2xl bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/10 shadow-md transition-all duration-500">
-                <h1 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-tight custom-font-barbra">
-                    Expérience</h1>
+                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-tight custom-font-barbra">
+                    Expérience</h2>
                 <div class="space-y-8">
                     <!-- Expérience 5G (Stage de 4ème année) -->
                     <div
@@ -325,8 +384,8 @@
                             IMT Nord Europe</p>
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="/assets/img/logos/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe"
-                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
+                                <img src="/assets/img/logos/Logo_IMT_Nord_Europe.webp" alt="IMT Nord Europe"
+                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" loading="lazy" decoding="async" width="500" height="331" />
                             </div>
                             <div class="flex-1">
                                 <p
@@ -356,8 +415,8 @@
                             CEA Rutas</p>
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="/assets/img/logos/logoRutas.jpeg" alt="CEA Rutas"
-                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
+                                <img src="/assets/img/logos/logoRutas.webp" alt="CEA Rutas"
+                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" loading="lazy" decoding="async" width="320" height="319" />
                             </div>
                             <div class="flex-1">
                                 <p
@@ -368,7 +427,7 @@
                                     Planification
                                     et exécution de projets d’optimisation de la connectivité et de la sécurité, en
                                     mettant en œuvre des protocoles réseau avancés, firewalls et accès à distance
-                                    sécurisé. Pilotage de la maintenance préventive et corrective del
+                                    sécurisé. Pilotage de la maintenance préventive et corrective du
                                     matériel et des logiciels, assurant une disponibilité de <b>99%</b> des systèmes.
                                 </p>
                             </div>
@@ -390,8 +449,8 @@
                             TecnoParque SENA</p>
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="/assets/img/logos/logoSena2.png" alt="TecnoParque SENA"
-                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" />
+                                <img src="/assets/img/logos/logoSena2.webp" alt="TecnoParque SENA"
+                                    class="edu-photo-img exp-photo" onerror="this.style.display='none'" loading="lazy" decoding="async" width="320" height="320" />
                             </div>
                             <div class="flex-1">
                                 <p
@@ -406,21 +465,23 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
         </section>
 
         <section id="education" class="max-w-6xl mx-auto py-8 sm:py-10 md:py-12">
             <div
                 class="mx-auto max-w-5xl card-spotlight py-6 px-6 rounded-2xl bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/10 shadow-md transition-all duration-500">
-                <h1 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-tight custom-font-barbra">
-                    Formation</h1>
+                <h2 class="text-3xl font-bold text-white mb-6 text-center uppercase tracking-tight custom-font-barbra">
+                    Formation</h2>
                 <div class="space-y-6 text-gray-300">
 
                     <div
                         class="bg-black/40 card-spotlight rounded-2xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-500 hover:border-white/20">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="/assets/img/logos/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe"
-                                    class="edu-photo-img imt-photo" onerror="this.style.display='none'" />
+                                <img src="/assets/img/logos/Logo_IMT_Nord_Europe.webp" alt="IMT Nord Europe"
+                                    class="edu-photo-img imt-photo" onerror="this.style.display='none'" loading="lazy" decoding="async" width="500" height="331" />
                             </div>
                             <div class="flex-1">
                                 <div class="flex justify-between items-start">
@@ -443,9 +504,9 @@
                         class="bg-black/40 card-spotlight rounded-2xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-500 hover:border-white/20">
                         <div class="flex flex-col md:flex-row md:items-start md:gap-6">
                             <div class="edu-photo">
-                                <img src="/assets/img/logos/utp-universidad-tecnologica-de-pereira-logo-png_seeklogo-259118.png"
+                                <img src="/assets/img/logos/utp.webp"
                                     alt="Universidad Tecnológica de Pereira" class="edu-photo-img"
-                                    onerror="this.style.display='none'" />
+                                    onerror="this.style.display='none'" loading="lazy" decoding="async" width="400" height="400" />
                             </div>
                             <div class="flex-1">
                                 <div class="flex justify-between items-start">
@@ -471,9 +532,9 @@
         <section class="stack-panel my-8 sm:my-12 md:my-16" id="stack">
             <div
                 class="panel-body card-spotlight py-6 sm:py-12 md:py-8 px-4 md:px-8 rounded-t-3xl bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/10">
-                <h1
+                <h2
                     class="panel-title text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-2 text-center uppercase tracking-tight custom-font-barbra tracking-tight">
-                    Stack Technique</h1>
+                    Stack Technique</h2>
                 <div class="marquee-container max-w-4xl mx-auto">
                     <div class="marquee-content custom">
                         <!-- TypeScript -->
@@ -584,16 +645,16 @@
                         <div class="tech-card group" data-tech="AWS">
                             <div class="tech-icon-container">
                                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF">
-                                    <title>iCloud</title>
+                                    <title>Amazon AWS</title>
                                     <path
-                                        d="M13.762 4.29a6.51 6.51 0 0 0-5.669 3.332 3.571 3.571 0 0 0-1.558-.36 3.571 3.571 0 0 0-3.516 3A4.918 4.918 0 0 0 0 14.796a4.918 4.918 0 0 0 4.92 4.914 4.93 4.93 0 0 0 .617-.045h14.42c2.305-.272 4.041-2.258 4.043-4.589v-.009a4.594 4.594 0 0 0-3.727-4.508 6.51 6.51 0 0 0-6.511-6.27z" />
+                                        d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.44.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.294.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.152-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926a2.14 2.14 0 0 1-.583.703c-.25.2-.549.343-.895.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.271-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.384.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z" />
                                 </svg>
                             </div>
                             <span class="tech-label mt-4 text-[11px] custom-font-medium text-white tracking-[-0.03em]">
                                 AWS</span>
                         </div>
 
-                        <!-- SASS -->
+                        <!-- Unity -->
                         <div class="tech-card group" data-tech="Unity">
                             <div class="tech-icon-container">
                                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF">
@@ -622,20 +683,20 @@
                         class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank"
+                    <a href="https://www.linkedin.com/in/sebastianruizzuluaga-ingenieur/" target="_blank" rel="noopener noreferrer"
                         class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/sebachoh" target="_blank"
+                    <a href="https://github.com/sebachoh" target="_blank" rel="noopener noreferrer"
                         class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://wa.me/33753012886" target="_blank"
+                    <a href="https://wa.me/33753012886" target="_blank" rel="noopener noreferrer"
                         class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"
-                        title="Envíame un mensaje por WhatsApp">
+                        title="Écrivez-moi sur WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="http://instagram.com/sebachoh#" target="_blank"
+                    <a href="http://instagram.com/sebachoh#" target="_blank" rel="noopener noreferrer"
                         class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-instagram"></i>
                     </a>
@@ -644,7 +705,7 @@
                     &copy; 2026 Sebastian Ruiz.
                 </p>
                 <p class="text-gray-500 text-sm mt-2">
-                    Si ves esto, me debes una alternancia ;) <i class="fa-regular fa-face-smile"></i> </p>
+                    Si vous lisez ceci, vous me devez une alternance ;) <i class="fa-regular fa-face-smile"></i> </p>
             </div>
         </footer>
     </div>
@@ -665,8 +726,8 @@
             <!-- 1. Image: Left Top on Desktop, First on Mobile -->
             <div class="col-span-12 md:col-span-5 flex flex-col">
                 <div class="relative w-full h-48 md:h-64 rounded-2xl overflow-hidden bg-gray-900 border border-white/5 group">
-                    <img id="modal-image" src="" alt=""
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img id="modal-image" alt="" decoding="async"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
             </div>
@@ -675,7 +736,6 @@
             <div class="col-span-12 md:col-span-7 md:row-span-2 flex flex-col justify-between md:overflow-y-auto space-y-6 pr-0 md:pr-2">
                 <div class="space-y-6">
                     <div>
-                        <!-- Title (el blanco nada mas, borra el azul) -->
                         <h3 id="modal-title"
                             class="text-2xl md:text-3xl font-bold text-white leading-snug tracking-[-0.04em]"
                             style="font-family: system-ui, -apple-system, sans-serif;"></h3>
@@ -730,7 +790,7 @@
         </div>
     </div>
 
-    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/script.js" defer></script>
 </body>
 
 </html>
